@@ -6,9 +6,10 @@ Pod::Spec.new do |s|
   s.description  = "Plugin for Alipay payment option for PWCoreSDK"
   s.homepage     = "http://paymentwall.com"
   s.author       = { "tien.vu" => "kyle.vu@paymentwall.com" }
-  s.platform     = :ios, "8.0"
+  s.platform     = :ios
+  s.ios.deployment_target = '8.0'
 
-  s.source       = { :git => "https://github.com/paymentwall/ios-sdk-core", :tag => "1.0.0" }
+  s.source       = { :git => "https://github.com/paymentwall/ios-sdk-core", :tag => 'PWAlipayPlugin-v'+String(s.version) }
   s.source_files = "PWAlipayPlugin", "PWAlipayPlugin/**/*.{h,m}", "Headers/*.h"
   s.resources    = "PWAlipayPlugin.bundle"
   s.vendored_libraries = "libPWAlipayPlugin.a"
