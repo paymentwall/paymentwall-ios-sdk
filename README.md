@@ -1,1 +1,1 @@
-# ios-panda-core
+# ios-SDK-core
