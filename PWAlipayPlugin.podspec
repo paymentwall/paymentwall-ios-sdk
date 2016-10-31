@@ -11,8 +11,8 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/paymentwall/ios-sdk-core", :tag => 'PWAlipayPlugin-v'+String(s.version) }
   s.source_files = "PWAlipayPlugin", "PWAlipayPlugin/**/*.{h,m}", "Headers/*.h"
-  s.resources    = "PWAlipayPlugin.bundle"
-  s.vendored_libraries = "PWAlipayPlugin/libPWAlipayPlugin.a"
+  s.resources    = "**/PWAlipayPlugin.bundle"
+  s.vendored_libraries = "**/libPWAlipayPlugin.a"
   s.dependency 'PWCoreSDK'
 
   s.subspec 'Headers' do |h|
