@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWUnionpayPlugin"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "PWUnionpayPlugin"
   s.description  = "Plugin for Unionpay payment option for PWCoreSDK"
   s.homepage     = "http://paymentwall.com"
