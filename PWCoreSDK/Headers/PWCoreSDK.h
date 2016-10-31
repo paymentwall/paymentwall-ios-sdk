@@ -16,8 +16,8 @@ FOUNDATION_EXPORT const unsigned char PWCoreSDKVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <PWCoreSDK/PublicHeader.h>
 //#import <PWCoreSDK/PaymentOptionsViewController.h>
-#import <PWCoreSDK/PWCoreSDKMain.h>
-#import <PWCoreSDK/LocalPaymentOptionProtocol.h>
-#import <PWCoreSDK/PWCoreSDKConnection.h>
-#import <PWCoreSDK/PWCoreSDKSigning.h>
+#import "PWCoreSDKMain.h"
+#import "LocalPaymentOptionProtocol.h"
+#import "PWCoreSDKConnection.h"
+#import "PWCoreSDKSigning.h"
 
