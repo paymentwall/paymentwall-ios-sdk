@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/paymentwall/ios-sdk-core", :tag => 'PWCoreSDK-v'+String(s.version) }
   s.source_files = "PWCoreSDK", "PWCoreSDK/**/*.{h,m}", "Headers/*.h"
   s.resources    = "PWCoreSDK.bundle"
-  s.vendored_libraries = "libPWCoreSDK.a"
+  s.vendored_libraries = "PWCoreSDK/libPWCoreSDK.a"
 
   s.subspec 'Headers' do |h|
     h.source_files = 'PWCoreSDK/Headers/*.{h,m}'
