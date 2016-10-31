@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWAlipayPlugin"
-  s.version      = "1.0.1"
+  s.version      = "1.0.2"
   s.summary      = "PWAlipayPlugin"
   s.description  = "Plugin for Alipay payment option for PWCoreSDK"
   s.homepage     = "http://paymentwall.com"
@@ -14,9 +14,5 @@ Pod::Spec.new do |s|
   s.resources    = "PWAlipayPlugin/PWAlipayPlugin.bundle"
   s.vendored_libraries = "PWAlipayPlugin/libPWAlipayPlugin.a"
   s.dependency 'PWCoreSDK'
-
-  s.subspec 'Headers' do |h|
-    h.source_files = 'PWAlipayPlugin/Headers/*.{h,m}'
-  end
 
 end
