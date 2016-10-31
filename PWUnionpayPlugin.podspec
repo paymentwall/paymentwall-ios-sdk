@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.ios.deployment_target = '8.0'
 
-  s.source       = { :git => "https://github.com/paymentwall/ios-sdk-core", :tag => 'PWUnionpayPlugin-v'+String(s.version) }
+  s.source       = { :git => "https://github.com/paymentwall/ios-sdk-core.git", :tag => 'PWUnionpayPlugin-v'+String(s.version) }
   s.source_files = "PWUnionpayPlugin", "PWUnionpayPlugin/**/*.{h,m}", "PWUnionpayPlugin/Headers/*.h"
   s.resources    = "PWUnionpayPlugin/PWUnionpayPlugin.bundle"
   s.vendored_libraries = "PWUnionpayPlugin/libPWUnionpayPlugin.a"
