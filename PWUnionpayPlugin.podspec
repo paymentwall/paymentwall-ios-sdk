@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.author       = { "tien.vu" => "kyle.vu@paymentwall.com" }
   s.platform     = :ios
   s.ios.deployment_target = '8.0'
+  s.license      = { :type => 'Apache 2.0', :file => 'LICENSE' }
 
   s.source       = { :git => "https://github.com/paymentwall/ios-sdk-core.git", :tag => 'PWUnionpayPlugin-v'+String(s.version) }
   s.source_files = "PWUnionpayPlugin", "PWUnionpayPlugin/**/*.{h,m}", "PWUnionpayPlugin/Headers/*.h"
