@@ -148,22 +148,22 @@ alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
 
 4. Handling the parameters response, you can either implement the delegate protocol or use the completion handler, if the request success, you can use it's response to call it's native form payment after dismiss the core view controller:
 
-	```swift
-	alipay.do { [unowned self] (response) in
-            if response.responseCode != 0 {
-                //Signature generate error
-                print("\n message \(response.message)")
-            }
+```swift
+alipay.do { [unowned self] (response) in
+	if response.responseCode != 0 {
+		//Signature generate error
+		print("\n message \(response.message)")
+	}
             
-            if let orderString = response.alipayOrderString {
-                print("\n alipayResponse \(orderString)")
-                self.dismiss(animated: true, completion: {
-                    AlipaySDK.defaultService().payOrder(orderString, fromScheme: self.appScheme, callback: { (dict) in
-                        print("\n alipay callback \(dict)")
-                    })
-                })
-            }
-        }
-	```
+	if let orderString = response.alipayOrderString {
+		print("\n alipayResponse \(orderString)")
+		self.dismiss(animated: true, completion: {
+			AlipaySDK.defaultService().payOrder(orderString, fromScheme: self.appScheme, callback: { (dict) in
+				print("\n alipay callback \(dict)")
+				})
+		})
+	}
+}
+```
 
 
