@@ -138,9 +138,9 @@ Panda++ supports external payment system injection (which are in our defined pay
 	alipay.pwProjectKey = "YOUR PROJECT KEY"
 	alipay.pwSecretKey = "YOUR SECRET KEY"
 	alipay.signVersion = 3
-alipay.appId = "YOUR APP ID"
+	alipay.appId = "YOUR APP ID"
 
-   //For international alipay payment
+	//For international alipay payment
 	alipay.itbPay = "30m"
 	alipay.forexBiz = "FP"
 	alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
