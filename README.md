@@ -132,18 +132,18 @@ Panda++ supports external payment system injection (which are in our defined pay
 2. Import pod modules or framework header into your project
 3. Setup the plugin, each plugin have different requirements so please check their header files and local payment option docs on their websites for more information:
 ```swift
-	let alipay = PWAlipayPlugin()
-	alipay.userId = "testuser"
-	alipay.agExternalId = "Item id"
-	alipay.pwProjectKey = "YOUR PROJECT KEY"
-	alipay.pwSecretKey = "YOUR SECRET KEY"
-	alipay.signVersion = 3
-	alipay.appId = "YOUR APP ID"
+let alipay = PWAlipayPlugin()
+alipay.userId = "testuser"
+alipay.agExternalId = "Item id"
+alipay.pwProjectKey = "YOUR PROJECT KEY"
+alipay.pwSecretKey = "YOUR SECRET KEY"
+alipay.signVersion = 3
+alipay.appId = "YOUR APP ID"
 
-	//For international alipay payment
-	alipay.itbPay = "30m"
-	alipay.forexBiz = "FP"
-	alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
+//For international alipay payment
+alipay.itbPay = "30m"
+alipay.forexBiz = "FP"
+alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
 ```
 
 4. Handling the parameters response, you can either implement the delegate protocol or use the completion handler, if the request success, you can use it's response to call it's native form payment after dismiss the core view controller:
