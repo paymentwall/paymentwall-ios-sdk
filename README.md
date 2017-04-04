@@ -160,7 +160,7 @@ alipay.do { [unowned self] (response) in
 		self.dismiss(animated: true, completion: {
 			AlipaySDK.defaultService().payOrder(orderString, fromScheme: self.appScheme, callback: { (dict) in
 				print("\n alipay callback \(dict)")
-				})
+			})
 		})
 	}
 }
