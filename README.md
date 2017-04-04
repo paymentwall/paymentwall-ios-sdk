@@ -85,36 +85,36 @@ PWCoreSDK.setPaymentName("Item", paymentAmount: "9.99", paymentCurrency: "USD", 
 3. Add Brick payment type, please refer below on how to handle Brick payment flow:
 
 	```swift
-PWCoreSDK.createNewBrickPayment(withPublicKey: "YOUR PUBLIC KEY")
-```
+	PWCoreSDK.createNewBrickPayment(withPublicKey: "YOUR PUBLIC KEY")
+	```
 
 4. Add Mobiamo payment type:
 
 	```swift
-PWCoreSDK.createNewMobiamoPayment(withAppID: "YOUR APP ID", userID: "10101", paymentID: "1001", noPrice: true)
-```
+	PWCoreSDK.createNewMobiamoPayment(withAppID: "YOUR APP ID", userID: "10101", paymentID: "1001", noPrice: true)
+	```
 
 5. Add Mint payment type:
 	```swift
-PWCoreSDK.createNewMintPayment(withAppID: "YOUR APP ID", userID: "10101")
-```
+	PWCoreSDK.createNewMintPayment(withAppID: "YOUR APP ID", userID: "10101")
+	```
 6. Add PWLocal payment type, please refer [PWLocal docs](https://www.paymentwall.com/en/documentation/PWLocal-iOS-SDK/3358) or the demo for more ways to create PWlocal request:
 
 	```swift
-PWCoreSDK.createNewPWLocalCustomPayment(withSecretKey: "YOUR SECRET KEY", apiType: DIGITAL_GOODS, customRequestDic: customSetting)
-```
+	PWCoreSDK.createNewPWLocalCustomPayment(withSecretKey: "YOUR SECRET KEY", apiType: DIGITAL_GOODS, customRequestDic: customSetting)
+	```
 
 7. Add any other local payment option plugin if you want, please refer Implement local payment options section below on how to create them:
 	
 	```swift
-PWCoreSDK.addCustomPaymentOptions([alipay, unionpay, ...])
-```
+	PWCoreSDK.addCustomPaymentOptions([alipay, unionpay, ...])
+	```
 
 8. Present Payment options view controller:
 	
 	```swift
-PWCoreSDK.showPaymentOptionsViewController(withParentViewcontroller: self, delegate: self, showCompletion: nil)
-```
+	PWCoreSDK.showPaymentOptionsViewController(withParentViewcontroller: self, delegate: self, showCompletion: nil)
+	```
 
 Brick payment flow
 -------------------
@@ -135,24 +135,24 @@ Panda++ supports external payment system injection (which are in our defined pay
 3. Setup the plugin, each plugin have different requirements so please check their header files and local payment option docs on their websites for more information:
 
    ```swift
-let alipay = PWAlipayPlugin()
-alipay.userId = "testuser"
-alipay.agExternalId = "Item id"
-alipay.pwProjectKey = "YOUR PROJECT KEY"
-alipay.pwSecretKey = "YOUR SECRET KEY"
-alipay.signVersion = 3
+	let alipay = PWAlipayPlugin()
+	alipay.userId = "testuser"
+	alipay.agExternalId = "Item id"
+	alipay.pwProjectKey = "YOUR PROJECT KEY"
+	alipay.pwSecretKey = "YOUR SECRET KEY"
+	alipay.signVersion = 3
 alipay.appId = "YOUR APP ID"
 
    //For international alipay payment
-alipay.itbPay = "30m"
-alipay.forexBiz = "FP"
-alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
-```
+	alipay.itbPay = "30m"
+	alipay.forexBiz = "FP"
+	alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
+	```
 
 4. Handling the parameters response, you can either implement the delegate protocol or use the completion handler, if the request success, you can use it's response to call it's native form payment after dismiss the core view controller:
 
-```swift
-alipay.do { [unowned self] (response) in
+	```swift
+	alipay.do { [unowned self] (response) in
             if response.responseCode != 0 {
                 //Signature generate error
                 print("\n message \(response.message)")
@@ -167,6 +167,6 @@ alipay.do { [unowned self] (response) in
                 })
             }
         }
-```
+	```
 
 
