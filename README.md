@@ -49,7 +49,6 @@ bash "${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/PWCoreSDK.framework/ios-st
 ```
 
 5. If you are using Swift, create a new Objective-C file in order to create new bridging-header.h files, then import the following files into the header file like:
-
 ```objective-c
 #import <PWCoreSDK/PWCoreSDK.h> 
 ```
@@ -62,9 +61,8 @@ PWCoreSDK.setPaymentName("Item", paymentAmount: "9.99", paymentCurrency: "USD", 
 ```
 
 2. Implement `PWCoreSDKDelegate` protocol to handle payment response:
-
-   ```swift
-	func paymentResponse(_ response: PWCoreSDKResponse?) {
+```swift
+func paymentResponse(_ response: PWCoreSDKResponse?) {
 		guard let response = response else { return }
 		switch response.responseCode {
 			case .SUCCESSFUL:
