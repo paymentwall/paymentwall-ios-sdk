@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *cardBin;
 @property (nonatomic, strong) NSString *cardExpMonth;
 @property (nonatomic, strong) NSString *cardExpYear;
+@property (nonatomic, strong) NSString *email;
 
 -(id)initWithAttributeDictionary:(NSDictionary *) dictionary;
 
