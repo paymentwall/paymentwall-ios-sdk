@@ -55,6 +55,9 @@ typedef void (^PWLocalPaymentStatusCompletionBlock)(PWLocalStatusResponse *respo
 // Custom Request
 @property (nonatomic, strong) NSDictionary *customRequestDictionary;
 
+// app download link
+@property(nonatomic, strong) NSString *appDownloadURL;
+
 // delegate
 @property(nonatomic, weak) id<PWLocalSDKDelegate> delegate;
 

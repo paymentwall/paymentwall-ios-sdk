@@ -78,6 +78,7 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
  */
 + (void)createNewPWLocalCustomPaymentWithSecretKey:(NSString * _Nonnull )secretKey
                                            apiType:(apiType)type
+                                   appDownloadLink:(NSString * _Nonnull)appDownloadLink
                                   customRequestDic:(NSDictionary * _Nonnull )customRequestDic;
 
     
@@ -88,6 +89,7 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
  @param virtualCurrency  VirtualCurrency object, see the header for required fields
  */
 + (void)createNewPWLocalVirtualCurrencyPaymentWithSecretKey:(NSString * _Nonnull )secretKey
+                                            appDownloadLink:(NSString * _Nonnull)appDownloadLink
                                              virualCurrency:(VirtualCurrency * _Nonnull )virtualCurrency;
 
     
@@ -98,6 +100,7 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
  @param digitalGoodsDefautWidget DigitalGoodsDefautWidget object, see the header for required fields
  */
 + (void)createNewPWLocalDigitalGoodsDefautWidgetPaymentWithSecretKey:(NSString * _Nonnull )secretKey
+                                                     appDownloadLink:(NSString * _Nonnull)appDownloadLink
                                             digitalGoodsDefautWidget:(DigitalGoodsDefautWidget * _Nonnull )digitalGoodsDefautWidget;
 
 /**
@@ -107,6 +110,7 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
  @param digitalGoodsFlexibleWidget DigitalGoodsFlexibleWidget object, see the header for required fields
  */
 + (void)createNewPWLocalDigitalGoodsFlexibleWidgetPaymentWithSecretKey:(NSString * _Nonnull )secretKey
+                                                       appDownloadLink:(NSString * _Nonnull)appDownloadLink
                                             digitalGoodsFlexibleWidget:(DigitalGoodsFlexibleWidget * _Nonnull )digitalGoodsFlexibleWidget;
 
 /**
@@ -116,6 +120,7 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
  @param cartDefaultWidget CartDefaultWidget object, see the header for required fields
  */
 + (void)createNewPWLocalCartWidgetPaymentWithSecretKey:(NSString * _Nonnull )secretKey
+                                       appDownloadLink:(NSString * _Nonnull)appDownloadLink
                                      cartDefaultWidget:(CartDefaultWidget * _Nonnull )cartDefaultWidget;
 
 /**

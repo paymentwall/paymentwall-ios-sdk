@@ -32,4 +32,7 @@
 @property (nonatomic, strong) NSString *pingback_url;
 @property (nonatomic, strong) NSString *success_url;
 
+//Included nil, remove before use
+-(NSDictionary *)toDictionary;
+
 @end

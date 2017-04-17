@@ -32,8 +32,11 @@
 @property (nonatomic, strong) NSString *sex;
 @property (nonatomic, strong) NSString *success_url;
 @property (nonatomic, strong) NSString *default_goodsid;
-@property (nonatomic, strong) NSArray *hide_goodsid;
+@property (nonatomic, strong) NSArray  *hide_goodsid;
 @property (nonatomic, strong) NSString *display_goodsid;
 @property (nonatomic, strong) NSString *pingback_url;
+
+//Included nil, remove before use
+-(NSDictionary *)toDictionary;
 
 @end

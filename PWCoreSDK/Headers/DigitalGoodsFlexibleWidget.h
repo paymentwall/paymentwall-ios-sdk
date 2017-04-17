@@ -53,4 +53,8 @@
 @property (nonatomic, strong) NSString *show_trial_recurring;
 @property (nonatomic, strong) NSString *show_post_trial_non_recurring;
 @property (nonatomic, strong) NSString *show_post_trial_recurring;
+
+//Included nil, remove before use
+-(NSDictionary *)toDictionary;
+
 @end

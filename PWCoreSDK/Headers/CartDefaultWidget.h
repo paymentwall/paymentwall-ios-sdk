@@ -31,4 +31,7 @@
 @property (nonatomic, strong) NSString *sign_version;
 @property (nonatomic, strong) NSString *pingback_url;
 
+//Included nil, remove before use
+-(NSDictionary *)toDictionary;
+
 @end

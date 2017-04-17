@@ -30,20 +30,21 @@ typedef NS_ENUM(NSUInteger, PaymentResponseCode) {
     CANCEL = 2
 };
 
-extern NSString *const PAYMENT_SUCCESSFUL;
-extern NSString *const PAYMENT_FAIL;
-extern NSString *const PAYMENT_CANCELED;
+extern NSString * _Nonnull const PAYMENT_SUCCESSFUL;
+extern NSString * _Nonnull const PAYMENT_FAIL;
+extern NSString * _Nonnull const PAYMENT_CANCELED;
 
 @interface PWCoreSDKResponse : NSObject
 
 @property (nonatomic, assign) PaymentResponseCode responseCode;
 @property (nonatomic, assign) PaymentType paymentType;
-@property (nonatomic, strong) NSString *paymentName;
-@property (nonatomic, strong) NSString *paymentAmount;
-@property (nonatomic, strong) NSString *paymentCurrency;
-@property (nonatomic, strong) NSString *userID;
-@property (nonatomic, strong) NSString *message;
-@property (nonatomic, strong) NSString *productID;
-@property (nonatomic, strong) BrickToken *token;
+@property (nonatomic, strong) NSString * _Nullable paymentName;
+@property (nonatomic, strong) NSString * _Nullable paymentAmount;
+@property (nonatomic, strong) NSString * _Nullable paymentCurrency;
+@property (nonatomic, strong) NSString * _Nullable userID;
+@property (nonatomic, strong) NSString * _Nonnull message;
+@property (nonatomic, strong) NSString * _Nullable productID;
+@property (nonatomic, strong) NSString * _Nullable userEmail;
+@property (nonatomic, strong) BrickToken * _Nullable token;
 
 @end
