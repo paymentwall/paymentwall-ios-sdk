@@ -25,7 +25,7 @@ ADDING SDK (Paymentwall Core SDK)
 ---------------------
 Our SDK is delivered as a dynamic framework or public repository.
 
-Install with Cocoapods:
+### Install with Cocoapods:
 
 1. Install CocoaPods 0.39.0 or later
 2. In your Podfile, add `pod 'PWCoreSDK'` and `pod 'PW[Local payment method]Plugin'`(optional) to your main and test targets
@@ -38,7 +38,7 @@ Install with Cocoapods:
 import PWCoreSDK
 ```
 
-Install as Dynamic frameworks:
+### Install as Dynamic frameworks:
 
 1. Download the latest release of the SDK and extract the zip.
 2. Go to your Xcode project’s “General” settings. Drag PWCoreSDK.framework and other plugin frameworks to your project directory to the “Embedded Binaries” section. Make sure Copy items if needed is selected and click Finish.
