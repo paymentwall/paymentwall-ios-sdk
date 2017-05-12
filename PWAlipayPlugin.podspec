@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWAlipayPlugin"
-  s.version      = "1.0.3"
+  s.version      = “1.0.4”
   s.summary      = "PWAlipayPlugin"
   s.description  = "Plugin for Alipay payment option for PWCoreSDK"
   s.homepage     = "http://paymentwall.com"
@@ -11,9 +11,9 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'Apache 2.0', :file => 'LICENSE' }
 
   s.source       = { :git => "https://github.com/paymentwall/ios-sdk-core.git", :tag => 'PWAlipayPlugin-v'+String(s.version) }
-  s.source_files = "PWAlipayPlugin", "PWAlipayPlugin/**/*.{h,m}", "Headers/*.h"
-  s.resources    = "PWAlipayPlugin/PWAlipayPlugin.bundle"
-  s.vendored_libraries = "PWAlipayPlugin/libPWAlipayPlugin.a"
+  s.source_files = “Plugins/PWAlipayPlugin", "Plugins/PWAlipayPlugin/**/*.{h,m}"
+  s.resources    = "Plugins/PWAlipayPlugin/PWAlipayPlugin.bundle"
+  s.vendored_libraries = "Plugins/PWAlipayPlugin/libPWAlipayPlugin.a"
   s.dependency 'PWCoreSDK'
 
 end
