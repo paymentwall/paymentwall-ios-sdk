@@ -8,33 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "PWUnionpayResponse.h"
-
-NS_ASSUME_NONNULL_BEGIN
-
-@protocol PWUnionpayPluginDelegate <NSObject>
-
-@optional
--(void) pwUnionpayResponse:(PWUnionpayResponse*) response;
-
-@end
 
 @interface PWUnionpayPlugin : NSObject
 
--(void)makePayment;
-
-//Use delegate or completion handler block to call UnionpaySDK
-@property (nonatomic, weak) id <PWUnionpayPluginDelegate> delegate;
-@property (nonatomic, copy) void (^_Nullable signatureFetched)(PWUnionpayResponse *response);
--(void)doAfterFetchedSignature:(void (^_Nullable)(PWUnionpayResponse *response))signatureFetched;
+//Optional
+@property (nonatomic, strong) NSString* _Nullable pwProjectKey; //If nil, use default key from PWCoreSDK
+@property (nonatomic, strong) NSString* _Nullable pwSecretKey; //If nil, use default key from PWCoreSDK, if both nil, assign `signString` property below before showing payment dialog
+@property (nonatomic, assign) int signVersion; // 2 for MD5, 3 for SHA256
 
 //Required
-@property (nonatomic, strong) NSString* pwProjectKey;
-@property (nonatomic, strong) NSString* pwSecretKey;
-@property (nonatomic, assign) int signVersion; // 2 for MD5, 3 for SHA256
-@property (nonatomic, strong) NSString* userId; // User id
-@property (nonatomic, strong) NSString* agExternalId; // Item id
+@property (nonatomic, strong) NSString* _Nonnull appScheme; //To redirect back from Unionpay app
+@property (nonatomic, weak) UIViewController * _Nullable parentViewController;
+
+-(NSString * _Nonnull)getStringToSign; //Call after you assign all required value to get string to sign
+@property (nonatomic, strong) NSString* _Nonnull signString; //Use this property only if you want to calculate sign by your app or server
 
 @end
 
-NS_ASSUME_NONNULL_END

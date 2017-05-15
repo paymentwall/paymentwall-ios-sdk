@@ -7,41 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PWAlipayResponse.h"
-
-NS_ASSUME_NONNULL_BEGIN
-
-@protocol PWAlipayPluginDelegate <NSObject>
-
-@optional
--(void) pwAlipayResponse:(PWAlipayResponse*) response;
-
-@end
-
 
 @interface PWAlipayPlugin : NSObject
-    
-- (void)makePayment;
 
-//Use delegate or completion handler block to call AlipaySDK
-@property (nonatomic, weak) id <PWAlipayPluginDelegate> delegate;
-
-@property (nonatomic, copy) void (^_Nullable signatureFetched)(PWAlipayResponse *response);
--(void)doAfterFetchedSignature:(void (^_Nullable)(PWAlipayResponse *response))signatureFetched;
+//Optional
+@property (nonatomic, strong) NSString* _Nullable pwProjectKey; //If nil, use default key from PWCoreSDK
+@property (nonatomic, strong) NSString* _Nullable pwSecretKey; //If nil, use default key from PWCoreSDK, if both nil, assign `signString` property below before showing payment dialog
+@property (nonatomic, assign) int signVersion; // 2 for MD5, 3 for SHA256
 
 //Required
-@property (nonatomic, strong) NSString* pwProjectKey;
-@property (nonatomic, strong) NSString* pwSecretKey;
-@property (nonatomic, assign) int signVersion; // 2 for MD5, 3 for SHA256
-@property (nonatomic, strong) NSString* userId; // User id
-@property (nonatomic, strong) NSString* agExternalId; // Item id
-@property (nonatomic, strong) NSString* appId; //Required for domestic account, default for internation: external
+@property (nonatomic, strong) NSString* _Nonnull appId; //Required for domestic account, default for internation = external
+@property (nonatomic, strong) NSString* _Nonnull appScheme; //To redirect back from Alipay app
 
 //International account
-@property (nonatomic, strong) NSString* itbPay; //Default: 30m
-@property (nonatomic, strong) NSString* forexBiz; //Required for international account, default: FP
-@property (nonatomic, strong) NSString* appenv; //”system=client platform name ^version=business system version” eg ”system=iOS^version=9”
+@property (nonatomic, strong) NSString* _Nullable itbPay; //Default: 30m
+@property (nonatomic, strong) NSString* _Nullable forexBiz; //Required for international account, default: FP
+@property (nonatomic, strong) NSString* _Nullable appenv; //"system=[client platform name]^version=[system version]" eg ”system=iOS^version=9”
+
+-(NSString * _Nonnull)getStringToSign; //Call after you assign all required value to get string to sign
+@property (nonatomic, strong) NSString* _Nonnull signString; //Use this property only if you want to calculate sign by your app or server
 
 @end
-
-NS_ASSUME_NONNULL_END

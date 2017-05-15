@@ -9,15 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "PaymentStatus.h"
 
-//typedef enum {
-//    PWLOCAL_STAUTS_SUCCESSFUL = 0,
-//    PWLOCAL_STATUS_FAILED = 1,
-//    
-//} PWLocalStatusResponseCode;
-
-typedef NS_ENUM(NSUInteger, PWLocalStatusResponseCode) {
-    PWLOCAL_STAUTS_SUCCESSFUL = 0,
-    PWLOCAL_STATUS_FAILED = 1
+typedef NS_ENUM(int, PWLocalStatusResponseCode) {
+    PWLOCAL_STAUTS_SUCCESSFUL,
+    PWLOCAL_STATUS_FAILED
 };
 
 extern NSString *const PAYMENT_STATUS_SUCCESSFUL;
