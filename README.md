@@ -80,19 +80,19 @@ PWCoreSDK.sharedInstance().setPaymentObject(payment)
 func paymentResponse(_ response: PWCoreSDKResponse?) {
 guard let response = response else { return }
 switch response.responseCode {
-case .SUCCESSFUL:
-case .FAILED:
-case .CANCEL:
+    case .SUCCESSFUL:
+    case .FAILED:
+    case .CANCEL:
 }
 
 switch response.paymentType {
-case .NONE:
-case .MINT:
-case .PWLOCAL:
-case .BRICK:
-case .MOBIAMO:
-case .OTHERS:
-}
+        case .NONE:
+        case .MINT:
+        case .PWLOCAL:
+        case .BRICK:
+        case .MOBIAMO:
+        case .OTHERS:
+    }
 }
 ```
 
@@ -155,4 +155,5 @@ alipay.itbPay = "30m"
 alipay.forexBiz = "FP"
 alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
 ```
+>Note: All plugin support your own signature string if you don't specify Secret key in both CoreSDK and PluginSDK, use `plugin.getStringToSign()` to get the string to sign, then add your signed string to `plugin.signString`
 
