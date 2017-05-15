@@ -57,7 +57,9 @@ PWCoreSDK.sharedInstance().setupPaymentwall(withProjectKey: "YOUR PUBLIC KEY", s
 ```
 >Optional:  Default UI of the SDK is game style, to use flat UI, add this to your code: `PWCoreSDK.sharedInstance().setUseFlatUI(true)`
 
->Note: All payment option will use this Project key if their Project key set to nil, you also can specify their own Project key
+>Project key: All payment option will use this Project key if their Project key set to nil, you also can specify their own Project key
+
+>Secret key: PWLocal and local payment options plugins will use this Secret key as default if you specify it here
 
 1. Create new payment with `PaymentObject` class:
 ```swift
@@ -148,12 +150,13 @@ Panda++ supports external payment system injection (which are in our defined pay
 3. Setup the plugin, each plugin have different requirements so please check their header files and local payment option docs on their websites for more information:
 ```swift
 let alipay = PWAlipayPlugin()
-alipay.appId = "YOUR APP ID"
+alipay.appId = "external"
+alipay.appScheme = "YOUR APP SCHEME"
 
 //For international alipay payment
 alipay.itbPay = "30m"
 alipay.forexBiz = "FP"
 alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
 ```
->Note: All plugin support your own signature string if you don't specify Secret key in both CoreSDK and PluginSDK, use `plugin.getStringToSign()` to get the string to sign, then add your signed string to `plugin.signString`
+>Note: All plugins support your own signature string if you don't specify Secret key in both CoreSDK and PluginSDK, use `plugin.getStringToSign()` to get the string to sign, then add your signed string to `plugin.signString`
 
