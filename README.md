@@ -37,11 +37,7 @@ Our SDK is delivered as static library or public repository.
 #import <PWCoreSDK/PWCoreSDK.h> 
 ```
 
-<<<<<<< Updated upstream
-### Install as Dynamic frameworks:
-=======
 ### Install as Static library:
->>>>>>> Stashed changes
 
 1. Download the latest release of the SDK and extract the zip.
 2. Go to your Xcode project’s “General” settings. Drag libPWCoreSDK.a and other plugin library to your project directory to the “Linked frameworks and libraries” section. Make sure Copy items if needed is selected and click Finish.
@@ -55,64 +51,83 @@ Our SDK is delivered as static library or public repository.
 
 Create your first payment
 -------------------------
-1. Create new payment with name, price, currency, image, request time out (in second) and see if you want to use your own success dialog for Brick payment flow:
+1. Setup the SDK with the following params:
 ```swift
-PWCoreSDK.setPaymentName("Item", paymentAmount: "9.99", paymentCurrency: "USD", paymentImage: choosenItem.image, useNativeFinishDialog: true, requestTimeout: 30)
+PWCoreSDK.sharedInstance().setupPaymentwall(withProjectKey: "YOUR PUBLIC KEY", secretKey: "YOUR SECRET KEY", signVersion: 3, requestTimeout: 30)
 ```
+>Optional:  Default UI of the SDK is game style, to use flat UI, add this to your code: `PWCoreSDK.sharedInstance().setUseFlatUI(true)`
+
+>Note: All payment option will use this Project key if their Project key set to nil, you also can specify their own Project key
+
+1. Create new payment with `PaymentObject` class:
+```swift
+let payment = PaymentObject()
+payment.name = choosenItem.name
+payment.price = Double(choosenItem.price)!
+payment.currency = "USD"
+payment.image = choosenItem.image
+payment.userID = "test_user"
+payment.itemID = choosenItem.name+"id"
+payment.pwLocalParams = customSetting
+
+PWCoreSDK.sharedInstance().setPaymentObject(payment)
+```
+
+>Note: For pwLocalParams, please refer [PWLocal docs](https://www.paymentwall.com/en/documentation/PWLocal-iOS-SDK/3358) or demo to see more ways to create params
 
 2. Implement `PWCoreSDKDelegate` protocol to handle payment response:
 ```swift
 func paymentResponse(_ response: PWCoreSDKResponse?) {
-		guard let response = response else { return }
-		switch response.responseCode {
-			case .SUCCESSFUL:
-			case .FAILED:
-			case .CANCEL:
-		}
+guard let response = response else { return }
+switch response.responseCode {
+case .SUCCESSFUL:
+case .FAILED:
+case .CANCEL:
+}
 
-   		switch response.paymentType {
-   			case .NONE:
-   			case .MINT:
-   			case .PWLOCAL:
-			case .BRICK:
-			case .MOBIAMO:
-		}
-	}
+switch response.paymentType {
+case .NONE:
+case .MINT:
+case .PWLOCAL:
+case .BRICK:
+case .MOBIAMO:
+case .OTHERS:
+}
+}
 ```
 
 3. Add Brick payment type, please refer below on how to handle Brick payment flow, cardScannerPlugin is distributed as a plugin and is optional:
 
-	```swift
-	PWCoreSDK.createNewBrickPayment(withPublicKey: "YOUR PUBLIC KEY", cardScannerPlugin: PWCardScannerPlugin.sharedInstance())
-	```
+```swift
+PWCoreSDK.sharedInstance().addBrickPayment(withPublicKey: nil, useNativeFinishDialog: true, cardScannerPlugin: PWCardScannerPlugin.sharedInstance())
+```
 
-4. Add Mobiamo payment type:
+4. Add Mobiamo payment type, `noPrice` specify if you want to use the default Mobiamo price for each country:
 
-	```swift
-	PWCoreSDK.createNewMobiamoPayment(withAppID: "YOUR APP ID", userID: "10101", paymentID: "1001", noPrice: true)
-	```
+```swift
+PWCoreSDK.sharedInstance().addMobiamoPayment(withAppID: nil, noPrice: true)
+```
 
 5. Add Mint payment type:
-	```swift
-	PWCoreSDK.createNewMintPayment(withAppID: "YOUR APP ID", userID: "10101")
-	```
-6. Add PWLocal payment type, please refer [PWLocal docs](https://www.paymentwall.com/en/documentation/PWLocal-iOS-SDK/3358) or the demo for notes and more ways to create PWLocal payment:
-
-	```swift
-	PWCoreSDK.createNewPWLocalPayment(with: .DIGITAL_GOODS_FLEXIBLE, params: customSetting, secretKey: "YOUR SECRET KEY")
-	```
+```swift
+PWCoreSDK.sharedInstance().addMintPayment(withAppID: nil)
+```
+6. Add PWLocal payment type:
+```swift
+PWCoreSDK.sharedInstance().addPWLocalPayment(with: .DIGITAL_GOODS_FLEXIBLE, secretKey: nil)
+```
 
 7. Add any other local payment option plugin if you want, please refer Implement local payment options section below on how to create them:
-	
-	```swift
-	PWCoreSDK.addCustomPaymentOptions([alipay, unionpay, ...])
-	```
+
+```swift
+PWCoreSDK.sharedInstance().addCustomPaymentOptions([alipay, unionpay, ...])
+```
 
 8. Present Payment options view controller:
-	
-	```swift
-	PWCoreSDK.showPaymentOptionsViewController(withParentViewcontroller: self, delegate: self, showCompletion: nil)
-	```
+
+```swift
+PWCoreSDK.showPaymentOptionsViewController(withParentViewcontroller: self, delegate: self, showCompletion: nil)
+```
 
 Brick payment flow
 -------------------
@@ -133,11 +148,6 @@ Panda++ supports external payment system injection (which are in our defined pay
 3. Setup the plugin, each plugin have different requirements so please check their header files and local payment option docs on their websites for more information:
 ```swift
 let alipay = PWAlipayPlugin()
-alipay.userId = "testuser"
-alipay.agExternalId = "Item id"
-alipay.pwProjectKey = "YOUR PROJECT KEY"
-alipay.pwSecretKey = "YOUR SECRET KEY"
-alipay.signVersion = 3
 alipay.appId = "YOUR APP ID"
 
 //For international alipay payment
@@ -146,22 +156,3 @@ alipay.forexBiz = "FP"
 alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
 ```
 
-4. To handling the parameters response, you can either implement the delegate protocol or use the completion handler, if the signature request success, the native payment form will show, after user interact with the payment, the plugin will return  the response with native result, you can dismiss the SDK view controller and read the result to finish the transaction:
-
-```swift
-        alipay.do { [unowned self] (response) in
-            if let error = response.errorMessage {
-                //Signature generate error
-                print("\n message \(String(describing: error))")
-            }
-            
-            if let result = response.alipayResultDict {
-                print("\n alipayResponse \(result)")
-                self.dismiss(animated: true, completion: {
-                    
-                })
-            }
-        }
-```
-
->Note: The `response.result` maybe different between plugins depends on the native payment library, please check the response header file for more info
