@@ -67,6 +67,7 @@ func paymentResponse(_ response: PWCoreSDKResponse?) {
     guard let response = response else { return }
     switch response.responseCode {
         case .SUCCESSFUL:
+        //Example when you use Brick and `useNativeFinishDialog == true` can be found below
         case .FAILED:
         case .CANCEL:
     }
@@ -141,9 +142,15 @@ Brick payment flow
 2. Send request to your server to handle the token, if `useNativeFinishDialog` is set to `false`, you can show your own success or failed dialog after it finish, otherwise post a `Notification` to use the SDK success or failed dialog and close itself, THIS IS ONLY FOR HANDLE AFTER YOU PROCESS THE TOKEN, other error during fetching token will be handle automatically without posting notification:
 
 ```swift
-NotificationCenter.default.post(name: Notification.Name(BRICK_TOKEN_PROCESSED_FINISH), object: nil, userInfo: nil)
+if response.paymentType == .BRICK {
+    if let returnedToken = response.token {
+        //Process the token with your server here asynchronous
+        //When done:
+        NotificationCenter.default.post(name: Notification.Name(BRICK_TOKEN_PROCESSED_FINISH), object: nil, userInfo: nil)
+    }
+}
 ```
-> Note: Pass the error as Dictionary with key = "error" and value is the error message, the SDK will automatically show failed dialog instead of successful dialog
+> Note: Pass the error as Dictionary with key = "error" and value is the error message via `userInfo`, the SDK will automatically show failed dialog instead of successful dialog
 
 Implement local payment option
 ------------------------------
