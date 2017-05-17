@@ -51,7 +51,7 @@ Our SDK is delivered as static library or public repository.
 
 Create your first payment
 -------------------------
-1. Setup the SDK with the following params:
+1. Setup the SDK with the following params, only need to setup (step 1-7) once:
 ```swift
 PWCoreSDK.sharedInstance().setupPaymentwall(withProjectKey: "YOUR PUBLIC KEY", secretKey: "YOUR SECRET KEY", signVersion: 3, requestTimeout: 30)
 ```
@@ -61,23 +61,7 @@ PWCoreSDK.sharedInstance().setupPaymentwall(withProjectKey: "YOUR PUBLIC KEY", s
 
 >Secret key: PWLocal and local payment options plugins will use this Secret key as default if you specify it here
 
-2. Create new payment with `PaymentObject` class:
-```swift
-let payment = PaymentObject()
-payment.name = choosenItem.name
-payment.price = Double(choosenItem.price)!
-payment.currency = "USD"
-payment.image = choosenItem.image
-payment.userID = "test_user"
-payment.itemID = choosenItem.name+"id"
-payment.pwLocalParams = customSetting
-
-PWCoreSDK.sharedInstance().setPaymentObject(payment)
-```
-
->Note: For pwLocalParams, please refer [PWLocal docs](https://www.paymentwall.com/en/documentation/PWLocal-iOS-SDK/3358) or demo to see more ways to create params
-
-3. Implement `PWCoreSDKDelegate` protocol to handle payment response:
+2. Implement `PWCoreSDKDelegate` protocol to handle payment response:
 ```swift
 func paymentResponse(_ response: PWCoreSDKResponse?) {
     guard let response = response else { return }
@@ -98,32 +82,48 @@ func paymentResponse(_ response: PWCoreSDKResponse?) {
 }
 ```
 
-4. Add Brick payment type, please refer below on how to handle Brick payment flow, cardScannerPlugin is distributed as a plugin and is optional:
+3. Add Brick payment type, please refer below on how to handle Brick payment flow, cardScannerPlugin is distributed as a plugin and is optional:
 
 ```swift
 PWCoreSDK.sharedInstance().addBrickPayment(withPublicKey: nil, useNativeFinishDialog: true, cardScannerPlugin: PWCardScannerPlugin.sharedInstance())
 ```
 
-5. Add Mobiamo payment type, `noPrice` specify if you want to use the default Mobiamo price for each country:
+4. Add Mobiamo payment type, `noPrice` specify if you want to use the default Mobiamo price for each country:
 
 ```swift
 PWCoreSDK.sharedInstance().addMobiamoPayment(withAppID: nil, noPrice: true)
 ```
 
-6. Add Mint payment type:
+5. Add Mint payment type:
 ```swift
 PWCoreSDK.sharedInstance().addMintPayment(withAppID: nil)
 ```
-7. Add PWLocal payment type:
+6. Add PWLocal payment type:
 ```swift
 PWCoreSDK.sharedInstance().addPWLocalPayment(with: .DIGITAL_GOODS_FLEXIBLE, secretKey: nil)
 ```
 
-8. Add any other local payment option plugin if you want, please refer Implement local payment options section below on how to create them:
+7. Add any other local payment option plugin if you want, please refer Implement local payment options section below on how to create them:
 
 ```swift
 PWCoreSDK.sharedInstance().addCustomPaymentOptions([alipay, unionpay, ...])
 ```
+
+8. Create new payment with `PaymentObject` class and assign to the CoreSDK:
+```swift
+let payment = PaymentObject()
+payment.name = choosenItem.name
+payment.price = Double(choosenItem.price)!
+payment.currency = "USD"
+payment.image = choosenItem.image
+payment.userID = "test_user"
+payment.itemID = choosenItem.name+"id"
+payment.pwLocalParams = customSetting
+
+PWCoreSDK.sharedInstance().setPaymentObject(payment)
+```
+
+>Note: For pwLocalParams, please refer [PWLocal docs](https://www.paymentwall.com/en/documentation/PWLocal-iOS-SDK/3358) or demo to see more ways to create params
 
 9. Present Payment options view controller:
 

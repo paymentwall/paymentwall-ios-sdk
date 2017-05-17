@@ -2,7 +2,7 @@
 //  VituralCurrency.h
 //  PWLocalSDK
 //
-//  Created by Cong Tran on 6/15/15.
+//  Created by ; Tran on 6/15/15.
 //  Copyright (c) 2015 Paymentwall. All rights reserved.
 //
 
@@ -32,7 +32,7 @@
 @property (nonatomic, strong) NSString *pingback_url;
 @property (nonatomic, strong) NSString *success_url;
 
-//Included nil, remove before use
 -(NSDictionary *)toDictionary;
++(void)addPaymentObjectToDict:(NSMutableDictionary *)dict;
 
 @end

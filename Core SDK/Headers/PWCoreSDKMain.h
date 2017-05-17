@@ -10,8 +10,6 @@
 #import "PWCoreSDKResponse.h"
 #import "PWCoreSDKDelegate.h"
 #import "PWLocalStatusResponse.h"
-@class PaymentOptionsViewController;
-
 #import "PaymentObject.h"
 
 extern NSString * _Nonnull const BRICK_TOKEN_PROCESSED_FINISH;
@@ -109,10 +107,13 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
  @brief Create string to sign from your params.
  @discussion If you don't use "success_url", default will be "pwlocal://paymentsuccessful", you can track this value on your webview's "shouldStartLoadWithRequest" or similar to close webview if you decide to use your own webview.
  
+ REQUIRED TO ADD PWLOCAL METHOD FIRST
+ 
  @param params Can be Dictionary or object: DigitalGoodsDefautWidget / DigitalGoodsFlexibleWidget / VirtualCurrency / CartDefaultWidget.
+ @param object PaymentObject with all params except pwLocalParams
  @return NSString Combine this string with your secret key to calculate the signature.
  */
--(NSString *_Nonnull) getStringToSign:(id _Nonnull)params;
+-(NSString *_Nullable)getStringToSign:(id _Nonnull)params paymentObject:(PaymentObject * _Nonnull)object;
 
 /**
  Get default PWLocal extra headers for tracking

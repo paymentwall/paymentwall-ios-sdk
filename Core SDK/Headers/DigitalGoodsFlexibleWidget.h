@@ -56,5 +56,5 @@
 
 //Included nil, remove before use
 -(NSDictionary *)toDictionary;
-
++(void)addPaymentObjectToDict:(NSMutableDictionary *)dict;
 @end
