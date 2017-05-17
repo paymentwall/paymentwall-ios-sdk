@@ -119,7 +119,7 @@ payment.image = choosenItem.image
 payment.userID = "test_user"
 payment.itemID = choosenItem.name+"id"
 
-let customSetting = ["widget":"m2_1",
+let customSetting = ["widget":"pw",
                     "ag_type":"fixed",
                     "sign_version":"3"]
 payment.pwLocalParams = customSetting
