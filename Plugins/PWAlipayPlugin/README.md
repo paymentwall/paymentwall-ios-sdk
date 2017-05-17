@@ -24,7 +24,7 @@ alipay.signVersion = 3
 //Add to CoreSDK
 PWCoreSDK.sharedInstance().addCustomPaymentOptions([alipay])
 ```
-4. App scheme is required in `info.plist`:
+4. App scheme is required in `info.plist` in iOS 9.0 and above:
 ```xml
 <key>CFBundleURLTypes</key>
 <array>
