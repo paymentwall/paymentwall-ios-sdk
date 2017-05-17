@@ -12,13 +12,20 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/paymentwall/paymentwall-ios-sdk-master.git", :tag => 'PWAlipayPlugin-v'+String(s.version) }
   s.source_files = "Plugins/PWAlipayPlugin", "Plugins/PWAlipayPlugin/Headers/*.{h,m}"
-  s.resources    = "Plugins/PWAlipayPlugin/PWAlipayPlugin.bundle", "Plugins/PWAlipayPlugin/AlipaySDK.bundle"
+  s.resources    = "Plugins/PWAlipayPlugin/PWAlipayPlugin.bundle"
 
   s.vendored_libraries = "Plugins/PWAlipayPlugin/libPWAlipayPlugin.a"
-  s.vendored_frameworks = "Plugins/PWAlipayPlugin/AlipaySDK.framework"
 
-  s.libraries = 'PWCoreSDK', 'z', 'c++'
-  s.frameworks = 'AlipaySDK', 'UIKit', 'CFNetwork', 'CoreGraphics', 'SystemConfiguration', 'Foundation', 'CoreMotion', 'CFNetwork', 'QuartzCore', 'CoreText', 'CoreTelephony'
+  s.libraries = 'PWCoreSDK'
+  s.frameworks = 'AlipaySDK'
 
   s.dependency 'PWCoreSDK', '~>1.0.5'
+
+  s.subspec 'Alipay' do |sp|
+    sp.vendored_frameworks = "Plugins/PWAlipayPlugin/AlipaySDK.framework"
+    sp.libraries = 'z', 'c++'
+    sp.resources = "Plugins/PWAlipayPlugin/AlipaySDK.bundle"
+    sp.frameworks = 'UIKit', 'CFNetwork', 'CoreGraphics', 'SystemConfiguration', 'Foundation', 'CoreMotion', 'CFNetwork', 'QuartzCore', 'CoreText', 'CoreTelephony'
+  end
+
 end
