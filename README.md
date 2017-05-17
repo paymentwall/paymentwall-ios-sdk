@@ -1,14 +1,14 @@
 INTRODUCTION
 ------------
 Do you want to accept payments from mobile users in different countries, different payment system by writing just few of code lines? 
-Panda ++ is a global mobile payment gateway that accepts payments from more than 200 countries with 100+ alternative payment options. We now provide SDK for iOS which will become a native part of your application, it eliminates the necessity to open a web browser for payments. Less steps, faster process, there’s no doubt your conversion rate will get boost! All you have to do is import the library into your project and config it to start accepting in-app payment. It is quick and easy! We'll guide you through the process here.
+Paymentwall SDK is a global mobile payment gateway that accepts payments from more than 200 countries with 100+ alternative payment options. We now provide SDK for iOS which will become a native part of your application, it eliminates the necessity to open a web browser for payments. Less steps, faster process, there’s no doubt your conversion rate will get boost! All you have to do is import the library into your project and config it to start accepting in-app payment. It is quick and easy! We'll guide you through the process here.
 
 HOW DOES IT WORK?
 -----------------
 1. Add the framework to your project. 
 With different areas, we provide corresponding external payment system framework files. You can add as many as you want. You can also enable/disable default payment options too. You can add any payment option as they want by importing the payment system framework and framework plugin provided by Paymentwall to your project
 2. User requests a purchase inside your application.
-3. Panda++ initializes payment screen with 3 core payment options (Brick, MINT, Mobiamo) and the other is “Local Payments” option.
+3. Paymentwall SDK initializes payment screen with 3 core payment options (Brick, MINT, Mobiamo) and the other is “Local Payments” option.
 4. User initiates payment in-app 
 With Brick, Mint, Mobiamo the payment process will totally be native.
 With local payments, local payment screen will be shown with payment methods corresponding to user’s current location. Here users can then select a payment option they prefer.
@@ -143,7 +143,7 @@ NotificationCenter.default.post(name: Notification.Name(BRICK_TOKEN_PROCESSED_FI
 
 Implement local payment option
 ------------------------------
-Panda++ supports external payment system injection (which are in our defined payment system (PS) list). Each time you want to add a new payment system, you have to include it's native SDK into your project along with our plugin framework, our framework will handle creating all the necessary parameters then you can use them to show the native local payment SDK:
+Paymentwall SDK supports external payment system injection (which are in our defined payment system (PS) list). Each time you want to add a new payment system, you have to include it's native SDK into your project along with our plugin framework, our framework will handle creating all the necessary parameters then you can use them to show the native local payment SDK:
 
 1. Add the plugin with Cocoapods with `pod 'PW[Local payment method]Plugin'` or manually dragging the `PW[Local payment method]Plugin.a` and it's headers file to your project
 2. Import pod modules (if use `use_frameworks!`) or library header into your project
