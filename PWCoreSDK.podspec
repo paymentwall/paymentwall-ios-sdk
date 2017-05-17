@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWCoreSDK"
-  s.version      = “1.0.4”
+  s.version      = "1.0.4"
   s.summary      = "PWCoreSDK"
   s.description  = "Unified SDK for all paymentwall products on iOS"
   s.homepage     = "http://paymentwall.com"
