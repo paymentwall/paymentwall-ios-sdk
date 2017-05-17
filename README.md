@@ -123,7 +123,7 @@ payment.pwLocalParams = customSetting
 PWCoreSDK.sharedInstance().setPaymentObject(payment)
 ```
 
->Note: For pwLocalParams, please refer [PWLocal docs](https://www.paymentwall.com/en/documentation/PWLocal-iOS-SDK/3358) or demo to see more ways to create params
+>Note: pwLocalParams can be Dictionary or any of the defined class: `CartDefaultWidget`, `DigitalGoodsDefaultWidget`, `DigitalGoodsFlexibleWidget`, `VirtualCurrency`, refer their headers for required property or [PWLocal docs](https://github.com/paymentwall/paymentwall-pwlocal-ios). Key and value like prices, amount, currencyCode, currencies, ag_name, ag_external_id, uid will be ignored and use the one you described in `PaymentObject`
 
 9. Present Payment options view controller:
 
