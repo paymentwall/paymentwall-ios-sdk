@@ -1,51 +1,10 @@
-Paymentwall Alipay plugin
+Paymentwall Card Scanner plugin
 ------------------------------
-Panda++ supports external payment system injection (which are in our defined payment system (PS) list). Each time you want to add a new payment system, you have to include it's native SDK into your project along with our plugin framework, our framework will handle creating all the necessary parameters then you can use them to show the native local payment SDK:
+Card Scanner Plugin is an optional plugin to add the feature that use camera to scan the credit card, powered by [Card.IO](https://www.card.io/).
 
-1. Add the plugin with Cocoapods with `pod 'PWAlipayPlugin'` or manually dragging the `libPWAlipayPlugin.a` and it's headers file to your project
-2. Import the library header into your project in `bridging-headers.h` if you use Swift
-3. Setup the plugin, each plugin have different requirements so please check their header files and local payment option docs on their websites for more information:
+1. Add the plugin with Cocoapods with `pod 'PWCardScannerPlugin'` or manually dragging the `libPWCardScannerPlugin.a` and it's headers file to your project
+2. Import the library header into your project or via `bridging-headers.h` if you use Swift
+3. Add it within brick payment method creation:
 ```swift
-let alipay = PWAlipayPlugin()
-
-//Required
-alipay.appId = "external"
-alipay.appScheme = "YOUR APP SCHEME"
-//For international alipay payment
-alipay.itbPay = "30m"
-alipay.forexBiz = "FP"
-alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
-
-//Optional
-alipay.pwProjectKey = "YOUR PROJECT KEY"
-alipay.pwSecretKey = "YOUR SECRET KEY"
-alipay.signVersion = 3
-
-//Add to CoreSDK
-PWCoreSDK.sharedInstance().addCustomPaymentOptions([alipay])
-```
-4. App scheme is required in `info.plist` in iOS 9.0 and above:
-```xml
-<key>CFBundleURLTypes</key>
-<array>
-    <dict>
-    <key>CFBundleTypeRole</key>
-    <string>Editor</string>
-    <key>CFBundleURLName</key>
-    <string></string>
-    <key>CFBundleURLSchemes</key>
-        <array>
-            <string>YOUR APP SCHEME</string>
-        </array>
-    </dict>
-</array>
-```
-5. Linking to Alipay app is required in `info.plist`:
-```xml
-<key>LSApplicationQueriesSchemes</key>
-<array>
-    <string>alipay</string>
-    <string>safepay</string>
-    <string>platformapi</string>
-</array>
+PWCoreSDK.sharedInstance().addBrickPayment(withPublicKey: nil, useNativeFinishDialog: true, cardScannerPlugin: PWCardScannerPlugin.sharedInstance())
 ```
