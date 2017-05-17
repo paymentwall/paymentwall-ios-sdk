@@ -7,9 +7,10 @@ Panda++ supports external payment system injection (which are in our defined pay
 3. Setup the plugin, each plugin have different requirements so please check their header files and local payment option docs on their websites for more information:
 ```swift
 let alipay = PWAlipayPlugin()
-alipay.appId = "YOUR APP ID"
-alipay.appScheme = "YOUR APP SCHEME"
 
+//Required
+alipay.appId = "external"
+alipay.appScheme = "YOUR APP SCHEME"
 //For international alipay payment
 alipay.itbPay = "30m"
 alipay.forexBiz = "FP"
@@ -23,3 +24,25 @@ alipay.signVersion = 3
 //Add to CoreSDK
 PWCoreSDK.sharedInstance().addCustomPaymentOptions([alipay])
 ```
+4. App scheme is required in `info.plist`:
+<key>CFBundleURLTypes</key>
+<array>
+    <dict>
+    <key>CFBundleTypeRole</key>
+    <string>Editor</string>
+    <key>CFBundleURLName</key>
+    <string></string>
+    <key>CFBundleURLSchemes</key>
+        <array>
+            <string>YOUR APP SCHEME</string>
+        </array>
+    </dict>
+</array>
+
+5. Linking to Alipay app is required in `info.plist`:
+<key>LSApplicationQueriesSchemes</key>
+<array>
+    <string>alipay</string>
+    <string>safepay</string>
+    <string>platformapi</string>
+</array>
