@@ -98,7 +98,7 @@ PWCoreSDK.sharedInstance().addMobiamoPayment(withAppID: nil, noPrice: true)
 ```swift
 PWCoreSDK.sharedInstance().addMintPayment(withAppID: nil)
 ```
-6. Add PWLocal payment type:
+6. Add PWLocal payment type, `type` can be VIRTUAL_CURRENCY / DIGITAL_GOODS_FLEXIBLE / DIGITAL_GOODS_DEFAULT / CART:
 ```swift
 PWCoreSDK.sharedInstance().addPWLocalPayment(with: .DIGITAL_GOODS_FLEXIBLE, secretKey: nil)
 ```
@@ -118,6 +118,10 @@ payment.currency = "USD"
 payment.image = choosenItem.image
 payment.userID = "test_user"
 payment.itemID = choosenItem.name+"id"
+
+let customSetting = ["widget":"m2_1",
+                    "ag_type":"fixed",
+                    "sign_version":"3"]
 payment.pwLocalParams = customSetting
 
 PWCoreSDK.sharedInstance().setPaymentObject(payment)
