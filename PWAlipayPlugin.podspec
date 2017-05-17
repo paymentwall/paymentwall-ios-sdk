@@ -15,6 +15,6 @@ Pod::Spec.new do |s|
   s.resources    = "Plugins/PWAlipayPlugin/PWAlipayPlugin.bundle"
   s.vendored_libraries = "Plugins/PWAlipayPlugin/libPWAlipayPlugin.a"
   s.library = 'PWCoreSDK'
-  s.dependency 'PWCoreSDK', :git => 'https://github.com/paymentwall/paymentwall-ios-sdk-master'
+  s.dependency 'PWCoreSDK', '~>PWCoreSDK-v1.0.4'
 
 end
