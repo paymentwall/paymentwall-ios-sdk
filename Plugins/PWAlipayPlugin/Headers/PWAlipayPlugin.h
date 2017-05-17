@@ -10,12 +10,7 @@
 
 @interface PWAlipayPlugin : NSObject
 
-//Optional
-@property (nonatomic, strong) NSString* _Nullable pwProjectKey; //If nil, use default key from PWCoreSDK
-@property (nonatomic, strong) NSString* _Nullable pwSecretKey; //If nil, use default key from PWCoreSDK, if both nil, assign `signString` property below before showing payment dialog
-@property (nonatomic, assign) int signVersion; // 2 for MD5, 3 for SHA256
-
-//Required
+///Required
 @property (nonatomic, strong) NSString* _Nonnull appId; //Required for domestic account, default for internation = external
 @property (nonatomic, strong) NSString* _Nonnull appScheme; //To redirect back from Alipay app
 
@@ -24,7 +19,12 @@
 @property (nonatomic, strong) NSString* _Nullable forexBiz; //Required for international account, default: FP
 @property (nonatomic, strong) NSString* _Nullable appenv; //"system=[client platform name]^version=[system version]" eg ”system=iOS^version=9”
 
--(NSString * _Nonnull)getStringToSign; //Call after you assign all required value to get string to sign
+///Optionalå
+@property (nonatomic, strong) NSString* _Nullable pwProjectKey; //If nil, use default key from PWCoreSDK
+@property (nonatomic, strong) NSString* _Nullable pwSecretKey; //If nil, use default key from PWCoreSDK, if both nil, assign `signString` property below before showing payment dialog
+@property (nonatomic, assign) int signVersion; // 2 for MD5, 3 for SHA256
+
+-(NSString * _Nullable)getStringToSign; //Call after you assign all required value AND setup PaymentObject in order to get string to sign. If you use this feature, you have to keep this class instance pointer to assign new signString everytime after new payment object is set
 @property (nonatomic, strong) NSString* _Nonnull signString; //Use this property only if you want to calculate sign by your app or server
 
 @end
