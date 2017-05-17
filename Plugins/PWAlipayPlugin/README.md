@@ -25,6 +25,7 @@ alipay.signVersion = 3
 PWCoreSDK.sharedInstance().addCustomPaymentOptions([alipay])
 ```
 4. App scheme is required in `info.plist`:
+```xml
 <key>CFBundleURLTypes</key>
 <array>
     <dict>
@@ -38,11 +39,13 @@ PWCoreSDK.sharedInstance().addCustomPaymentOptions([alipay])
         </array>
     </dict>
 </array>
-
+```
 5. Linking to Alipay app is required in `info.plist`:
+```xml
 <key>LSApplicationQueriesSchemes</key>
 <array>
     <string>alipay</string>
     <string>safepay</string>
     <string>platformapi</string>
 </array>
+```
