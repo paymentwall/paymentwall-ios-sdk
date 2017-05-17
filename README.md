@@ -150,7 +150,7 @@ Implement local payment option
 Paymentwall SDK supports external payment system injection (which are in our defined payment system (PS) list). Each time you want to add a new payment system, you have to include it's native SDK into your project along with our plugin framework, our framework will handle creating all the necessary parameters then you can use them to show the native local payment SDK:
 
 1. Add the plugin with Cocoapods with `pod 'PW[Local payment method]Plugin'` or manually dragging the `PW[Local payment method]Plugin.a` and it's headers file to your project
-2. Import pod modules (if use `use_frameworks!`) or library header into your project
+2. Import the library header into your project or via `bridging-headers.h` if you use Swift 
 3. Setup the plugin, each plugin have different requirements so please check their header files and local payment option docs on their websites for more information:
 ```swift
 let alipay = PWAlipayPlugin()
@@ -164,3 +164,6 @@ alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
 ```
 >Note: All plugins support your own signature string if you don't specify Secret key in both CoreSDK and PluginSDK, use `plugin.getStringToSign()` to get the string to sign, then add your signed string to `plugin.signString`
 
+List of available local payment option
+------------------------------
+- [Alipay](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWAlipayPlugin)
