@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'Apache 2.0', :file => 'LICENSE' }
 
   s.source       = { :git => "https://github.com/paymentwall/paymentwall-ios-sdk-master.git", :tag => 'PWCoreSDK-v'+String(s.version) }
-  s.source_files = "Core SDK/Headers/PWCoreSDK.h", "Core SDK/**/*.{h,m}"
+  s.source_files = "Core SDK/**/PWCoreSDK.h"
   s.resources    = "Core SDK/*.bundle", "Core SDK/PWCoreSDKResource.bundle", "Core SDK/PWCoreSDKResourceFlat.bundle"
   s.vendored_libraries = "Core SDK/libPWCoreSDK.a"
 end
