@@ -11,11 +11,15 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'Apache 2.0', :file => 'LICENSE' }
 
   s.source       = { :git => "https://github.com/paymentwall/paymentwall-ios-sdk-master.git", :tag => 'PWCoreSDK-v'+String(s.version) }
-  s.source_files = "Core SDK/**/PWCoreSDK.h"
+  s.source_files = "**/PWCoreSDK.h", "**/PWCoreSDKMain.h"
   s.resources    = "Core SDK/*.bundle", "Core SDK/PWCoreSDKResource.bundle", "Core SDK/PWCoreSDKResourceFlat.bundle"
   s.vendored_libraries = "Core SDK/libPWCoreSDK.a"
 
-  s.subspec 'Alipay' do |sp|
-    sp.source_files = "Core SDK/**/*.{h,m}"
+  s.subspec 'CoreSDK' do |sp|
+    sp.source_files = "**/PWCoreSDKDelegate.h", "**/PaymentObject.h" , "**/PWCoreSDKResponse.h", "**/Constants.h"
+  end
+
+  s.subspec 'PWLocal' do |sp|
+    sp.source_files = "**/*.{h,m}"
   end
 end
