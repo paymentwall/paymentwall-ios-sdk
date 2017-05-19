@@ -15,7 +15,6 @@
 @property (nonatomic, strong) NSString *widget;             //Required
 @property (nonatomic, strong) NSString *ps;
 @property (nonatomic, strong) NSString *sign;
-@property (nonatomic, strong) NSString *sign_version;
 @property (nonatomic, strong) NSString *birthday;
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *sex;

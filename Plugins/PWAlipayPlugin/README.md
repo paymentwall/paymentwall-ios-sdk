@@ -19,7 +19,6 @@ alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
 //Optional
 alipay.pwProjectKey = "YOUR PROJECT KEY"
 alipay.pwSecretKey = "YOUR SECRET KEY"
-alipay.signVersion = 3
 
 //Add to CoreSDK
 PWCoreSDK.sharedInstance().addCustomPaymentOptions([alipay])

@@ -53,7 +53,7 @@ Create your first payment
 -------------------------
 1. Setup the SDK with the following params, only need to setup (step 1-7) once:
 ```swift
-PWCoreSDK.sharedInstance().setupPaymentwall(withProjectKey: "YOUR PUBLIC KEY", secretKey: "YOUR SECRET KEY", signVersion: 3, requestTimeout: 30)
+PWCoreSDK.sharedInstance().setupPaymentwall(withProjectKey: "YOUR PUBLIC KEY", secretKey: "YOUR SECRET KEY", requestTimeout: 30)
 ```
 >Optional:  Default UI of the SDK is game style, to use flat UI, add this to your code: `PWCoreSDK.sharedInstance().setUseFlatUI(true)`
 
@@ -119,10 +119,10 @@ payment.currency = "USD"
 payment.image = choosenItem.image
 payment.userID = "test_user"
 payment.itemID = choosenItem.name+"id"
+payment.signVersion = 3
 
 let customSetting = ["widget":"pw",
-                    "ag_type":"fixed",
-                    "sign_version":"3"]
+                    "ag_type":"fixed"]
 payment.pwLocalParams = customSetting
 
 PWCoreSDK.sharedInstance().setPaymentObject(payment)

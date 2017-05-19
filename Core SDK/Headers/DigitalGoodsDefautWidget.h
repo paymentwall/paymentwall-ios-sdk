@@ -11,12 +11,10 @@
 @interface DigitalGoodsDefautWidget : NSObject
 
 @property (nonatomic, strong) NSString *key;                    //Required
-@property (nonatomic, strong) NSString *uid;                    //Required
 @property (nonatomic, strong) NSString *widget;                 //Required
 @property (nonatomic, strong) NSString *ps;
 @property (nonatomic, strong) NSString *ts;
 @property (nonatomic, strong) NSString *sign;
-@property (nonatomic, strong) NSString *sign_version;
 @property (nonatomic, strong) NSString *birthday;
 @property (nonatomic, strong) NSString *country_code;
 @property (nonatomic, strong) NSString *email;

@@ -25,12 +25,10 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
 
  @param pwProjectKey pwProjectKey, required
  @param pwSecretKey pwSecretKey, use only for PWLocal and plugin SDK, if nil, either specify secret key for each payment option or calculate the sign by yourself and add it to `paymentObject.pwLocalParams`
- @param signVersion signVersion, 2 = md5, 3 = sha256
  @param requestTimeout request timeout in second
  */
 -(void)setupPaymentwallWithProjectKey:(NSString * _Nonnull)pwProjectKey
                             secretKey:(NSString * _Nullable)pwSecretKey
-                          signVersion:(int)signVersion
                        requestTimeout:(NSTimeInterval)requestTimeout;
 
 /**

@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWAlipayPlugin"
-  s.version      = "1.0.6"
+  s.version      = "1.1.0"
   s.summary      = "PWAlipayPlugin"
   s.description  = "Plugin for Alipay payment option for PWCoreSDK"
   s.homepage     = "http://paymentwall.com"
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.libraries = 'PWCoreSDK'
   s.frameworks = 'AlipaySDK'
 
-  s.dependency 'PWCoreSDK', '~>1.0.5'
+  s.dependency 'PWCoreSDK', '~> 1.1.0'
 
   s.subspec 'Alipay' do |sp|
     sp.vendored_frameworks = "Plugins/PWAlipayPlugin/AlipaySDK.framework"

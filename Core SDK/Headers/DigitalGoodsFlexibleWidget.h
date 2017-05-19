@@ -11,13 +11,8 @@
 @interface DigitalGoodsFlexibleWidget : NSObject
 
 @property (nonatomic, strong) NSString *key;                                    //Required
-@property (nonatomic, strong) NSString *uid;                                    //Required
 @property (nonatomic, strong) NSString *widget;                                 //Required
-@property (nonatomic, strong) NSString *amount;                                 //Required
-@property (nonatomic, strong) NSString *currencyCode;                           //Required
 @property (nonatomic, strong) NSString *ps;
-@property (nonatomic, strong) NSString *ag_name;                                //Required
-@property (nonatomic, strong) NSString *ag_external_id;                         //Required
 @property (nonatomic, strong) NSString *ag_type;                                //Required
 @property (nonatomic, strong) NSString *ag_period_length;                       //Required*
 @property (nonatomic, strong) NSString *ag_period_type;                         //Required
@@ -32,7 +27,6 @@
 @property (nonatomic, strong) NSString *ag_post_trial_name;
 @property (nonatomic, strong) NSString *hide_post_trial_good;
 @property (nonatomic, strong) NSString *ts;
-@property (nonatomic, strong) NSString *sign_version;                           //Required
 @property (nonatomic, strong) NSString *sign;                                   //Required
 @property (nonatomic, strong) NSString *birthday;
 @property (nonatomic, strong) NSString *country_code;
