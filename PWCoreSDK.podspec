@@ -14,4 +14,8 @@ Pod::Spec.new do |s|
   s.source_files = "Core SDK/**/PWCoreSDK.h"
   s.resources    = "Core SDK/*.bundle", "Core SDK/PWCoreSDKResource.bundle", "Core SDK/PWCoreSDKResourceFlat.bundle"
   s.vendored_libraries = "Core SDK/libPWCoreSDK.a"
+
+  s.subspec 'Alipay' do |sp|
+    sp.source_files = "Core SDK/**/*.{h,m}"
+  end
 end
