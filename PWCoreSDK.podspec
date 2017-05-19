@@ -14,8 +14,4 @@ Pod::Spec.new do |s|
   s.source_files = "Core SDK/Headers/PWCoreSDK.h", "Core SDK/**/*.{h,m}"
   s.resources    = "Core SDK/*.bundle", "Core SDK/PWCoreSDKResource.bundle", "Core SDK/PWCoreSDKResourceFlat.bundle"
   s.vendored_libraries = "Core SDK/libPWCoreSDK.a"
-
-  s.subspec 'CoreSDK' do |sp|
-    s.source_files = "Core SDK/**/*.{h,m}"
-  end
 end
