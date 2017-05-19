@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWCardScannerPlugin"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "PWCardScannerPlugin"
   s.description  = "Plugin for Alipay payment option for PWCoreSDK"
   s.homepage     = "http://paymentwall.com"
@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   
   s.vendored_libraries = "Plugins/PWCardScannerPlugin/libPWCardScannerPlugin.a"
 
-  s.dependency 'PWCoreSDK', '~>1.0.5'
+  s.dependency 'PWCoreSDK'
   s.dependency 'CardIO'
 
   s.libraries = 'PWCoreSDK', 'CardIO', 'opencv_core', 'opencv_imgproc'
