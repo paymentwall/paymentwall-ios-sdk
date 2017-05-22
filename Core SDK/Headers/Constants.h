@@ -11,8 +11,6 @@
 #ifndef Constants_h
 #define Constants_h
 
-#define LOCAL_PAYMENT_OPEN_URL @"LOCAL_PAYMENT_OPEN_URL"
-
 /**
  PaymentType
  */
