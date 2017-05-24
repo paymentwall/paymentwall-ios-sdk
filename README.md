@@ -152,6 +152,31 @@ if response.paymentType == .BRICK {
 ```
 > Note: Pass the error as Dictionary with key = "error" and value is the error message via `userInfo`, the SDK will automatically show failed dialog instead of successful dialog
 
+Custom PWLocal signature
+------------------------
+If you wish to provide your PWLocal signature manually:
+
+```swift
+//Define all params in step 8., and extra custom settings, then get `stringToSign`:
+
+let payment = PaymentObject()
+payment.name = choosenItem.name
+payment.price = Double(choosenItem.price)!
+payment.currency = "USD"
+payment.image = choosenItem.image
+payment.userID = "test_user"
+payment.itemID = choosenItem.name+"id"
+payment.signVersion = 3
+let customSetting = ["widget":"pw",
+                    "ag_type":"fixed"]
+
+let strToSign = PWCoreSDK.sharedInstance().getStringToSign(customSetting, paymentObject: payment)
+
+//Calculate your sign and set it
+customSetting["sign"] = sha256(text: "\(strToSign!)YOUR SECRET KEY")
+payment.pwLocalParams = customSetting
+```
+
 Implement local payment option
 ------------------------------
 Paymentwall SDK supports external payment system injection (which are in our defined payment system (PS) list). Each time you want to add a new payment system, you have to include it's native SDK into your project along with our plugin framework, our framework will handle creating all the necessary parameters then you can use them to show the native local payment SDK:

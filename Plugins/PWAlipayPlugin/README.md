@@ -19,11 +19,20 @@ alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
 //Optional
 alipay.pwProjectKey = "YOUR PROJECT KEY"
 alipay.pwSecretKey = "YOUR SECRET KEY"
+```
+4. If secret key is not set in both PWCoreSDK and this plugin, you have to generate and provide `signString` for the Plugin:
+```swift
+//Get string to sign - call this after set all required values in step 3. and set PaymentObject in PWCoreSDK
+let strToSign = alipay.getStringToSign()
 
-//Add to CoreSDK
+//Append your secret key to the end and calculate, then set to `signString`, have to do it again with new PaymentObject
+alipay.signString = calculateSign(with: strToSign)
+```
+5. Add to CoreSDK:
+```swift
 PWCoreSDK.sharedInstance().addCustomPaymentOptions([alipay])
 ```
-4. App scheme is required in `info.plist` in iOS 9.0 and above:
+6. App scheme is required in `info.plist`:
 ```xml
 <key>CFBundleURLTypes</key>
 <array>
@@ -39,7 +48,7 @@ PWCoreSDK.sharedInstance().addCustomPaymentOptions([alipay])
     </dict>
 </array>
 ```
-5. Linking to Alipay app is required in `info.plist`:
+7. Linking to Alipay app is required in `info.plist` in iOS 9.0 and above:
 ```xml
 <key>LSApplicationQueriesSchemes</key>
 <array>
