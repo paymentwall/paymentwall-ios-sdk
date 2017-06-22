@@ -114,7 +114,7 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
 -(NSString *_Nullable)getStringToSign:(id _Nonnull)params paymentObject:(PaymentObject * _Nonnull)object;
 
 /**
- Get default PWLocal extra headers for tracking
+ Get default PWLocal extra headers for risk tracking
 
  @return Default extra headers as dictionary
  */
@@ -154,11 +154,28 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
 -(NSDictionary* _Nonnull)getPaymentObjectDetails;
 
 /**
- Set use new flat UI, require PWCoreSDKResourceFlat.bundle
- Default is game style, use PWCoreSDKResource.bundle
+ Set use game UI, require PWCoreSDKResource.bundle
+ Default is flat style (false), require PWCoreSDKResourceFlat.bundle
 
- @param useFlatUI use flat UI
+ @param useGameUI set to true to use game UI
  */
--(void)setUseFlatUI:(BOOL)useFlatUI;
+-(void)setUseGameUI:(BOOL)useGameUI;
+
+
+/**
+ Set to true if you want to show navtive success/failed dialog after any payment finish
+ Default to false
+
+ @param useNativeDialog useNativeDialog
+ */
+-(void)setUseNativeFinishDialogForAllMethods:(BOOL)useNativeDialog;
+
+
+/**
+ Set use customization plugin for flat UI
+
+ @param customization require customize plugin singleton: PWCustomizationPlugin
+ */
+-(void)setUseCustomization:(id _Nullable)customization;
 
 @end

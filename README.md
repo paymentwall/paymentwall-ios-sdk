@@ -49,13 +49,15 @@ Our SDK is delivered as static library or public repository.
 #import <PWCoreSDK/PWCoreSDK.h> 
 ```
 
+>Update: If your CoreSDK got update during install any plugin, you should also check to update the rest of plugins.
+
 Create your first payment
 -------------------------
 1. Setup the SDK with the following params, only need to setup (step 1-7) once:
 ```swift
 PWCoreSDK.sharedInstance().setupPaymentwall(withProjectKey: "YOUR PUBLIC KEY", secretKey: "YOUR SECRET KEY", requestTimeout: 30)
 ```
->Optional:  Default UI of the SDK is game style, to use flat UI, add this to your code: `PWCoreSDK.sharedInstance().setUseFlatUI(true)`
+>Optional: Extra settings can be found in the Extra settings section below
 
 >Project key: All payment option will use this Project key if their Project key set to nil, you also can specify their own Project key
 
@@ -83,19 +85,19 @@ func paymentResponse(_ response: PWCoreSDKResponse?) {
 }
 ```
 
-3. Add Brick payment type, please refer below on how to handle Brick payment flow, cardScannerPlugin is distributed as a plugin and is optional:
+3. Add Brick payment type, Brick is Paymentwall's credit card solution available for businesses in 200+ countries, please refer below on how to handle Brick payment flow, cardScannerPlugin is distributed as a plugin and is optional:
 
 ```swift
 PWCoreSDK.sharedInstance().addBrickPayment(withPublicKey: nil, useNativeFinishDialog: true, cardScannerPlugin: PWCardScannerPlugin.sharedInstance())
 ```
 
-4. Add Mobiamo payment type, `noPrice` specify if you want to use the default Mobiamo price for each country:
+4. Add Mobiamo payment type, Mobiamo is a mobile carrier billing platform with global coverage via SMSs, `noPrice` specify if you want to use the default Mobiamo price for each country:
 
 ```swift
 PWCoreSDK.sharedInstance().addMobiamoPayment(withAppID: nil, noPrice: true)
 ```
 
-5. Add Mint payment type:
+5. Add Mint payment type, MINT is Paymentwall's cash payment solution designed to help monetize your digital goods and services all over the world via MINT prepaid card:
 ```swift
 PWCoreSDK.sharedInstance().addMintPayment(withAppID: nil)
 ```
@@ -109,6 +111,7 @@ PWCoreSDK.sharedInstance().addPWLocalPayment(with: .DIGITAL_GOODS_FLEXIBLE, secr
 ```swift
 PWCoreSDK.sharedInstance().addCustomPaymentOptions([alipay, unionpay, ...])
 ```
+>Note: These payment options will be place in `Local payments` together with PWLocal.
 
 8. Create new payment with `PaymentObject` class and assign to the CoreSDK:
 ```swift
@@ -135,6 +138,12 @@ PWCoreSDK.sharedInstance().setPaymentObject(payment)
 ```swift
 PWCoreSDK.showPaymentOptionsViewController(withParentViewcontroller: self, delegate: self, showCompletion: nil)
 ```
+
+Extra settings
+-------------------
+- Default UI of the SDK is flat style, to use game UI, add this to your code: `PWCoreSDK.sharedInstance().setUseGameUI(true)`
+- If you wish to customize the flat UI to suit your app, you can get the [PWCustomizationPlugin](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCustomizationPlugin) and set it while setup the SDK.
+- By default (except Brick), all payments method will return delegate for you to work with, if you want to use the SDK's success/failed dialog, add this to your code: `PWCoreSDK.sharedInstance().setUseNativeFinishDialogForAllMethods(true)`
 
 Brick payment flow
 -------------------
@@ -203,3 +212,4 @@ List of available local payment option
 Available extra plugin
 ------------------------------
 - [Card scanner](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCardScannerPlugin)
+- [Customization](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCustomizationPlugin)
