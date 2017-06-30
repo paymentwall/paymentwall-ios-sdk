@@ -9,7 +9,6 @@ Paymentwall SDK supports external payment system injection (which are in our def
 let wechatpay = PWWechatpayPlugin()
 
 //Required
-wechatpay.appId = "external"
 wechatpay.appScheme = "YOUR APP SCHEME"
 
 //Optional
