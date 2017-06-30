@@ -69,9 +69,10 @@ func paymentResponse(_ response: PWCoreSDKResponse?) {
     guard let response = response else { return }
     switch response.responseCode {
         case .SUCCESSFUL:
-        //Example when you use Brick and `useNativeFinishDialog == true` can be found below
         case .FAILED:
         case .CANCEL:
+        case .MERCHANT_PROCESSING:
+        //Example when you use Brick and `useNativeFinishDialog == true` can be found below
     }
 
     switch response.paymentType {
@@ -159,7 +160,11 @@ if response.paymentType == .BRICK {
     }
 }
 ```
-> Note: Pass the error as Dictionary with key = "error" and value is the error message via `userInfo`, the SDK will automatically show failed dialog instead of successful dialog
+- Pass the error in Dictionary as `["error": errorMessage]` via `userInfo`, the SDK will automatically show failed dialog instead of successful dialog
+
+- If 3D secure happen, we also support 3D secure, pass the URL in Dictionary as `["secure": urlString]` via `userInfo`, the SDK will handle showing the 3D secure and pass `SUCCESS/FAILED` back to app after user finish enter secure info
+
+- If you want to enable store card feature for user, pass the Charge object to our SDK via `userInfo`, Charge object format can be found in our [Brick docs](https://www.paymentwall.com/en/documentation/Brick/2968)
 
 Custom PWLocal signature
 ------------------------
