@@ -213,6 +213,7 @@ alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
 List of available local payment option
 ------------------------------
 - [Alipay](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWAlipayPlugin)
+- [Wechatpay](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWWechatpayPlugin)
 
 Available extra plugin
 ------------------------------
