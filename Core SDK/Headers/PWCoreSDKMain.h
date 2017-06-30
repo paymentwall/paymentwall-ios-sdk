@@ -146,6 +146,14 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
                              completion:(void (^_Nullable)(PWLocalStatusResponse * _Nullable response))completionBlock;
 
 #pragma mark - Extra
+
+/**
+ Add extra params to payment request
+
+ @param params dictionary of extra params
+ */
+-(void)addExtraParams:(NSDictionary* _Nonnull)params;
+
 /**
  To get payment's name, price, currency code
 
