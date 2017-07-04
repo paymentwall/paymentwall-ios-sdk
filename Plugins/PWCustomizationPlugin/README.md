@@ -31,6 +31,4 @@ Usage
 
 - `UIButton* buttonConfig`: Set custom UI property for this property to change some button to your liking, eg. backgroundColor, tintColor, titleColor, image
 
-![](https://user-images.githubusercontent.com/23113471/27734022-42b14d5a-5dc3-11e7-92b5-7213e260810a.jpg)
-
-![](https://user-images.githubusercontent.com/23113471/27734047-58549374-5dc3-11e7-84eb-6a92f03f6f9d.jpeg)
+![customization_guide](https://user-images.githubusercontent.com/23113471/27816093-84af641a-60b3-11e7-9a8b-d2dd01a3eafc.png)

@@ -144,12 +144,16 @@ Extra settings
 -------------------
 - Default UI of the SDK is flat style, to use game UI, add this to your code: `PWCoreSDK.sharedInstance().setUseGameUI(true)`
 - If you wish to customize the flat UI to suit your app, you can get the [PWCustomizationPlugin](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCustomizationPlugin) and set it while setup the SDK.
-- By default (except Brick), all payments method will return delegate for you to work with, if you want to use the SDK's success/failed dialog, add this to your code: `PWCoreSDK.sharedInstance().setUseNativeFinishDialogForAllMethods(true)`
+- By default (except Brick), all payments method will show success once the payment is finish, if you don't want to use the SDK's success dialog but return delegate for you to work with, add this to your code: `PWCoreSDK.sharedInstance().setUseNativeFinishDialogForAllMethods(false)`
 
 Brick payment flow
 -------------------
 1. After the token is successfully fetched, the `response: PWCoreSDKResponse` will contain the `token: BrickToken` along with it
-2. Send request to your server to handle the token, if `useNativeFinishDialog` is set to `false`, you can show your own success or failed dialog after it finish, otherwise post a `Notification` to use the SDK success or failed dialog and close itself, THIS IS ONLY FOR HANDLE AFTER YOU PROCESS THE TOKEN, other error during fetching token will be handle automatically without posting notification:
+2. Send request to your server to handle the token: 
+
+- If `useNativeFinishDialog` is set to `false`, the SDK will dismiss after token is successfully fetched, the `response.responseCode` will also be `.MERCHANT_PROCESSING`, you will have to handle success/failed/3D secure yourself and store card feature wont be available
+
+- If `useNativeFinishDialog` is set to `true`, the loading popup will keep showing, after you process the token in your sever, post a `Notification` to use the SDK success or failed dialog, also the SDK will call delegate again to return `.SUCCESS` or `.FAILED`:
 
 ```swift
 if response.paymentType == .BRICK {
@@ -197,23 +201,15 @@ Paymentwall SDK supports external payment system injection (which are in our def
 
 1. Add the plugin with Cocoapods with `pod 'PW[Local payment method]Plugin'` or manually dragging the `PW[Local payment method]Plugin.a` and it's headers file to your project
 2. Import the library header into your project or via `bridging-headers.h` if you use Swift 
-3. Setup the plugin, each plugin have different requirements so please check their header files and local payment option docs on their websites for more information:
-```swift
-let alipay = PWAlipayPlugin()
-alipay.appId = "external"
-alipay.appScheme = "YOUR APP SCHEME"
+3. Setup the plugin, each plugin have different requirements, details can be found in their headers or detailed docs below.
 
-//For international alipay payment
-alipay.itbPay = "30m"
-alipay.forexBiz = "FP"
-alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
-```
 >Note: All plugins support your own signature string if you don't specify Secret key in both CoreSDK and PluginSDK, use `plugin.getStringToSign()` to get the string to sign, then add your signed string to `plugin.signString`
 
 List of available local payment option
 ------------------------------
 - [Alipay](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWAlipayPlugin)
 - [Wechatpay](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWWechatpayPlugin)
+- [MyCard](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWMycardPlugin)
 
 Available extra plugin
 ------------------------------
