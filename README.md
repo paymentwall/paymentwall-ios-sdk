@@ -21,7 +21,18 @@ CREDENTIALS
 -----------
 SDK integration requires a project key. Obtain these Paymentwall API credentials in the application settings of your Merchant Account at [Paymentwall.com](http://paymentwall.com/)
 
-ADDING SDK (Paymentwall Core SDK)
+Available native payment option plugins
+------------------------------
+- [Alipay](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWAlipayPlugin)
+- [Wechatpay](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWWechatpayPlugin)
+- [MyCard](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWMycardPlugin)
+
+Available extra plugins
+------------------------------
+- [Card scanner](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCardScannerPlugin)
+- [Customization](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCustomizationPlugin)
+
+Setup (Paymentwall Core SDK)
 ---------------------
 Our SDK is delivered as static library or public repository.
 
@@ -204,14 +215,3 @@ Paymentwall SDK supports external payment system injection (which are in our def
 3. Setup the plugin, each plugin have different requirements, details can be found in their headers or detailed docs below.
 
 >Note: All plugins support your own signature string if you don't specify Secret key in both CoreSDK and PluginSDK, use `plugin.getStringToSign()` to get the string to sign, then add your signed string to `plugin.signString`
-
-List of available local payment option
-------------------------------
-- [Alipay](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWAlipayPlugin)
-- [Wechatpay](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWWechatpayPlugin)
-- [MyCard](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWMycardPlugin)
-
-Available extra plugin
-------------------------------
-- [Card scanner](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCardScannerPlugin)
-- [Customization](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCustomizationPlugin)
