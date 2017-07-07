@@ -1,0 +1,58 @@
+PODS:
+  - CardIO (5.4.1)
+  - PWAlipayPlugin (2.0.0):
+    - PWAlipayPlugin/Alipay (= 2.0.0)
+    - PWCoreSDK (~> 2.0.0)
+  - PWAlipayPlugin/Alipay (2.0.0):
+    - PWCoreSDK (~> 2.0.0)
+  - PWCardScannerPlugin (2.0.0):
+    - CardIO
+    - PWCoreSDK (~> 2.0.0)
+  - PWCoreSDK (2.0.0):
+    - PWCoreSDK/CoreSDK (= 2.0.0)
+  - PWCoreSDK/CoreSDK (2.0.0)
+  - PWCustomizationPlugin (2.0.0):
+    - PWCoreSDK (~> 2.0.0)
+  - PWMyCardPlugin (2.0.0):
+    - PWCoreSDK (~> 2.0.0)
+  - PWWechatpayPlugin (2.0.0):
+    - PWCoreSDK (~> 2.0.0)
+    - PWWechatpayPlugin/Wechatpay (= 2.0.0)
+  - PWWechatpayPlugin/Wechatpay (2.0.0):
+    - PWCoreSDK (~> 2.0.0)
+
+DEPENDENCIES:
+  - CardIO
+  - PWAlipayPlugin (from `.`)
+  - PWCardScannerPlugin (from `.`)
+  - PWCoreSDK (from `.`)
+  - PWCustomizationPlugin (from `.`)
+  - PWMyCardPlugin (from `.`)
+  - PWWechatpayPlugin (from `.`)
+
+EXTERNAL SOURCES:
+  PWAlipayPlugin:
+    :path: .
+  PWCardScannerPlugin:
+    :path: .
+  PWCoreSDK:
+    :path: .
+  PWCustomizationPlugin:
+    :path: .
+  PWMyCardPlugin:
+    :path: .
+  PWWechatpayPlugin:
+    :path: .
+
+SPEC CHECKSUMS:
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
+  PWAlipayPlugin: ed96be5e06a6250efdf6fb607dc8e0e1591c0241
+  PWCardScannerPlugin: 624500fa89fad7994a989a291fcb2067977c4072
+  PWCoreSDK: 94161d8437cf9b7c7546cec86f9a6bc81273c30d
+  PWCustomizationPlugin: 7892e65fc7f9840e4213f147d95c14ef98f37994
+  PWMyCardPlugin: 1c0ffcffd63331179f0004142c6457b5581701b7
+  PWWechatpayPlugin: 7fcb61e4445402f17576a5119edf2dedd6011277
+
+PODFILE CHECKSUM: bc0ef34ff5e2a53820d24e47eb4204cd95063d1a
+
+COCOAPODS: 1.2.1
