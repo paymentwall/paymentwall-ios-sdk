@@ -29,7 +29,8 @@ typedef NS_ENUM(NSUInteger, PaymentType) {
 typedef NS_ENUM(NSUInteger, PaymentResponseCode) {
     SUCCESSFUL = 0,
     FAILED = 1,
-    CANCEL = 2
+    CANCEL = 2,
+    MERCHANT_PROCESSING = 3
 };
 
 

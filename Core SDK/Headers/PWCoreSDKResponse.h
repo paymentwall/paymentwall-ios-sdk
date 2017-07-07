@@ -18,13 +18,13 @@ extern NSString * _Nonnull const PAYMENT_CANCELED;
 
 @property (nonatomic, assign) PaymentResponseCode responseCode;
 @property (nonatomic, assign) PaymentType paymentType;
-@property (nonatomic, strong) NSString * _Nullable paymentName;
-@property (nonatomic, strong) NSString * _Nullable paymentAmount;
-@property (nonatomic, strong) NSString * _Nullable paymentCurrency;
-@property (nonatomic, strong) NSString * _Nullable userID;
+@property (nonatomic, strong) NSString * _Nonnull paymentName;
+@property (nonatomic, strong) NSString * _Nonnull paymentAmount;
+@property (nonatomic, strong) NSString * _Nonnull paymentCurrency;
+@property (nonatomic, strong) NSString * _Nonnull userID;
 @property (nonatomic, strong) NSString * _Nonnull message;
-@property (nonatomic, strong) NSString * _Nullable productID;
-@property (nonatomic, strong) NSString * _Nullable userEmail;
+@property (nonatomic, strong) NSString * _Nonnull productID;
 @property (nonatomic, strong) BrickToken * _Nullable token;
+@property (nonatomic, strong) NSDictionary <NSString *, NSString *> * _Nullable others;
 
 @end

@@ -23,6 +23,7 @@ Pod::Spec.new do |s|
   s.dependency 'PWCoreSDK', '~> 2.0.0'
 
   s.subspec 'Wechatpay' do |sp|
+    sp.source_files = "Plugins/PWWechatpayPlugin/Wechatpay/*.{h,m}"
     sp.vendored_libraries = "Plugins/PWWechatpayPlugin/Wechatpay/libWeChatSDK.a"
     sp.libraries = 'z', 'c++', 'sqlite3.0'
     sp.frameworks = 'UIKit', 'SystemConfiguration', 'Foundation', 'CoreTelephony', 'Security'
