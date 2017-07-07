@@ -29,9 +29,9 @@ PWCoreSDK.sharedInstance().addCustomPaymentOptions([mycard])
     switch response.responseCode {
         case .MERCHANT_PROCESSING:
             if response.paymentType == .OTHERS {
-                for (key,val) in response.others! {
-                    if key == "MyCard" {
-                        let signString = sha256(text: "\(val)YOUR_SECRET_KEY")!
+                if let othersDict = response.others {
+                    if let mycardStringToSign = othersDict["MyCard"] {
+                        let signString = sha256(text: "\(mycardStringToSign)d283a4f7768976b2f1511e56ee3e1700")!
                         //If success
                         NotificationCenter.default.post(name: Notification.Name(MYCARD_SIGNATURE_GENERATED), object: nil, userInfo: ["signString": signString])
                         //If failed
