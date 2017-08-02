@@ -13,7 +13,6 @@
 #import "PaymentObject.h"
 
 extern NSString * _Nonnull const BRICK_TOKEN_PROCESSED_FINISH;
-extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
 
 @interface PWCoreSDK : NSObject
 
@@ -150,7 +149,7 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
 /**
  Add extra params to payment request
 
- @param params dictionary of extra params
+ @param params : dictionary of extra params
  */
 -(void)addExtraParams:(NSDictionary* _Nonnull)params;
 
@@ -165,7 +164,7 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
  Set use game UI, require PWCoreSDKResource.bundle
  Default is flat style (false), require PWCoreSDKResourceFlat.bundle
 
- @param useGameUI set to true to use game UI
+ @param useGameUI : set to true to use game UI
  */
 -(void)setUseGameUI:(BOOL)useGameUI;
 
@@ -174,7 +173,7 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
  Set to true if you want to show navtive success/failed dialog after any payment finish
  Default to false
 
- @param useNativeDialog useNativeDialog
+ @param useNativeDialog : useNativeDialog
  */
 -(void)setUseNativeFinishDialogForAllMethods:(BOOL)useNativeDialog;
 
@@ -182,8 +181,15 @@ extern NSString * _Nonnull const PAYMENT_FINISH_LOAD;
 /**
  Set use customization plugin for flat UI
 
- @param customization require customize plugin singleton: PWCustomizationPlugin
+ @param customization : require customize plugin singleton: PWCustomizationPlugin
  */
 -(void)setUseCustomization:(id _Nullable)customization;
+
+/**
+ Show information during Brick transaction
+
+ @param showFooter : default is NO
+ */
+-(void)setShowBrickFooter:(BOOL)showFooter;
 
 @end

@@ -54,6 +54,7 @@ class ViewController: UIViewController {
     func setupUI() {
         ///Setup CoreSDK UI
         PWCoreSDK.sharedInstance().setUseGameUI(false)
+        PWCoreSDK.sharedInstance().setShowBrickFooter(true)
         
         let custom = PWCustomizationPlugin()
         custom.headerBackgroundColor = UIColor.red

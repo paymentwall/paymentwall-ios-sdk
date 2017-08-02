@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWCustomizationPlugin"
-  s.version      = "2.0.0"
+  s.version      = "2.1.1"
   s.summary      = "PWCustomizationPlugin"
   s.description  = "Plugin to customize PWCoreSDK's flat UI"
   s.homepage     = "http://paymentwall.com"
@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   
   s.vendored_libraries = "Plugins/PWCustomizationPlugin/libPWCustomizationPlugin.a"
 
-  s.dependency 'PWCoreSDK', '~> 2.0.0'
+  s.dependency 'PWCoreSDK', '~> 2.1.1'
 end
