@@ -127,6 +127,14 @@ extern NSString * _Nonnull const BRICK_TOKEN_PROCESSED_FINISH;
  */
 -(void)setExtraPWLocalHeader:(NSDictionary *_Nonnull)extraHeaders;
 
+
+/**
+ Change `Local Payments` and `Paymentwall Local` cell icon, prefer image with w/h = 5/1
+
+ @param image : Image to change to
+ */
+-(void)setCustomLocalPaymentImage:(UIImage *_Nullable)image;
+
 /**
  Check payment status, SUPPORT DIGITAL GOODS FLEXIBLE WIDGET ONLY
  
