@@ -121,6 +121,7 @@ extension ViewController: PWCoreSDKDelegate {
         }
         
         print("\(self.statusMsg(type: response.paymentType, msg: response.message))")
+        resultLabel.text = statusMsg(type: response.paymentType, msg: response.message)
         
         switch response.responseCode {
         case .SUCCESSFUL:
@@ -142,7 +143,7 @@ extension ViewController: PWCoreSDKDelegate {
             - Error:
              NotificationCenter.default.post(name: Notification.Name(BRICK_TOKEN_PROCESSED_FINISH), object: nil, userInfo: ["error":"some error"])
             - 3D secure:
-             NotificationCenter.default.post(name: Notification.Name(BRICK_TOKEN_PROCESSED_FINISH), object: nil, userInfo: ["secure":"3d secure URL"])
+             NotificationCenter.default.post(name: Notification.Name(BRICK_TOKEN_PROCESSED_FINISH), object: nil, userInfo: ["secure":"3d secure URL string"])
             >After 3D secure, the SDK will redirect to your sever URL, response ["success":1] will be equal to success without asking to store card.
             */
             break
