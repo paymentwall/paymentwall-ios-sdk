@@ -157,6 +157,7 @@ Extra settings
 - If you wish to customize the flat UI to suit your app, you can get the [PWCustomizationPlugin](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCustomizationPlugin) and set it while setup the SDK.
 - By default (except Brick), all payments method will show success once the payment is finish, if you don't want to use the SDK's success dialog but return delegate for you to work with, add this to your code: `PWCoreSDK.sharedInstance().setUseNativeFinishDialogForAllMethods(false)`
 - To show bank processor adress for Brick, use `PWCoreSDK.sharedInstance().setShowBrickFooter(true)`
+- To use custom icon for local payments, use `PWCoreSDK.sharedInstance().setCustomLocalPaymentImage(image)`
 
 Brick payment flow
 -------------------
