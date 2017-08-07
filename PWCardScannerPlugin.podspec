@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWCardScannerPlugin"
-  s.version      = "2.0.0"
+  s.version      = "2.1.2"
   s.summary      = "PWCardScannerPlugin"
   s.description  = "Plugin to support credit card scanner for PWCoreSDK"
   s.homepage     = "http://paymentwall.com"
@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   
   s.vendored_libraries = "Plugins/PWCardScannerPlugin/libPWCardScannerPlugin.a"
 
-  s.dependency 'PWCoreSDK', '~> 2.0.0'
+  s.dependency 'PWCoreSDK', '>= 2.0.0'
   s.dependency 'CardIO'
 
   s.libraries = 'PWCoreSDK', 'CardIO', 'opencv_core', 'opencv_imgproc'
