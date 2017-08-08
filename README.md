@@ -66,7 +66,7 @@ Create your first payment
 -------------------------
 1. Setup the SDK with the following params, only need to setup (step 1-7) once:
 ```swift
-PWCoreSDK.sharedInstance().setupPaymentwall(withProjectKey: "YOUR PUBLIC KEY", secretKey: "YOUR SECRET KEY", requestTimeout: 30)
+PWCoreSDK.sharedInstance().setupPaymentwall(withProjectKey: "YOUR PUBLIC KEY", secretKey: "YOUR SECRET KEY", requestTimeout: 30, clearPaymentMethodsAfterFinish: false)
 ```
 >Optional: Extra settings can be found in the Extra settings section below
 
@@ -153,6 +153,7 @@ PWCoreSDK.showPaymentOptionsViewController(withParentViewcontroller: self, deleg
 
 Extra settings
 -------------------
+- `clearPaymentMethodsAfterFinish`: set to true if you wish to remove already added payment system after the SDK view controller is closed, you will have to add the payment system again, but the UI setting will be kept.
 - Default UI of the SDK is flat style, to use game UI, add this to your code: `PWCoreSDK.sharedInstance().setUseGameUI(true)`
 - If you wish to customize the flat UI to suit your app, you can get the [PWCustomizationPlugin](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCustomizationPlugin) and set it while setup the SDK.
 - By default (except Brick), all payments method will show success once the payment is finish, if you don't want to use the SDK's success dialog but return delegate for you to work with, add this to your code: `PWCoreSDK.sharedInstance().setUseNativeFinishDialogForAllMethods(false)`
