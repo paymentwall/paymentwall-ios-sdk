@@ -23,10 +23,6 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
-    
     @IBAction func startPaymentsBtnTouch(_ sender: Any) {
         setupPayment()
         PWCoreSDK.sharedInstance().showPaymentOptionsViewController(withParentViewcontroller: self, delegate: self, showCompletion: nil)
@@ -59,7 +55,7 @@ class ViewController: UIViewController {
         let custom = PWCustomizationPlugin()
         custom.headerBackgroundColor = UIColor.red
         custom.barStyle = .black
-        custom.infoCardTextAttribute = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 16)!, NSForegroundColorAttributeName: UIColor.cyan]
+        custom.infoCardTextAttribute = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 16)!, NSForegroundColorAttributeName: UIColor.purple]
         custom.optionTextColor = UIColor.green
         custom.optionBackgroundImageMode = .scaleAspectFill
         let customBtn = UIButton(type: .custom)

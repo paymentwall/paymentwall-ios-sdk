@@ -31,6 +31,19 @@ extern NSString * _Nonnull const BRICK_TOKEN_PROCESSED_FINISH;
                        requestTimeout:(NSTimeInterval)requestTimeout;
 
 /**
+ Setup the SDK
+
+ @param pwProjectKey pwProjectKey, required
+ @param pwSecretKey pwSecretKey, use only for PWLocal and plugin SDK, if nil, either specify secret key for each payment option or calculate the sign by yourself and add it to `paymentObject.pwLocalParams`
+ @param requestTimeout request timeout in second
+ @param clear Clear the current available payments after the SDK is closed(cancel/success), use when you want to dinamically add/remove payment methods
+ */
+-(void)setupPaymentwallWithProjectKey:(NSString * _Nonnull)pwProjectKey
+                            secretKey:(NSString * _Nullable)pwSecretKey
+                       requestTimeout:(NSTimeInterval)requestTimeout
+       clearPaymentMethodsAfterFinish:(BOOL)clear;
+
+/**
  Set the Payment object, for new request, only need to set this and call showPaymentOptionsViewControllerWithParentViewcontroller
 
  @param paymentObject include payment params like price, name, currency,..
