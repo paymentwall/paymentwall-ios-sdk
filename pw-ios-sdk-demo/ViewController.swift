@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         self.setupUI()
         
         ///Setup CoreSDK payment systems
-        PWCoreSDK.sharedInstance().setupPaymentwall(withProjectKey: "YOUR_PUBLIC_KEY", secretKey: "YOUR_SECRET_KEY", requestTimeout: 30)
+        PWCoreSDK.sharedInstance().setupPaymentwall(withProjectKey: "YOUR_PUBLIC_KEY", secretKey: "YOUR_SECRET_KEY", requestTimeout: 30, clearPaymentMethodsAfterFinish: false)
         
         PWCoreSDK.sharedInstance().addBrickPayment(withPublicKey: nil, useNativeFinishDialog: true, cardScannerPlugin: PWCardScannerPlugin.sharedInstance())
         PWCoreSDK.sharedInstance().addMintPayment(withAppID: nil)
