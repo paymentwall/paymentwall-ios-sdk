@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+__attribute__((deprecated("Use PWCustomization class in PWCoreSDK from v2.2")))
 @interface PWCustomizationPlugin : NSObject
 
 @property (nonatomic, assign) UIBarStyle barStyle;

@@ -14,4 +14,5 @@ target 'pw-ios-sdk-demo' do
   pod 'PWCardScannerPlugin', :path => '.'
   pod 'PWCustomizationPlugin', :path => '.'
   pod 'PWMyCardPlugin', :path => '.'
+  pod 'PWGameUIPlugin', :path => '.'
 end

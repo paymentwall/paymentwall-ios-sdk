@@ -187,7 +187,14 @@ extern NSString * _Nonnull const BRICK_TOKEN_PROCESSED_FINISH;
 
  @param useGameUI : set to true to use game UI
  */
--(void)setUseGameUI:(BOOL)useGameUI;
+-(void)setUseGameUI:(BOOL)useGameUI DEPRECATED_MSG_ATTRIBUTE("Use only when having the bundle in the same folder as the library, else use setUIPackage:package instead");
+
+/**
+ Set use external ui resource bundle plugin
+
+ @param package Plugin library with bundle
+ */
+-(void)setUIPackage:(id _Nonnull)package;
 
 
 /**

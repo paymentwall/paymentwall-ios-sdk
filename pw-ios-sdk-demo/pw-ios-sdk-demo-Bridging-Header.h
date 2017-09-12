@@ -8,3 +8,4 @@
 #import "PWCardScannerPlugin.h"
 #import "PWMyCardPlugin.h"
 #import "PWCustomizationPlugin.h"
+#import "PWGameUIPlugin.h"

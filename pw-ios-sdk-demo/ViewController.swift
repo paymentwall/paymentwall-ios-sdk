@@ -49,10 +49,11 @@ class ViewController: UIViewController {
     
     func setupUI() {
         ///Setup CoreSDK UI
-        PWCoreSDK.sharedInstance().setUseGameUI(false)
+//        PWCoreSDK.sharedInstance().setUseGameUI(false)
+        PWCoreSDK.sharedInstance().setUIPackage(PWGameUIPlugin())
         PWCoreSDK.sharedInstance().setShowBrickFooter(true)
         
-        let custom = PWCustomizationPlugin()
+        let custom = PWCustomization()
         custom.headerBackgroundColor = UIColor.red
         custom.barStyle = .black
         custom.infoCardTextAttribute = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 16)!, NSForegroundColorAttributeName: UIColor.purple]

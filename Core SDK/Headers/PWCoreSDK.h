@@ -22,6 +22,7 @@ FOUNDATION_EXPORT const unsigned char PWCoreSDKVersionString[];
 #import "PWCoreSDKResponse.h"
 #import "PWCoreSDKDelegate.h"
 #import "Constants.h"
+#import "PWCustomization.h"
 
 ///Brick
 #import "BrickToken.h"
