@@ -1,3 +1,6 @@
+
+>Deprecated: Use Customization class in CoreSDK instead.
+
 Paymentwall Customization plugin
 ------------------------------
 Customization Plugin is an optional plugin to add the feature that enable customization UI for the flat UI.
