@@ -34,4 +34,5 @@ Available native payment option plugins
 Available extra plugins
 ------------------------------
 - [Card scanner](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCardScannerPlugin)
-- [UI Customization](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCustomizationPlugin)
+- [GameUI](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWGameUIPlugin)
+- [UI Customization](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCustomizationPlugin) (Deprecated)
