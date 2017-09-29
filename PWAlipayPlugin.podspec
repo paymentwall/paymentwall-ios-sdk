@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWAlipayPlugin"
-  s.version      = "2.1.2"
+  s.version      = "2.1.3"
   s.summary      = "PWAlipayPlugin"
   s.description  = "Plugin for Alipay payment option for PWCoreSDK"
   s.homepage     = "http://paymentwall.com"
