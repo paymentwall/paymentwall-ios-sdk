@@ -84,8 +84,16 @@ Present Payment options view controller:
 ```swift
 PWCoreSDK.showPaymentOptionsViewController(withParentViewcontroller: self, delegate: self, showCompletion: nil)
 ```
+## Step 7: Handle callback URL
+Add this code in your AppDelegate  to handle callback from other app if you use plugins (suchs as Alipay, Unionpay, Paypal,...)
+```swift
+func application(_ app: UIApplication, open url: URL, options:[UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    PWCoreSDK.sharedInstance().handleOpen(url)
+    return true
+}
+```
 
-## Step 7: Handle Payment Response
+## Step 8: Handle Payment Response
  Implement `PWCoreSDKDelegate` protocol to handle payment response:
 
 ```swift
@@ -109,7 +117,7 @@ func paymentResponse(_ response: PWCoreSDKResponse?) {
     }
 }
 ```
-## Step 8: Customized UI
+## Step 9: Customized UI
 Usage:
 ```swift
 let custom = PWCustomization()

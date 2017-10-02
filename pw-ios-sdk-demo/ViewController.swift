@@ -49,7 +49,6 @@ class ViewController: UIViewController {
     
     func setupUI() {
         ///Setup CoreSDK UI
-//        PWCoreSDK.sharedInstance().setUseGameUI(false)
         PWCoreSDK.sharedInstance().setUIPackage(PWGameUIPlugin())
         PWCoreSDK.sharedInstance().setShowBrickFooter(true)
         
