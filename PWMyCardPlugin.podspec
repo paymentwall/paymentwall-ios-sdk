@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWMyCardPlugin"
-  s.version      = "2.1.2"
+  s.version      = "2.2.2"
   s.summary      = "PWMyCardPlugin"
   s.description  = "Plugin for MyCard payment option for PWCoreSDK"
   s.homepage     = "http://paymentwall.com"
