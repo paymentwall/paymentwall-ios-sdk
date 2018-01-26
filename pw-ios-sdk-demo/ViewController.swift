@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         customBtn.backgroundColor = UIColor.black
         customBtn.tintColor = UIColor.black
         custom.buttonConfig = customBtn
-        PWCoreSDK.sharedInstance().setUseCustomization(custom)
+//        PWCoreSDK.sharedInstance().setUseCustomization(custom)
     }
     
     func setupAlipayInternational() -> PWAlipayPlugin {
