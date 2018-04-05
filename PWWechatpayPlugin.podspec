@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWWechatpayPlugin"
-  s.version      = "2.2.2"
+  s.version      = "3.0.0"
   s.summary      = "PWWechatpayPlugin"
   s.description  = "Plugin for Wechatpay payment option for PWCoreSDK"
   s.homepage     = "http://paymentwall.com"
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.libraries = 'PWCoreSDK' , 'WeChatSDK'
 
-  s.dependency 'PWCoreSDK', '>= 2.0.0'
+  s.dependency 'PWCoreSDK', '>= 3.0.0'
 
   s.subspec 'Wechatpay' do |sp|
     sp.source_files = "Plugins/PWWechatpayPlugin/Wechatpay/*.{h,m}"

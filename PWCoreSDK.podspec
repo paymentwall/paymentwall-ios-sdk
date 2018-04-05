@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWCoreSDK"
-  s.version      = "2.2.3"
+  s.version      = "3.0.0"
   s.summary      = "PWCoreSDK"
   s.description  = "Unified SDK for all paymentwall products on iOS"
   s.homepage     = "http://paymentwall.com"
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/paymentwall/paymentwall-ios-sdk-master.git", :tag => 'v'+String(s.version) }
   s.source_files = "Core SDK/**/PWCoreSDK.h"
-  s.resources    = "Core SDK/*.bundle", "Core SDK/PWCoreSDKResource.bundle", "Core SDK/PWCoreSDKResourceFlat.bundle"
+  s.resources    = "Core SDK/*.bundle", "Core SDK/PWCoreSDKResource.bundle"
   s.vendored_libraries = "Core SDK/libPWCoreSDK.a"
 
   s.subspec 'CoreSDK' do |sp|

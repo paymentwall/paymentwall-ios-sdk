@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PWGameUIPlugin"
-  s.version      = "2.2.0"
+  s.version      = "3.0.0"
   s.summary      = "PWGameUIPlugin"
   s.description  = "Resource for CoreSDK's game UI"
   s.homepage     = "http://paymentwall.com"
@@ -16,5 +16,5 @@ Pod::Spec.new do |s|
   s.vendored_libraries = "Plugins/PWGameUIPlugin/libPWGameUIPlugin.a"
   s.resources    = "Plugins/PWGameUIPlugin/PWGameUIPluginResource.bundle"
 
-  s.dependency 'PWCoreSDK', '>= 2.2.0'
+  s.dependency 'PWCoreSDK', '>= 3.0.0'
 end

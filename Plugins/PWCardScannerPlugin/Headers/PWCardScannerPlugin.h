@@ -10,6 +10,6 @@
 
 @interface PWCardScannerPlugin : NSObject
 
-+(PWCardScannerPlugin *)sharedInstance;
++(instancetype)sharedInstance;
 
 @end

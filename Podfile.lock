@@ -1,34 +1,31 @@
 PODS:
   - CardIO (5.4.1)
-  - PWAlipayPlugin (2.1.2):
-    - PWAlipayPlugin/Alipay (= 2.1.2)
-    - PWCoreSDK (>= 2.0.0)
-  - PWAlipayPlugin/Alipay (2.1.2):
-    - PWCoreSDK (>= 2.0.0)
-  - PWCardScannerPlugin (2.1.2):
+  - PWAlipayPlugin (3.0.0):
+    - PWAlipayPlugin/Alipay (= 3.0.0)
+    - PWCoreSDK (>= 3.0.0)
+  - PWAlipayPlugin/Alipay (3.0.0):
+    - PWCoreSDK (>= 3.0.0)
+  - PWCardScannerPlugin (3.0.0):
     - CardIO
-    - PWCoreSDK (>= 2.0.0)
-  - PWCoreSDK (2.2.0):
-    - PWCoreSDK/CoreSDK (= 2.2.0)
-  - PWCoreSDK/CoreSDK (2.2.0)
-  - PWCustomizationPlugin (2.1.2):
-    - PWCoreSDK (>= 2.1.1)
-  - PWGameUIPlugin (2.2.0):
-    - PWCoreSDK (>= 2.2.0)
-  - PWMyCardPlugin (2.1.2):
-    - PWCoreSDK (>= 2.0.0)
-  - PWWechatpayPlugin (2.1.2):
-    - PWCoreSDK (>= 2.0.0)
-    - PWWechatpayPlugin/Wechatpay (= 2.1.2)
-  - PWWechatpayPlugin/Wechatpay (2.1.2):
-    - PWCoreSDK (>= 2.0.0)
+    - PWCoreSDK (>= 3.0.0)
+  - PWCoreSDK (3.0.0):
+    - PWCoreSDK/CoreSDK (= 3.0.0)
+  - PWCoreSDK/CoreSDK (3.0.0)
+  - PWGameUIPlugin (3.0.0):
+    - PWCoreSDK (>= 3.0.0)
+  - PWMyCardPlugin (3.0.0):
+    - PWCoreSDK (>= 3.0.0)
+  - PWWechatpayPlugin (3.0.0):
+    - PWCoreSDK (>= 3.0.0)
+    - PWWechatpayPlugin/Wechatpay (= 3.0.0)
+  - PWWechatpayPlugin/Wechatpay (3.0.0):
+    - PWCoreSDK (>= 3.0.0)
 
 DEPENDENCIES:
   - CardIO
   - PWAlipayPlugin (from `.`)
   - PWCardScannerPlugin (from `.`)
   - PWCoreSDK (from `.`)
-  - PWCustomizationPlugin (from `.`)
   - PWGameUIPlugin (from `.`)
   - PWMyCardPlugin (from `.`)
   - PWWechatpayPlugin (from `.`)
@@ -40,8 +37,6 @@ EXTERNAL SOURCES:
     :path: .
   PWCoreSDK:
     :path: .
-  PWCustomizationPlugin:
-    :path: .
   PWGameUIPlugin:
     :path: .
   PWMyCardPlugin:
@@ -51,14 +46,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
-  PWAlipayPlugin: 68d41f09711a2b85301b1ce605c1ff4496dc7767
-  PWCardScannerPlugin: 9380fd92384fe29936af3b871d0a0475498d25d7
-  PWCoreSDK: d83c659d54c07407dd24beb8fbe86adf2acb89ec
-  PWCustomizationPlugin: abe7c2be1831a4a1a8b8ee79c3c383da3b17102b
-  PWGameUIPlugin: d4c70a969e98b4ea9eddc592e80ee0bb7b840168
-  PWMyCardPlugin: c2f79fbb0a9b27a6f6c24e321f8889959338c329
-  PWWechatpayPlugin: 00e3a4e0f031adc6c910890d4c7f895f67b1a6b6
+  PWAlipayPlugin: 78dc10c51f7773f1ac674eac9ed8116b42474ba3
+  PWCardScannerPlugin: 2a3c4992b85782ed2cc2efaa4e01677cf50db4a1
+  PWCoreSDK: 443052f9d1c91e877b1757fd9cedc19d337b4f11
+  PWGameUIPlugin: 94cb50a2f9e3ff698008c8b314e36d805290a393
+  PWMyCardPlugin: e9960d1b874204f1e87194eaa48530def33d1725
+  PWWechatpayPlugin: 10272b2e5fa40b36adf5795084e23f9536174c1c
 
-PODFILE CHECKSUM: 87956bf6ba31e4336dddca9477ad1b923a05bd83
+PODFILE CHECKSUM: a586364a0697ab5d6f69699db3127c43ff75867b
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.1

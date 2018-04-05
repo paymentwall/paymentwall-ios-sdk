@@ -7,5 +7,6 @@
 #import "PWWechatpayPlugin.h"
 #import "PWCardScannerPlugin.h"
 #import "PWMyCardPlugin.h"
-#import "PWCustomizationPlugin.h"
 #import "PWGameUIPlugin.h"
+
+#import <CommonCrypto/CommonCrypto.h>

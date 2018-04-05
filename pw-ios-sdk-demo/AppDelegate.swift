@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        PWCoreSDK.sharedInstance().handleOpen(url)
+        PWCoreSDK.sharedInstance().handlePingbackURL(url)
         return true
     }
 

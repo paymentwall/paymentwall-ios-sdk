@@ -12,6 +12,15 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var resultLabel: UILabel!
     
+    var brick: PWOptionBrick!
+    var mint: PWOptionMint!
+    var mobiamo: PWOptionMobiamo!
+    var widget: PWOptionWidget!
+    var alipay: PWOptionAlipay!
+    var mycard: PWOptionMyCard!
+    var wechatpay: PWOptionWechatpay!
+    var options: [Any]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,143 +33,148 @@ class ViewController: UIViewController {
     }
     
     @IBAction func startPaymentsBtnTouch(_ sender: Any) {
-        setupPayment()
-        PWCoreSDK.sharedInstance().showPaymentOptionsViewController(withParentViewcontroller: self, delegate: self, showCompletion: nil)
+        let paymentObject = setupPaymentObject()
+        PWCoreSDK.sharedInstance().showPaymentVC(withParentVC: self, paymentObject: paymentObject, paymentOption: options, delegate: self)
+    }
+    
+    func setupPaymentObject() -> PWPaymentObject {
+        ///Setup payment object
+        let payment = PWPaymentObject()
+        payment.currency = "USD"
+        payment.price = NSDecimalNumber(string: "0.99")
+        payment.userID = "testuid"
+        payment.itemID = "testid"
+        payment.name = "test"
+        return payment
+    }
+    
+    func setupUI() {
+        ///Setup CoreSDK UI
+        let custom = PWCustomization()
+        custom.headerBackgroundColor = UIColor.green
+        custom.infoTextFont = UIFont(name: "Times New Roman", size: 16)
+        custom.cellTextFont = UIFont(name: "Times New Roman", size: 16)
+        custom.barStyle = UIBarStyle.black
+        custom.commonTextColor = UIColor.red
+        custom.cellTextColor = UIColor.purple
+        custom.loaderExtraMessageTextColor = UIColor.green
+        PWCoreSDK.sharedInstance().setCustomizationForDefaultUI(custom)
+        //        PWCoreSDK.sharedInstance().setUIPackage(PWGameUIPlugin())
     }
     
     func setupPaymentwall() {
         self.setupUI()
         
         ///Setup CoreSDK payment systems
-        PWCoreSDK.sharedInstance().setupPaymentwall(withProjectKey: "YOUR_PUBLIC_KEY", secretKey: "YOUR_SECRET_KEY", requestTimeout: 30, clearPaymentMethodsAfterFinish: false)
+//        PWCoreSDK.sharedInstance().setGlobalProjectKey("YOUR_PUBLIC_KEY")
+//        PWCoreSDK.sharedInstance().setGlobalSecretKey("YOUR_SECRET_KEY")
+        PWCoreSDK.sharedInstance().setGlobalProjectKey("f29e7441a54debd44f903a2b7c40b15d")
+//        PWCoreSDK.sharedInstance().setGlobalSecretKey("dec31fb340f14b63b42f458431e12d12")
         
-        PWCoreSDK.sharedInstance().addBrickPayment(withPublicKey: nil, useNativeFinishDialog: true, cardScannerPlugin: PWCardScannerPlugin.sharedInstance())
-        PWCoreSDK.sharedInstance().addMintPayment(withAppID: nil)
-        PWCoreSDK.sharedInstance().addMobiamoPayment(withAppID: nil, noPrice: true)
-        PWCoreSDK.sharedInstance().addPWLocalPayment(with: .DIGITAL_GOODS_FLEXIBLE, secretKey: nil)
+        brick = PWOptionBrick()
+        brick.overrideProjectKey = "t_d13a62cafbfc534efdecef3b7b63c0"
+        brick.setCardScannerPlugin(PWCardScannerPlugin())
         
-        //Setup CoreSDK plugins for native payment systems
-        let alipayInternational = setupAlipayInternational()
-        let wechatpay = setupWechatpay()
-        let mycard = setupMYCard()
+        mint = PWOptionMint()
         
-        PWCoreSDK.sharedInstance().addCustomPaymentOptions([alipayInternational,wechatpay, mycard])
-    }
-    
-    func setupUI() {
-        ///Setup CoreSDK UI
-        PWCoreSDK.sharedInstance().setUIPackage(PWGameUIPlugin())
-        PWCoreSDK.sharedInstance().setShowBrickFooter(true)
+        mobiamo = PWOptionMobiamo()
         
-        let custom = PWCustomization()
-        custom.headerBackgroundColor = UIColor.red
-        custom.barStyle = .black
-        custom.infoCardTextAttribute = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 16)!, NSForegroundColorAttributeName: UIColor.purple]
-        custom.optionTextColor = UIColor.green
-        custom.optionBackgroundImageMode = .scaleAspectFill
-        let customBtn = UIButton(type: .custom)
-        customBtn.backgroundColor = UIColor.black
-        customBtn.tintColor = UIColor.black
-        custom.buttonConfig = customBtn
-//        PWCoreSDK.sharedInstance().setUseCustomization(custom)
-    }
-    
-    func setupAlipayInternational() -> PWAlipayPlugin {
-        let alipay = PWAlipayPlugin()
+        let widgetFlex = PWWidgetDigitalGoodsFlexible()
+        widgetFlex.widget = "m2_1"
+        widgetFlex.ag_type = "fixed"
+        widgetFlex.success_url = "https://google.com"
+        widget = PWOptionWidget(type: PWWidgetType.digitalGoodsFlexible, extraParams: widgetFlex)
+        widget.overrideProjectKey = "dea07cfb5300badc9b002009facad651"
+        widget.overrideSecretKey = "dec31fb340f14b63b42f458431e12d12"
+        
+        mycard = PWOptionMyCard()
+        
+        wechatpay = PWOptionWechatpay()
+        
+        alipay = PWOptionAlipay()
         alipay.appId = "external" //International
         alipay.appScheme = "pwsdkdemo"
-        
         //international alipay
         alipay.itbPay = "30m"
         alipay.forexBiz = "FP"
         alipay.appenv = "system=ios^version=\(UIDevice.current.systemVersion)"
         
-        return alipay
-    }
-    
-    func setupWechatpay() -> PWWechatpayPlugin {
-        let wechatpay = PWWechatpayPlugin()
-        wechatpay.appScheme = "WECHATPAY_APPID"
-        return wechatpay
-    }
-    
-    func setupMYCard() -> PWMyCardPlugin {
-        let mycard = PWMyCardPlugin()
-        return mycard
-    }
-    
-    func setupPayment() {
-        ///Setup payment object
-        let payment = PaymentObject()
-        payment.name = "item"
-        payment.price = 0.99
-        payment.currency = "USD"
-        payment.image = nil
-        payment.userID = "testuser1"
-        payment.itemID = "itemid1"
-        payment.signVersion = 3
-        var customSetting = ["widget":"m2_1",
-                             "ag_type":"fixed"]
-        //If using custom signing:
-        //let strToSign = PWCoreSDK.sharedInstance().getStringToSign(customSetting, paymentObject: payment) //Call after setting all other value
-        //customSetting["key"] = "YOUR_PUBLIC_KEY"
-        //customSetting["sign"] = sha256(text: "\(strToSign!)YOUR_SECRET_KEY")
-        payment.pwLocalParams = customSetting
-        PWCoreSDK.sharedInstance().setPaymentObject(payment)
+        options = [brick, mint, mobiamo, widget, alipay, mycard, wechatpay]
     }
 }
 
 extension ViewController: PWCoreSDKDelegate {
-    func paymentResponse(_ response: PWCoreSDKResponse?) {
-        guard let response = response else {
-            return
-        }
+    func paymentResponse(_ response: PWCoreSDKResponse) {
         
-        print("\(self.statusMsg(type: response.paymentType, msg: response.message))")
-        resultLabel.text = statusMsg(type: response.paymentType, msg: response.message)
+        var message = response.message ?? ""
         
         switch response.responseCode {
-        case .SUCCESSFUL:
-            let alert = UIAlertView(title: "Congrats", message: "Successfully payment", delegate: nil, cancelButtonTitle: "OK")
+        case .successful:
+            let alert = UIAlertView(title: "Congrats", message: "Payment successful", delegate: nil, cancelButtonTitle: "OK")
             alert.show()
+            message = "Success"
+        case .failed:
             break
-        case .FAILED:
+        case .cancel:
+            message = "Cancelled"
             break
-        case .CANCEL:
-            break
-        case .MERCHANT_PROCESSING:
+        case .signatureRequiring:
+            switch response.signatureAlgorithm {
+            case .MD5:
+                PWCoreSDK.sharedInstance().continuePayment(withSign: md5("\(response.stringToSign!)d283a4f7768976b2f1511e56ee3e1700"))
+            case .SHA256:
+                PWCoreSDK.sharedInstance().continuePayment(withSign: sha256("\(response.stringToSign!)d283a4f7768976b2f1511e56ee3e1700"))
+            }
+        case .merchantProcessing:
             /*
-            Process the one-time token in your backend asynchronous
-            After finish:
-            - Success without asking to store card: 
-             NotificationCenter.default.post(name: Notification.Name(BRICK_TOKEN_PROCESSED_FINISH), object: nil, userInfo: nil)
-            - Success with asking to store card:
-             NotificationCenter.default.post(name: Notification.Name(BRICK_TOKEN_PROCESSED_FINISH), object: nil, userInfo: chargedObjectDict)
-            - Error:
-             NotificationCenter.default.post(name: Notification.Name(BRICK_TOKEN_PROCESSED_FINISH), object: nil, userInfo: ["error":"some error"])
-            - 3D secure:
-             NotificationCenter.default.post(name: Notification.Name(BRICK_TOKEN_PROCESSED_FINISH), object: nil, userInfo: ["secure":"3d secure URL string"])
-            >After 3D secure, the SDK will redirect to your sever URL, response ["success":1] will be equal to success without asking to store card.
-            */
-            break
+             Process the one-time token in your backend asynchronously
+             After finish:
+             - Success without asking to store card:
+             brick.handleBackendChargeResult(true, chargeObject: nil, secureURL: nil, errorMessage: nil)
+             - Success with asking to store card:
+             brick.handleBackendChargeResult(true, chargeObject: chargedObjectDict, secureURL: nil, errorMessage: nil)
+             - Error:
+             brick.handleBackendChargeResult(false, chargeObject: nil, secureURL: nil, errorMessage: "some error")
+             - 3D secure:
+             brick.handleBackendChargeResult(false, chargeObject: nil, secureURL: url, errorMessage: nil)
+             >After 3D secure, the SDK will redirect to your sever URL, response ["success":1] will be equal to success without asking to store card.
+             */
+            if response.paymentType == PWPaymentTypeBrick {
+                brick.handleBackendChargeResult(true, chargeObject: nil, secureURL: nil, errorMessage: nil)
+            }
         }
+        
+        resultLabel.text = message
+        print(message)
+    }
+}
+
+extension ViewController {
+    func sha256(_ string: String) -> String {
+        guard let data = string.data(using: .utf8) else {
+            return ""
+        }
+        var hash = [UInt8](repeating: 0,  count: Int(CC_SHA256_DIGEST_LENGTH))
+        data.withUnsafeBytes {
+            _ = CC_SHA256($0, CC_LONG(data.count), &hash)
+        }
+        let shaData = Data(bytes: hash)
+        let sign = shaData.map { String(format: "%02hhx", $0) }.joined()
+        return sign
     }
     
-    func statusMsg(type: PaymentType, msg: String) -> String {
-        switch type {
-        case .NONE:
-            return "\(msg)"
-        case .MINT:
-            return "Mint \(msg)"
-        case .PWLOCAL:
-            return "PWlocal \(msg)"
-        case .BRICK:
-            return "Brick \(msg)"
-        case .MOBIAMO:
-            return "Mobiamo \(msg)"
-        case .OTHERS:
-            return "Others \(msg)"
+    func md5(_ string: String) -> String {
+        guard let data = string.data(using: .utf8) else {
+            return ""
         }
+        var digestData = Data(count: Int(CC_MD5_DIGEST_LENGTH))
+        
+        _ = digestData.withUnsafeMutableBytes {digestBytes in
+            data.withUnsafeBytes {messageBytes in
+                CC_MD5(messageBytes, CC_LONG(data.count), digestBytes)
+            }
+        }
+        return digestData.map { String(format: "%02hhx", $0) }.joined()
     }
 }
 

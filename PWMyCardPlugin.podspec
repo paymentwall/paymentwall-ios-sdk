@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWMyCardPlugin"
-  s.version      = "2.2.2"
+  s.version      = "3.0.0"
   s.summary      = "PWMyCardPlugin"
   s.description  = "Plugin for MyCard payment option for PWCoreSDK"
   s.homepage     = "http://paymentwall.com"
@@ -20,6 +20,6 @@ Pod::Spec.new do |s|
 
   s.libraries = 'PWCoreSDK'
 
-  s.dependency 'PWCoreSDK', '>= 2.0.0'
+  s.dependency 'PWCoreSDK', '>= 3.0.0'
 
 end
