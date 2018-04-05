@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/paymentwall/paymentwall-ios-sdk-master.git", :tag => 'v'+String(s.version) }
   s.source_files = "Plugins/PWAlipayPlugin", "Plugins/PWAlipayPlugin/Headers/*.{h,m}"
-  s.resources    = "Plugins/PWAlipayPlugin/PWAlipayPlugin.bundle"
+  s.resources    = "Plugins/PWAlipayPlugin/PWAlipayPluginResource.bundle"
 
   s.vendored_libraries = "Plugins/PWAlipayPlugin/libPWAlipayPlugin.a"
 

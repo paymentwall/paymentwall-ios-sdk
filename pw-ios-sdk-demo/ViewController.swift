@@ -45,47 +45,42 @@ class ViewController: UIViewController {
         payment.userID = "testuid"
         payment.itemID = "testid"
         payment.name = "test"
+        payment.image = #imageLiteral(resourceName: "item1")
         return payment
     }
     
     func setupUI() {
         ///Setup CoreSDK UI
         let custom = PWCustomization()
-        custom.headerBackgroundColor = UIColor.green
-        custom.infoTextFont = UIFont(name: "Times New Roman", size: 16)
-        custom.cellTextFont = UIFont(name: "Times New Roman", size: 16)
-        custom.barStyle = UIBarStyle.black
-        custom.commonTextColor = UIColor.red
+        custom.headerBackgroundColor = UIColor.clear
+        custom.barStyle = UIBarStyle.blackOpaque
+        custom.commonBackgroundImage = #imageLiteral(resourceName: "optionBackground")
+        custom.commonTextColor = UIColor.white
         custom.cellTextColor = UIColor.purple
-        custom.loaderExtraMessageTextColor = UIColor.green
+        custom.cellBackgroundColor = UIColor.white
         PWCoreSDK.sharedInstance().setCustomizationForDefaultUI(custom)
-        //        PWCoreSDK.sharedInstance().setUIPackage(PWGameUIPlugin())
+//        PWCoreSDK.sharedInstance().setUIPackage(PWGameUIPlugin())
     }
     
     func setupPaymentwall() {
         self.setupUI()
         
         ///Setup CoreSDK payment systems
-//        PWCoreSDK.sharedInstance().setGlobalProjectKey("YOUR_PUBLIC_KEY")
-//        PWCoreSDK.sharedInstance().setGlobalSecretKey("YOUR_SECRET_KEY")
-        PWCoreSDK.sharedInstance().setGlobalProjectKey("f29e7441a54debd44f903a2b7c40b15d")
-//        PWCoreSDK.sharedInstance().setGlobalSecretKey("dec31fb340f14b63b42f458431e12d12")
+        PWCoreSDK.sharedInstance().setGlobalProjectKey("YOUR_PUBLIC_KEY")
+        PWCoreSDK.sharedInstance().setGlobalSecretKey("YOUR_SECRET_KEY")
         
         brick = PWOptionBrick()
-        brick.overrideProjectKey = "t_d13a62cafbfc534efdecef3b7b63c0"
         brick.setCardScannerPlugin(PWCardScannerPlugin())
         
         mint = PWOptionMint()
         
         mobiamo = PWOptionMobiamo()
+        mobiamo.useNoPrice = true
         
         let widgetFlex = PWWidgetDigitalGoodsFlexible()
         widgetFlex.widget = "m2_1"
         widgetFlex.ag_type = "fixed"
-        widgetFlex.success_url = "https://google.com"
         widget = PWOptionWidget(type: PWWidgetType.digitalGoodsFlexible, extraParams: widgetFlex)
-        widget.overrideProjectKey = "dea07cfb5300badc9b002009facad651"
-        widget.overrideSecretKey = "dec31fb340f14b63b42f458431e12d12"
         
         mycard = PWOptionMyCard()
         
@@ -121,9 +116,9 @@ extension ViewController: PWCoreSDKDelegate {
         case .signatureRequiring:
             switch response.signatureAlgorithm {
             case .MD5:
-                PWCoreSDK.sharedInstance().continuePayment(withSign: md5("\(response.stringToSign!)d283a4f7768976b2f1511e56ee3e1700"))
+                PWCoreSDK.sharedInstance().continuePayment(withSign: md5("\(response.stringToSign!)YOUR_SECRET_KEY"))
             case .SHA256:
-                PWCoreSDK.sharedInstance().continuePayment(withSign: sha256("\(response.stringToSign!)d283a4f7768976b2f1511e56ee3e1700"))
+                PWCoreSDK.sharedInstance().continuePayment(withSign: sha256("\(response.stringToSign!)YOUR_SECRET_KEY"))
             }
         case .merchantProcessing:
             /*
