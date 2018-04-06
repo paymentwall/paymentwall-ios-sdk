@@ -10,3 +10,10 @@ Card Scanner Plugin is an optional plugin to add the feature that use camera to 
 let brick = PWOptionBrick()
 brick.setCardScannerPlugin(PWCardScannerPlugin())
 ```
+5. You have to specify the usage of camera and photo library to your `info.plist`:
+```xml
+<key>NSCameraUsageDescription</key>
+<string>To scan credit card</string>
+<key>NSPhotoLibraryUsageDescription</key>
+<string>To get image</string>
+```

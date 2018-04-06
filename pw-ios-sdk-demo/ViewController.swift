@@ -37,8 +37,8 @@ class ViewController: UIViewController {
         PWCoreSDK.sharedInstance().showPaymentVC(withParentVC: self, paymentObject: paymentObject, paymentOption: options, delegate: self)
     }
     
+    ///Setup payment object
     func setupPaymentObject() -> PWPaymentObject {
-        ///Setup payment object
         let payment = PWPaymentObject()
         payment.currency = "USD"
         payment.price = NSDecimalNumber(string: "0.99")
@@ -49,8 +49,8 @@ class ViewController: UIViewController {
         return payment
     }
     
+    ///Setup CoreSDK UI
     func setupUI() {
-        ///Setup CoreSDK UI
         let custom = PWCustomization()
         custom.headerBackgroundColor = UIColor.clear
         custom.barStyle = UIBarStyle.blackOpaque
@@ -62,10 +62,10 @@ class ViewController: UIViewController {
 //        PWCoreSDK.sharedInstance().setUIPackage(PWGameUIPlugin())
     }
     
+    ///Setup CoreSDK payment systems
     func setupPaymentwall() {
         self.setupUI()
         
-        ///Setup CoreSDK payment systems
         PWCoreSDK.sharedInstance().setGlobalProjectKey("YOUR_PUBLIC_KEY")
         PWCoreSDK.sharedInstance().setGlobalSecretKey("YOUR_SECRET_KEY")
         
