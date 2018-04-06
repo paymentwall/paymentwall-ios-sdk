@@ -8,7 +8,7 @@ HOW DOES IT WORK?
 1. Add the framework to your project.
 With different areas, we provide corresponding external payment system framework files. You can add as many as you want. You can also enable/disable default payment options too. You can add any payment option as they want by importing the payment system framework and framework plugin provided by Paymentwall to your project
 2. User requests a purchase inside your application.
-3. Paymentwall SDK initializes payment screen with 3 core payment options (Brick, MINT, Mobiamo) and the other is “Local Payments” option.
+3. Paymentwall SDK initializes payment screen with 3 core payment options (Brick, Mint, Mobiamo) and the other is “Local Payments” option.
 4. User initiates payment in-app
 With Brick, Mint, Mobiamo the payment process will totally be native.
 With local payments, local payment screen will be shown with payment methods corresponding to user’s current location. Here users can then select a payment option they prefer.
@@ -35,4 +35,3 @@ Available extra plugins
 ------------------------------
 - [Card scanner](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCardScannerPlugin)
 - [GameUI](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWGameUIPlugin)
-- [UI Customization](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCustomizationPlugin) (Deprecated)

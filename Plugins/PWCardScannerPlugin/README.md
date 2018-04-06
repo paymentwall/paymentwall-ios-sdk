@@ -7,5 +7,6 @@ Card Scanner Plugin is an optional plugin to add the feature that use camera to 
 3. Import the library header into your project or via `bridging-headers.h` if you use Swift
 4. Add it within brick payment method creation:
 ```swift
-PWCoreSDK.sharedInstance().addBrickPayment(withPublicKey: nil, useNativeFinishDialog: true, cardScannerPlugin: PWCardScannerPlugin.sharedInstance())
+let brick = PWOptionBrick()
+brick.setCardScannerPlugin(PWCardScannerPlugin())
 ```

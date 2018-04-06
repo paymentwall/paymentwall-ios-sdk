@@ -58,7 +58,7 @@ class ViewController: UIViewController {
         custom.commonTextColor = UIColor.white
         custom.cellTextColor = UIColor.purple
         custom.cellBackgroundColor = UIColor.white
-        PWCoreSDK.sharedInstance().setCustomizationForDefaultUI(custom)
+//        PWCoreSDK.sharedInstance().setCustomizationForDefaultUI(custom)
 //        PWCoreSDK.sharedInstance().setUIPackage(PWGameUIPlugin())
     }
     

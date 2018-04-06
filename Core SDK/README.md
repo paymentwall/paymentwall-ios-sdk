@@ -1,5 +1,4 @@
-# Core SDK Integration Instruction
----------------------
+﻿# Core SDK Integration Instruction
 ## Step 1: Add Core SDK
 
 Our SDK is delivered as static library or public repository.
@@ -33,19 +32,15 @@ Our SDK is delivered as static library or public repository.
 ## Step 2: Setup Core SDK
 
 ```swift
-PWCoreSDK.sharedInstance().setupPaymentwall(withProjectKey: "YOUR PUBLIC KEY", secretKey: "YOUR SECRET KEY", requestTimeout: 30, clearPaymentMethodsAfterFinish: false)
+PWCoreSDK.sharedInstance().setGlobalProjectKey("YOUR_PUBLIC_KEY")
 ```
->Project key: All payment option will use this Project key if their Project key set to nil, you also can specify their own Project key
-
->Secret key: PWLocal and local payment options plugins will use this Secret key as default if you specify it here
+>Project key: All payment option will use this Project key if you don't override Project key while declaring them.
 
 ## Step 3: Extra Settings (Optional)
-- `clearPaymentMethodsAfterFinish`: set to true if you wish to remove payment system, which are already added, after the SDK view controller is closed. You will have to add the payment system again, but the UI setting will be kept.
+- `setGlobalSecretKey`: Some payment option will require signing the request to continue payment. You can specify your project's secret key here so that the SDK can help you sign the request to continue.
+- `setGlobalSignType`: Specify the signature algorithm that you wanted to use.
+- `setRequestTimeOut`: Request time out for the request in second. Also apply for delegate callback that require futher action such as `PWPaymentResponseCodeMerchantProcessing` or `PWPaymentResponseCodeSignatureRequiring`.
 - Default UI of the SDK is flat style, to use game UI, check [PWGameUIPlugin](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWGameUIPlugin)
-- By default (except Brick), all payments method will show success once the payment is finish, if you don't want to use the SDK's success dialog but return delegate for you to work with, add this to your code: `PWCoreSDK.sharedInstance().setUseNativeFinishDialogForAllMethods(false)`
-- To show bank processor address for Brick, use `PWCoreSDK.sharedInstance().setShowBrickFooter(true)`
-- To use custom icon for local payments, use `PWCoreSDK.sharedInstance().setCustomLocalPaymentImage(image)`
-
 
 ## Step 4: Add Payment Methods
 You can choose one or more payment methods according to your needs.
@@ -56,39 +51,29 @@ You can choose one or more payment methods according to your needs.
 * [Mobiamo](#mobiamo)
 * [External payment methods](#external-payment-methods)
 
-## Step 5: Build Unified Payment Params
-
-Create new payment with `PaymentObject` class and assign to the CoreSDK:
+## Step 5: Create new payment
+Create new payment with `PaymentObject` class:
 ```swift
-let payment = PaymentObject()
-payment.name = choosenItem.name
-payment.price = Double(choosenItem.price)!
+let payment = PWPaymentObject()
 payment.currency = "USD"
-payment.image = choosenItem.image
-payment.userID = "test_user"
-payment.itemID = choosenItem.name+"id"
-payment.signVersion = 3
-
-let customSetting = ["widget":"pw",
-                    "ag_type":"fixed"]
-payment.pwLocalParams = customSetting
-
-PWCoreSDK.sharedInstance().setPaymentObject(payment)
+payment.price = NSDecimalNumber(string: "0.99")
+payment.userID = "testuid"
+payment.itemID = "testid"
+payment.name = "test"
 ```
-
->Note: pwLocalParams can be Dictionary or any of the defined class: `CartDefaultWidget`, `DigitalGoodsDefaultWidget`, `DigitalGoodsFlexibleWidget`, `VirtualCurrency`, refer their headers for required property or [PWLocal docs](https://github.com/paymentwall/paymentwall-pwlocal-ios). Key and value like prices, amount, currencyCode, currencies, ag_name, ag_external_id, uid will be ignored and use the one you described in `PaymentObject`
 
 ## Step 6: Present View Controller
 Present Payment options view controller:
 
 ```swift
-PWCoreSDK.showPaymentOptionsViewController(withParentViewcontroller: self, delegate: self, showCompletion: nil)
+let options = [brick, mint, mobiamo, widget]
+PWCoreSDK.sharedInstance().showPaymentVC(withParentVC: self, paymentObject: payment, paymentOption: options, delegate: self)
 ```
 ## Step 7: Handle callback URL
-Add this code in your AppDelegate  to handle callback from other app if you use plugins (suchs as Alipay, Unionpay, Paypal,...)
+Add this code in your `AppDelegate`  to handle callback from other app if you use plugins (suchs as Alipay, Unionpay, Paypal,...)
 ```swift
 func application(_ app: UIApplication, open url: URL, options:[UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-    PWCoreSDK.sharedInstance().handleOpen(url)
+    PWCoreSDK.sharedInstance().handlePingbackURL(url)
     return true
 }
 ```
@@ -97,23 +82,19 @@ func application(_ app: UIApplication, open url: URL, options:[UIApplicationOpen
  Implement `PWCoreSDKDelegate` protocol to handle payment response:
 
 ```swift
-func paymentResponse(_ response: PWCoreSDKResponse?) {
-    guard let response = response else { return }
+func paymentResponse(_ response: PWCoreSDKResponse) {
     switch response.responseCode {
-        case .SUCCESSFUL:
-        case .FAILED:
-        case .CANCEL:
-        case .MERCHANT_PROCESSING:
-        //Example when you use Brick and `useNativeFinishDialog == true` can be found below
-    }
-
-    switch response.paymentType {
-        case .NONE:
-        case .MINT:
-        case .PWLOCAL:
-        case .BRICK:
-        case .MOBIAMO:
-        case .OTHERS:
+        case .successful: //Payment is successful
+        case .failed: //Payment is failed, the SDK will show error popup automatically if this happen
+        case .cancel: //Payment is cancelled
+        case .signatureRequiring: //Only need to handle this case if you didn't provide the SDK with your Secret key
+	        switch response.signatureAlgorithm {
+				case .MD5:
+					PWCoreSDK.sharedInstance().continuePayment(withSign: md5("\(response.stringToSign!)YOUR_SECRET_KEY"))
+				case .SHA256:
+					PWCoreSDK.sharedInstance().continuePayment(withSign: sha256("\(response.stringToSign!)YOUR_SECRET_KEY"))
+			}
+        case .merchantProcessing: //Some option will require you to process it futher from your backend, such as Brick, refer below on how to handle them
     }
 }
 ```
@@ -121,40 +102,21 @@ func paymentResponse(_ response: PWCoreSDKResponse?) {
 Usage:
 ```swift
 let custom = PWCustomization()
-//Config properties
-PWCoreSDK.sharedInstance().setUseCustomization(custom)
+//Config properties...
+PWCoreSDK.sharedInstance().setCustomizationForDefaultUI(custom)
 ```
 
-- `UIBarStyle barStyle`: Change the status bar style
-
-- `NSDictionary* infoCardTextAttribute`: You can set custom font and color of infoCard text with this property eg. item name and item value
-- `UIColor* infoCardBackgroundColor`: Background color for the infoCard, default is 0xFFFFFF
-- `UIImage* infoCardImage`: Replace the infoCard background with your own image, default is nil
-- `UIViewContentMode infoCardImageMode`: Image content mode for infoCard background, default is UIViewContentModeScaleAspectFill
-
-- `UIColor* headerBackgroundColor`: Change the header color, default is 0xFBBD30
-- `UIImage* headerBackgroundImage`: Add image to the header view, default is nil
-- `UIViewContentMode headerBackgroundImageMode`: Image content mode for header background, default is UIViewContentModeScaleAspectFill
-
-- `UIColor* optionTextColor`: Set color for the text in option method background, does not affect cell, default is 0x000000
-- `UIColor* optionBackgroundColor`: Background color for the whole view
-- `UIImage* optionBackgroundImage`: Set image as background for the whole view, you can set alpha = 0 color for `headerBackgroundColor` to show whole image, default is nil
-- `UIViewContentMode optionBackgroundImageMode`: Image content mode for view background image, default is UIViewContentModeScaleAspectFill
-
-- `UIButton* buttonConfig`: Set custom UI property for this property to change some button to your liking, eg. backgroundColor, tintColor, titleColor, image
-
-![customization_guide](https://user-images.githubusercontent.com/23113471/27816093-84af641a-60b3-11e7-9a8b-d2dd01a3eafc.png)
+![customization_guide](https://user-images.githubusercontent.com/23113471/38403571-9758f6bc-398e-11e8-839a-24cf1bc84c10.png)
 
 # Payment Methods Integration Details
 ## Brick
-**Step 1: Add Brick to Core SDK**
+**Step 1: Create PWOptionBrick**
 
 ```swift
-PWCoreSDK.sharedInstance().addBrickPayment(withPublicKey: nil, useNativeFinishDialog: true, cardScannerPlugin: PWCardScannerPlugin.sharedInstance())
+let brick = PWOptionBrick()
+brick.setCardScannerPlugin(PWCardScannerPlugin())
 ```
-> If `useNativeFinishDialog` is set to `false`, the SDK will dismiss after token is successfully fetched, the `response.responseCode` will also be `.MERCHANT_PROCESSING`, you will have to handle success/failed/3D secure by yourself and store card feature won't be available
-
->If `useNativeFinishDialog` is set to `true`, the loading popup will keep showing, after you process the token in your sever, post a `Notification` to use the SDK success or failed dialog, also the SDK will call delegate again to return `.SUCCESS` or `.FAILED`
+> [PWCardScannerPlugin](https://github.com/paymentwall/paymentwall-ios-sdk/tree/master/Plugins/PWCardScannerPlugin) is a plugin that will help your user to scan their credit card without manually input, powered by Card.io
 
 
 **Step 2: Handle One Time Token**
@@ -172,73 +134,53 @@ Parameters and description can be referred [here](https://paymentwall.github.io/
 **Step 4: Handle Charge Response**
 
 ```swift
-if response.paymentType == .BRICK {
-    if let returnedToken = response.token {
-        //Process the token with your server here asynchronous
-        //When done:
-        NotificationCenter.default.post(name: Notification.Name(BRICK_TOKEN_PROCESSED_FINISH), object: nil, userInfo: nil)
-    }
-}
+case .merchantProcessing:
+	if response.paymentType == PWPaymentTypeBrick {
+		//Process the one-time token in your backend asynchronously
+		//After finish:
+		brick.handleBackendChargeResult(true, chargeObject: nil, secureURL: nil, errorMessage: nil)
+	}
 ```
-- Pass the error in Dictionary as `["error": errorMessage]` via `userInfo`, the SDK will automatically show failed dialog instead of successful dialog
+- Pass the `errorMessage` will make the SDK will automatically show failed dialog instead of successful dialog
 
-- If 3D secure is necessary, pass the URL in Dictionary as `["secure": urlString]` via `userInfo`, the SDK will automatically show the 3D secure page and pass `SUCCESS/FAILED` back to app after user finishes entering secure info
+- If 3D secure is necessary, pass the URL in `secureURL`, the SDK will automatically show the 3D secure page and pass `SUCCESS/FAILED` back to app after user finishes entering secure info
 
-- If you want to enable store card feature for user, pass the Charge object to our SDK via `userInfo`, Charge object format can be found in our [Brick docs](https://www.paymentwall.com/en/documentation/Brick/2968)
+- If you want to enable store card feature for user, pass the Charge object to our SDK via `chargeObject` as Dictionary, Charge object format can be found in our [Brick docs](https://www.paymentwall.com/en/documentation/Brick/2968)
 
 
-## PwLocal
+## PWLocal - PWOptionWidget
 
-**Step 1: Add PwLocal**
+**Create PWOptionWidget**
 
 ```swift
-PWCoreSDK.sharedInstance().addPWLocalPayment(with: .DIGITAL_GOODS_FLEXIBLE, secretKey: nil)
+let widgetFlex = PWWidgetDigitalGoodsFlexible()
+widgetFlex.widget = "m2_1"
+widgetFlex.ag_type = "fixed"
+
+let widget = PWOptionWidget(type: PWWidgetType.digitalGoodsFlexible, extraParams: widgetFlex)
 ```
-> Value for `type`: VIRTUAL_CURRENCY / DIGITAL_GOODS_FLEXIBLE / DIGITAL_GOODS_DEFAULT / CART
+> Value for `type`: `PWWidgetType` enum
 
-**Step 2:Signature Calculation**
-
-If you wish to provide your PWLocal signature manually:
-
-```swift
-//Define all params in step 8., and extra custom settings, then get `stringToSign`:
-
-let payment = PaymentObject()
-payment.name = choosenItem.name
-payment.price = Double(choosenItem.price)!
-payment.currency = "USD"
-payment.image = choosenItem.image
-payment.userID = "test_user"
-payment.itemID = choosenItem.name+"id"
-payment.signVersion = 3
-let customSetting = ["widget":"pw",
-                    "ag_type":"fixed"]
-
-let strToSign = PWCoreSDK.sharedInstance().getStringToSign(customSetting, paymentObject: payment)
-
-//Calculate your sign and set it
-customSetting["sign"] = sha256(text: "\(strToSign!)YOUR SECRET KEY")
-payment.pwLocalParams = customSetting
-```
+>Note: `extraParams` can be Dictionary or any of the defined class: `PWWidgetDigitalGoodsFlexible`, `PWWidgetDigitalGoodsDefaut`, `PWWidgetVirtualCurrency`, `PWWidgetCart`, refer their headers for required property or [PWLocal docs](https://github.com/paymentwall/paymentwall-pwlocal-ios). Key and value like prices, amount, currencyCode, currencies, ag_name, ag_external_id, uid will be ignored and use the one you described in `PaymentObject`
 
 ## Mint
 
-**Add Mint**
+**Create PWOptionMint**
 
 ```swift
-PWCoreSDK.sharedInstance().addMintPayment(withAppID: nil)
+let mint = PWOptionMint()
 ```
 
 ## Mobiamo
 
-**Add Mobiamo**
+**Create PWOptionMobiamo**
 
 ```swift
-PWCoreSDK.sharedInstance().addMobiamoPayment(withAppID: nil, noPrice: true)
+let mobiamo = PWOptionMobiamo()
+mobiamo.useNoPrice = true
 ```
-> If `noPrice` is set to `true`: Default Mobiamo price points will be used for each country.
-
-> If `noPrice` is omitted: The price will be shown as you set in SDK.
+> If `useNoPrice` is set to `true`: Default Mobiamo price points will be used for each country.
+> If `useNoPrice` is omitted: The price will be shown as you set in SDK.
 
 ## External Payment Methods
 
@@ -247,9 +189,10 @@ Paymentwall SDK supports external payment system injection (which are in our def
 **Step 1: Add Payment options to Core SDK**
 
 ```swift
-PWCoreSDK.sharedInstance().addCustomPaymentOptions([alipay, unionpay, ...])
+//You can pass it along with core sdk options array
+let options = [brick, mint, mobiamo, widget, alipay, mycard, wechatpay]
 ```
->Note: These payment options will be placed in `Local payments` together with PWLocal.
+>Note: These payment options will be placed in `Local payments` together with PWOptionWidget.
 
 **Step 2: Import Plugin SDK**
 
@@ -263,4 +206,4 @@ Import the library header into your project or via `bridging-headers.h` if you u
 
 Each plugin has different requirements. Details can be found in their headers or detailed docs below.
 
->Note: All plugins support your own signature string if you don't specify Secret key in both CoreSDK and PluginSDK. Use `plugin.getStringToSign()` to get the string to sign, then add your signed string to `plugin.signString`
+>Note: All plugins support your own signature string if you don't specify Secret key in both CoreSDK and PluginSDK.

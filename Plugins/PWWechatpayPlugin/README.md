@@ -6,26 +6,18 @@ Paymentwall SDK supports external payment system injection (which are in our def
 2. Import the library header into your project in `bridging-headers.h` if you use Swift
 3. Setup the plugin, each plugin have different requirements so please check their header files and local payment option docs on their websites for more information:
 ```swift
-let wechatpay = PWWechatpayPlugin()
-
-//Required
-wechatpay.appScheme = "YOUR APP SCHEME"
+let wechatpay = PWOptionWechatpay()
 
 //Optional
-wechatpay.pwProjectKey = "YOUR PROJECT KEY"
-wechatpay.pwSecretKey = "YOUR SECRET KEY"
+wechatpay.overrideProjectKey = "YOUR PROJECT KEY"
+wechatpay.overrideSecretKey = "YOUR SECRET KEY"
+wechatpay.overrideSignVersion = .SHA256
 ```
-4. If secret key is not set in both PWCoreSDK and this plugin, you have to generate and provide `signString` for the Plugin:
-```swift
-//Get string to sign - call this after set all required values in step 3. and set PaymentObject in PWCoreSDK
-let strToSign = wechatpay.getStringToSign()
-
-//Append your secret key to the end and calculate, then set to `signString`, have to do it again with new PaymentObject
-wechatpay.signString = calculateSign(with: strToSign)
-```
+4. If secret key is not set in both PWCoreSDK and this plugin, you will have to handle the `.signatureRequiring` in your `PWCoreSDKDelegate` callback
 5. Add to CoreSDK:
 ```swift
-PWCoreSDK.sharedInstance().addCustomPaymentOptions([wechatpay])
+options.append(wechatpay)
+PWCoreSDK.sharedInstance().showPaymentVC(withParentVC: self, paymentObject: payment, paymentOption: options, delegate: self)
 ```
 6. App scheme is required in `info.plist`:
 ```xml
@@ -52,4 +44,4 @@ PWCoreSDK.sharedInstance().addCustomPaymentOptions([wechatpay])
 ```
 
 ## Important
-Make sure `YOUR APP SCHEME` is Wechatpay App id on your ps settings.
+Make sure `YOUR APP SCHEME` is Wechatpay App id on your ps settings, not the app scheme you use to call your app.
