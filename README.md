@@ -13,6 +13,10 @@ With different areas, we provide corresponding external payment system framework
 With Brick, Mint, Mobiamo the payment process will totally be native.
 With local payments, local payment screen will be shown with payment methods corresponding to user’s current location. Here users can then select a payment option they prefer.
 
+LATEST UPDATE
+-------------
+We have refactor the SDK in v3.0.0 to make the implementation process cleaner, easier, shorter and added some new features, this included the CoreSDK and all the plugins. Please check the demo app and the docs to see how to update your current code. You can check what's new on [Release section](https://github.com/paymentwall/paymentwall-ios-sdk/releases)
+
 REQUIREMENTS
 ------------
 XCode 8.0+, iOS 8.0+
