@@ -30,29 +30,33 @@ DEPENDENCIES:
   - PWMyCardPlugin (from `.`)
   - PWWechatpayPlugin (from `.`)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CardIO
+
 EXTERNAL SOURCES:
   PWAlipayPlugin:
-    :path: .
+    :path: "."
   PWCardScannerPlugin:
-    :path: .
+    :path: "."
   PWCoreSDK:
-    :path: .
+    :path: "."
   PWGameUIPlugin:
-    :path: .
+    :path: "."
   PWMyCardPlugin:
-    :path: .
+    :path: "."
   PWWechatpayPlugin:
-    :path: .
+    :path: "."
 
 SPEC CHECKSUMS:
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
-  PWAlipayPlugin: fb8153b3c42bc522b24419927084ace20adc4ee7
-  PWCardScannerPlugin: 2a3c4992b85782ed2cc2efaa4e01677cf50db4a1
-  PWCoreSDK: 443052f9d1c91e877b1757fd9cedc19d337b4f11
-  PWGameUIPlugin: 94cb50a2f9e3ff698008c8b314e36d805290a393
-  PWMyCardPlugin: e9960d1b874204f1e87194eaa48530def33d1725
-  PWWechatpayPlugin: 10272b2e5fa40b36adf5795084e23f9536174c1c
+  PWAlipayPlugin: 6ce1847a70162382de6afcd7874b419f47093ee4
+  PWCardScannerPlugin: c69e8333e0b986dc8ec73ca9352024935b05f114
+  PWCoreSDK: 04dcd33c27b55e00d7e9c2d2e4b2872c65e5fc87
+  PWGameUIPlugin: 638643f55f8fc013de1ad1bee91bf2405fcc862f
+  PWMyCardPlugin: 9f7d4f02525eeadb55160d78cd029ba9ccc0cec6
+  PWWechatpayPlugin: 11933a7cdb420d358522c34871d8e49b235596f5
 
 PODFILE CHECKSUM: a586364a0697ab5d6f69699db3127c43ff75867b
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0
