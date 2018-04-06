@@ -106,7 +106,7 @@ let custom = PWCustomization()
 PWCoreSDK.sharedInstance().setCustomizationForDefaultUI(custom)
 ```
 
-![customization_guide](https://user-images.githubusercontent.com/23113471/38403571-9758f6bc-398e-11e8-839a-24cf1bc84c10.png)
+![customization_guide](https://user-images.githubusercontent.com/23113471/38407551-247875a8-39a4-11e8-96b3-a8172d0518e5.png)
 
 # Payment Methods Integration Details
 ## Brick
