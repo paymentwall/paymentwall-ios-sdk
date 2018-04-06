@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-NSString *const PWPaymentTypeWechatpay;
+extern NSString *const PWPaymentTypeWechatpay;
 
 @interface PWOptionWechatpay : NSObject
 
