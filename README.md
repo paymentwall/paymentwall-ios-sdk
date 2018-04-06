@@ -15,7 +15,7 @@ With local payments, local payment screen will be shown with payment methods cor
 
 LATEST UPDATE
 -------------
-We have refactor the SDK in v3.0.0 to make the implementation process cleaner, easier, shorter and added some new features, this included the CoreSDK and all the plugins. Please check the demo app and the docs to see how to update your current code. You can check what's new on [Release section](https://github.com/paymentwall/paymentwall-ios-sdk/releases)
+We have refactor the SDK in v3.0.0 to make the implementation process cleaner, easier, shorter and added some new features, this included the CoreSDK and all the plugins. Please check the demo app and the docs to see how to update your current code. You can check what's new on the [Release section](https://github.com/paymentwall/paymentwall-ios-sdk/releases).
 
 REQUIREMENTS
 ------------
