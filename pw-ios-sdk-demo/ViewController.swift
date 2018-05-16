@@ -58,6 +58,11 @@ class ViewController: UIViewController {
         custom.commonTextColor = UIColor.white
         custom.cellTextColor = UIColor.purple
         custom.cellBackgroundColor = UIColor.white
+        
+        let customButton = UIButton()
+        customButton.tintColor = UIColor.purple
+        customButton.backgroundColor = .purple
+        custom.commonButtonConfig = customButton
 //        PWCoreSDK.sharedInstance().setCustomizationForDefaultUI(custom)
 //        PWCoreSDK.sharedInstance().setUIPackage(PWGameUIPlugin())
     }
