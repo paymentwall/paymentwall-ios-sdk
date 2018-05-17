@@ -126,18 +126,24 @@ extension ViewController: PWCoreSDKDelegate {
                 PWCoreSDK.sharedInstance().continuePayment(withSign: sha256("\(response.stringToSign!)YOUR_SECRET_KEY"))
             }
         case .merchantProcessing:
-            /*
+            /**
+             
              Process the one-time token in your backend asynchronously
              After finish:
              - Success without asking to store card:
-             brick.handleBackendChargeResult(true, chargeObject: nil, secureURL: nil, errorMessage: nil)
+                brick.handleBackendChargeResult(true, chargeObject: nil, secureURL: nil, errorMessage: nil)
              - Success with asking to store card:
-             brick.handleBackendChargeResult(true, chargeObject: chargedObjectDict, secureURL: nil, errorMessage: nil)
+                brick.handleBackendChargeResult(true, chargeObject: chargedObjectDict, secureURL: nil, errorMessage: nil)
              - Error:
-             brick.handleBackendChargeResult(false, chargeObject: nil, secureURL: nil, errorMessage: "some error")
+                brick.handleBackendChargeResult(false, chargeObject: nil, secureURL: nil, errorMessage: "some error")
              - 3D secure:
-             brick.handleBackendChargeResult(false, chargeObject: nil, secureURL: url, errorMessage: nil)
-             >After 3D secure, the SDK will redirect to your sever URL, response ["success":1] will be equal to success without asking to store card.
+                brick.handleBackendChargeResult(false, chargeObject: nil, secureURL: url, errorMessage: nil)
+             
+             >After 3D secure, Paymentwall backend will report the 3DS result to your server, now you can make the charge again and print the result on the webView, the webView will catch the result JSON and close the webView:
+                - {"success":1} will mark the result as success without asking to store user card.
+                - Charge object JSON will mark the result as success and ask to store user card.
+                - {"error": "error_message"} will mark the result as failed with the error message
+             
              */
             if response.paymentType == PWPaymentTypeBrick {
                 brick.handleBackendChargeResult(true, chargeObject: nil, secureURL: nil, errorMessage: nil)
