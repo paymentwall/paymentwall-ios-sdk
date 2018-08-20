@@ -39,13 +39,12 @@ class ViewController: UIViewController {
     
     ///Setup payment object
     func setupPaymentObject() -> PWPaymentObject {
-        let payment = PWPaymentObject()
-        payment.currency = "USD"
-        payment.price = NSDecimalNumber(string: "0.99")
-        payment.userID = "testuid"
-        payment.itemID = "testid"
-        payment.name = "test"
-        payment.image = #imageLiteral(resourceName: "item1")
+        let payment = PWPaymentObject(name: "test",
+                                      price: NSDecimalNumber(string: "0.99"),
+                                      itemID: "testid",
+                                      userID: "testuid",
+                                      currency: "USD",
+                                      image: #imageLiteral(resourceName: "item1"))
         return payment
     }
     

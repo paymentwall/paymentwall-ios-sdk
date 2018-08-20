@@ -9,15 +9,27 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface PWPaymentObject : NSObject
 
-@property (copy, nonatomic) NSString* _Nonnull name;
-@property (copy, nonatomic) NSDecimalNumber* _Nonnull price;
-@property (copy, nonatomic) NSString* _Nonnull currency;
-@property (strong, nonatomic) UIImage* _Nullable image;
-@property (copy, nonatomic) NSString* _Nonnull itemID; //should only include alphanumeric
-@property (copy, nonatomic) NSString* _Nonnull userID; //should only include alphanumeric
+@property (copy, nonatomic, readonly) NSString* name;
+@property (copy, nonatomic, readonly) NSDecimalNumber* price;
+@property (copy, nonatomic, readonly) NSString* currency;
+@property (strong, nonatomic, readonly) UIImage* _Nullable image;
+@property (copy, nonatomic, readonly) NSString* itemID; //should only include alphanumeric
+@property (copy, nonatomic, readonly) NSString* userID; //should only include alphanumeric
 
--(NSDictionary * _Nonnull)toDict;
+-(instancetype)initWithName:(NSString *)name
+                      price:(NSDecimalNumber *)price
+                     itemID:(NSString *)itemID
+                     userID:(NSString *)userID
+                   currency:(NSString *)currency
+                      image:(UIImage *_Nullable)image;
+
+
+-(NSDictionary *)toDict;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -1,16 +1,16 @@
 PODS:
   - CardIO (5.4.1)
-  - PWAlipayPlugin (3.0.0):
-    - PWAlipayPlugin/Alipay (= 3.0.0)
+  - PWAlipayPlugin (3.1.0):
+    - PWAlipayPlugin/Alipay (= 3.1.0)
     - PWCoreSDK (>= 3.0.0)
-  - PWAlipayPlugin/Alipay (3.0.0):
+  - PWAlipayPlugin/Alipay (3.1.0):
     - PWCoreSDK (>= 3.0.0)
   - PWCardScannerPlugin (3.0.0):
     - CardIO
     - PWCoreSDK (>= 3.0.0)
-  - PWCoreSDK (3.0.0):
-    - PWCoreSDK/CoreSDK (= 3.0.0)
-  - PWCoreSDK/CoreSDK (3.0.0)
+  - PWCoreSDK (3.1.0):
+    - PWCoreSDK/CoreSDK (= 3.1.0)
+  - PWCoreSDK/CoreSDK (3.1.0)
   - PWGameUIPlugin (3.0.0):
     - PWCoreSDK (>= 3.0.0)
   - PWMyCardPlugin (3.0.0):
@@ -31,7 +31,7 @@ DEPENDENCIES:
   - PWWechatpayPlugin (from `.`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - CardIO
 
 EXTERNAL SOURCES:
@@ -50,13 +50,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
-  PWAlipayPlugin: 6ce1847a70162382de6afcd7874b419f47093ee4
+  PWAlipayPlugin: 770a8d03fa74e5bd973592660eac8a60ab54c1ea
   PWCardScannerPlugin: c69e8333e0b986dc8ec73ca9352024935b05f114
-  PWCoreSDK: 04dcd33c27b55e00d7e9c2d2e4b2872c65e5fc87
+  PWCoreSDK: d00ae116c4279644cd6b7f7b648f01cc862b5237
   PWGameUIPlugin: 638643f55f8fc013de1ad1bee91bf2405fcc862f
   PWMyCardPlugin: 9f7d4f02525eeadb55160d78cd029ba9ccc0cec6
   PWWechatpayPlugin: 11933a7cdb420d358522c34871d8e49b235596f5
 
 PODFILE CHECKSUM: a586364a0697ab5d6f69699db3127c43ff75867b
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

@@ -176,7 +176,7 @@
 				"${PODS_ROOT}/../Plugins/PWAlipayPlugin/AlipaySDK.bundle",
 				"${PODS_ROOT}/../Core SDK/PWCoreSDKResource.bundle",
 				"${PODS_ROOT}/../Plugins/PWGameUIPlugin/PWGameUIPluginResource.bundle",
-				"${PODS_ROOT}/../Plugins/PWMyCardPlugin/PWMyCardPluginResource.bundle",
+				"${PODS_ROOT}/../Plugins/PWMycardPlugin/PWMyCardPluginResource.bundle",
 				"${PODS_ROOT}/../Plugins/PWWechatpayPlugin/PWWechatpayPluginResource.bundle",
 			);
 			name = "[CP] Copy Pods Resources";

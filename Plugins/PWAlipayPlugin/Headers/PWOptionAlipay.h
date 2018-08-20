@@ -29,6 +29,32 @@ extern NSString *const PWPaymentTypeAlipay;
 @property(nonatomic, copy, nullable) NSString* overrideSecretKey;
 @property(nonatomic) PWSignatureType overrideSignVersion;
 
+/**
+ Initializer for domestic alipay payment
+
+ @param appId Alipay application ID
+ @param appScheme Application scheme for pingback
+ @return PWOptionAlipay
+ */
+-(instancetype)initWithAppID:(NSString *)appId
+                   appScheme:(NSString *)appScheme;
+
+/**
+ Initializer for international alipay payment
+
+ @param appId Alipay application ID, default: "external"
+ @param appScheme Application scheme for pingback
+ @param itbPay Default: 30m
+ @param forexBiz Required for international account, default: FP
+ @param appenv system=[client platform name]^version=[system version]" eg ”system=iOS^version=9
+ @return PWOptionAlipay
+ */
+-(instancetype)initWithWithAppID:(NSString *)appId
+                       appScheme:(NSString *)appScheme
+                          itbPay:(NSString *)itbPay
+                        forexBiz:(NSString *)forexBiz
+                          appenv:(NSString *)appenv;
+
 @end
 
 NS_ASSUME_NONNULL_END
