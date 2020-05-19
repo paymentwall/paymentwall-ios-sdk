@@ -1,24 +1,24 @@
 PODS:
   - CardIO (5.4.1)
-  - PWAlipayPlugin (3.1.0):
-    - PWAlipayPlugin/Alipay (= 3.1.0)
+  - PWAlipayPlugin (3.1.1):
+    - PWAlipayPlugin/Alipay (= 3.1.1)
     - PWCoreSDK (>= 3.0.0)
-  - PWAlipayPlugin/Alipay (3.1.0):
+  - PWAlipayPlugin/Alipay (3.1.1):
     - PWCoreSDK (>= 3.0.0)
   - PWCardScannerPlugin (3.0.0):
     - CardIO
     - PWCoreSDK (>= 3.0.0)
-  - PWCoreSDK (3.1.0):
-    - PWCoreSDK/CoreSDK (= 3.1.0)
-  - PWCoreSDK/CoreSDK (3.1.0)
+  - PWCoreSDK (3.1.1):
+    - PWCoreSDK/CoreSDK (= 3.1.1)
+  - PWCoreSDK/CoreSDK (3.1.1)
   - PWGameUIPlugin (3.0.0):
     - PWCoreSDK (>= 3.0.0)
   - PWMyCardPlugin (3.0.0):
     - PWCoreSDK (>= 3.0.0)
-  - PWWechatpayPlugin (3.0.0):
+  - PWWechatpayPlugin (3.0.1):
     - PWCoreSDK (>= 3.0.0)
-    - PWWechatpayPlugin/Wechatpay (= 3.0.0)
-  - PWWechatpayPlugin/Wechatpay (3.0.0):
+    - PWWechatpayPlugin/Wechatpay (= 3.0.1)
+  - PWWechatpayPlugin/Wechatpay (3.0.1):
     - PWCoreSDK (>= 3.0.0)
 
 DEPENDENCIES:
@@ -50,12 +50,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
-  PWAlipayPlugin: 9928477777000b06f8ab2e71aff72a0c61df0321
+  PWAlipayPlugin: 1931ed9fee4d3ea7c60409e4445f27241bb2dada
   PWCardScannerPlugin: 2a3c4992b85782ed2cc2efaa4e01677cf50db4a1
-  PWCoreSDK: 0f2ed9d491e6f2c5bcfbecef5299d2ea2e6ac440
+  PWCoreSDK: f4957795273e12a886ab01e5aa07f67cce305c9d
   PWGameUIPlugin: 94cb50a2f9e3ff698008c8b314e36d805290a393
   PWMyCardPlugin: e9960d1b874204f1e87194eaa48530def33d1725
-  PWWechatpayPlugin: fd29e6b7ed57dcb8963744faf2070a6ec4072a7a
+  PWWechatpayPlugin: 8f4e38c763877983f84710336b38af70455b39bb
 
 PODFILE CHECKSUM: a586364a0697ab5d6f69699db3127c43ff75867b
 
