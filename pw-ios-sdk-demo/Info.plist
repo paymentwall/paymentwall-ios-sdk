@@ -37,6 +37,7 @@
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>weixin</string>
+		<string>weixinULAPI</string>
 		<string>com.paypal.ppclient.touch.v2</string>
 		<string>com.paypal.ppclient.touch.v1</string>
 		<string>org-appextension-feature-password-management</string>

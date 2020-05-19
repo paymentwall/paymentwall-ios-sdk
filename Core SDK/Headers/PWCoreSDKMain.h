@@ -51,6 +51,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 -(void)handlePingbackURL:(NSURL *)url;
 
+/// Using for handle callback from local payment option app if using universal link (eg. Wechatpay)
+/// Put in AppDelegate's application:continueUserActivity:restorationHandler:
+/// @param userActivity NSUserActivity
+-(BOOL)handlePingbackUniversalLink:(NSUserActivity *)userActivity;
+
 #pragma mark - Optional
 /**
  Some payment option will require signing the request to continue payment. You can call this method after you signed the `stringToSign` inside the `PWCoreSDKDelegate` callback with the appropriated signing algorithm and your secret key

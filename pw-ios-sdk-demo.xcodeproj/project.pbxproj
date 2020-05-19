@@ -128,6 +128,7 @@
 				TargetAttributes = {
 					9CCFE4661ECE9CF5005627E0 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 3WU962LK4A;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
@@ -138,8 +139,11 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
+				vi,
+				"zh-Hans",
 			);
 			mainGroup = 9CCFE45E1ECE9CF5005627E0;
 			productRefGroup = 9CCFE4681ECE9CF5005627E0 /* Products */;
@@ -171,7 +175,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-pw-ios-sdk-demo/Pods-pw-ios-sdk-demo-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-pw-ios-sdk-demo/Pods-pw-ios-sdk-demo-resources.sh",
 				"${PODS_ROOT}/../Plugins/PWAlipayPlugin/PWAlipayPluginResource.bundle",
 				"${PODS_ROOT}/../Plugins/PWAlipayPlugin/AlipaySDK.bundle",
 				"${PODS_ROOT}/../Core SDK/PWCoreSDKResource.bundle",
@@ -190,7 +194,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pw-ios-sdk-demo/Pods-pw-ios-sdk-demo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-pw-ios-sdk-demo/Pods-pw-ios-sdk-demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		631E61270C8796742A76C02A /* [CP] Check Pods Manifest.lock */ = {
@@ -368,11 +372,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3WU962LK4A;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "pw-ios-sdk-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Paymentwall.sdk.pw-ios-sdk-demo-v1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tvn.Paymentwall.sdk.pw-ios-sdk-demo-v1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "pw-ios-sdk-demo/pw-ios-sdk-demo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -387,11 +391,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3WU962LK4A;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "pw-ios-sdk-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Paymentwall.sdk.pw-ios-sdk-demo-v1";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tvn.Paymentwall.sdk.pw-ios-sdk-demo-v1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "pw-ios-sdk-demo/pw-ios-sdk-demo-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;

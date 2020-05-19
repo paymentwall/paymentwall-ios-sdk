@@ -8,5 +8,3 @@
 #import "PWCardScannerPlugin.h"
 #import "PWMyCardPlugin.h"
 #import "PWGameUIPlugin.h"
-
-#import <CommonCrypto/CommonCrypto.h>
