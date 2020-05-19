@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWWechatpayPlugin"
-  s.version      = "3.0.1"
+  s.version      = "3.1.1"
   s.summary      = "PWWechatpayPlugin"
   s.description  = "Plugin for Wechatpay payment option for PWCoreSDK"
   s.homepage     = "http://paymentwall.com"
