@@ -7,6 +7,7 @@ Paymentwall SDK supports external payment system injection (which are in our def
 3. Setup the plugin, each plugin have different requirements so please check their header files and local payment option docs on their websites for more information:
 ```swift
 let wechatpay = PWOptionWechatpay()
+wechatpay.universalLink = "https://example_domain.com" //Required by Wechat
 
 //Optional
 wechatpay.overrideProjectKey = "YOUR PROJECT KEY"
@@ -40,6 +41,7 @@ PWCoreSDK.sharedInstance().showPaymentVC(withParentVC: self, paymentObject: paym
 <key>LSApplicationQueriesSchemes</key>
 <array>
     <string>weixin</string>
+    <string>weixinULAPI</string>
 </array>
 ```
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CommonCrypto
 
 class ViewController: UIViewController {
 
@@ -89,6 +90,7 @@ class ViewController: UIViewController {
         mycard = PWOptionMyCard()
         
         wechatpay = PWOptionWechatpay()
+        wechatpay.universalLink = "https://test.com"
         
         alipay = PWOptionAlipay()
         alipay.appId = "external" //International

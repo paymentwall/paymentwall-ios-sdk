@@ -138,8 +138,11 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
+				vi,
+				"zh-Hans",
 			);
 			mainGroup = 9CCFE45E1ECE9CF5005627E0;
 			productRefGroup = 9CCFE4681ECE9CF5005627E0 /* Products */;
@@ -171,7 +174,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-pw-ios-sdk-demo/Pods-pw-ios-sdk-demo-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-pw-ios-sdk-demo/Pods-pw-ios-sdk-demo-resources.sh",
 				"${PODS_ROOT}/../Plugins/PWAlipayPlugin/PWAlipayPluginResource.bundle",
 				"${PODS_ROOT}/../Plugins/PWAlipayPlugin/AlipaySDK.bundle",
 				"${PODS_ROOT}/../Core SDK/PWCoreSDKResource.bundle",
@@ -190,7 +193,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pw-ios-sdk-demo/Pods-pw-ios-sdk-demo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-pw-ios-sdk-demo/Pods-pw-ios-sdk-demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		631E61270C8796742A76C02A /* [CP] Check Pods Manifest.lock */ = {

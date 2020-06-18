@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "PWCoreSDK"
-  s.version      = "3.1.0"
+  s.version      = "3.1.1"
   s.summary      = "PWCoreSDK"
   s.description  = "Unified SDK for all paymentwall products on iOS"
   s.homepage     = "http://paymentwall.com"
@@ -11,7 +11,9 @@ Pod::Spec.new do |s|
   s.license      = { :type => 'Apache 2.0', :file => 'LICENSE' }
   s.requires_arc = true
 
-  s.source       = { :git => "https://github.com/paymentwall/paymentwall-ios-sdk-master.git", :tag => 'v'+String(s.version) }
+  s.source       = { :git => "https://github.com/paymentwall/paymentwall-ios-sdk-master.git", :tag => "v"+String(s.version) }
+  
+  s.public_header_files = "Core SDK/**/PWCoreSDK.h"
   s.source_files = "Core SDK/**/PWCoreSDK.h"
   s.resources    = "Core SDK/*.bundle", "Core SDK/PWCoreSDKResource.bundle"
   s.vendored_libraries = "Core SDK/libPWCoreSDK.a"
@@ -19,4 +21,8 @@ Pod::Spec.new do |s|
   s.subspec 'CoreSDK' do |sp|
     sp.source_files = "Core SDK/**/*.{h,m}"
   end
+
+  s.pod_target_xcconfig = {
+    "OTHER_LDFLAGS" => "-lObjC"
+  }
 end

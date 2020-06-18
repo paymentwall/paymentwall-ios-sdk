@@ -1,24 +1,24 @@
 PODS:
   - CardIO (5.4.1)
-  - PWAlipayPlugin (3.1.0):
-    - PWAlipayPlugin/Alipay (= 3.1.0)
+  - PWAlipayPlugin (3.1.1):
+    - PWAlipayPlugin/Alipay (= 3.1.1)
     - PWCoreSDK (>= 3.0.0)
-  - PWAlipayPlugin/Alipay (3.1.0):
+  - PWAlipayPlugin/Alipay (3.1.1):
     - PWCoreSDK (>= 3.0.0)
   - PWCardScannerPlugin (3.0.0):
     - CardIO
     - PWCoreSDK (>= 3.0.0)
-  - PWCoreSDK (3.1.0):
-    - PWCoreSDK/CoreSDK (= 3.1.0)
-  - PWCoreSDK/CoreSDK (3.1.0)
+  - PWCoreSDK (3.1.1):
+    - PWCoreSDK/CoreSDK (= 3.1.1)
+  - PWCoreSDK/CoreSDK (3.1.1)
   - PWGameUIPlugin (3.0.0):
     - PWCoreSDK (>= 3.0.0)
   - PWMyCardPlugin (3.0.0):
     - PWCoreSDK (>= 3.0.0)
-  - PWWechatpayPlugin (3.0.0):
+  - PWWechatpayPlugin (3.0.1):
     - PWCoreSDK (>= 3.0.0)
-    - PWWechatpayPlugin/Wechatpay (= 3.0.0)
-  - PWWechatpayPlugin/Wechatpay (3.0.0):
+    - PWWechatpayPlugin/Wechatpay (= 3.0.1)
+  - PWWechatpayPlugin/Wechatpay (3.0.1):
     - PWCoreSDK (>= 3.0.0)
 
 DEPENDENCIES:
@@ -31,7 +31,7 @@ DEPENDENCIES:
   - PWWechatpayPlugin (from `.`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - CardIO
 
 EXTERNAL SOURCES:
@@ -50,13 +50,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
-  PWAlipayPlugin: 770a8d03fa74e5bd973592660eac8a60ab54c1ea
-  PWCardScannerPlugin: c69e8333e0b986dc8ec73ca9352024935b05f114
-  PWCoreSDK: d00ae116c4279644cd6b7f7b648f01cc862b5237
-  PWGameUIPlugin: 638643f55f8fc013de1ad1bee91bf2405fcc862f
-  PWMyCardPlugin: 9f7d4f02525eeadb55160d78cd029ba9ccc0cec6
-  PWWechatpayPlugin: 11933a7cdb420d358522c34871d8e49b235596f5
+  PWAlipayPlugin: 1931ed9fee4d3ea7c60409e4445f27241bb2dada
+  PWCardScannerPlugin: 2a3c4992b85782ed2cc2efaa4e01677cf50db4a1
+  PWCoreSDK: f4957795273e12a886ab01e5aa07f67cce305c9d
+  PWGameUIPlugin: 94cb50a2f9e3ff698008c8b314e36d805290a393
+  PWMyCardPlugin: e9960d1b874204f1e87194eaa48530def33d1725
+  PWWechatpayPlugin: 8f4e38c763877983f84710336b38af70455b39bb
 
 PODFILE CHECKSUM: a586364a0697ab5d6f69699db3127c43ff75867b
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4

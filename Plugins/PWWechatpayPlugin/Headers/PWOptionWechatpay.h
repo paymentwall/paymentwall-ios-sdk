@@ -13,11 +13,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 extern NSString *const PWPaymentTypeWechatpay;
 
+/**
+ Required
+ You have to add your Wechatpay App ID as your URL Schemes in order to capture redirect
+ */
 @interface PWOptionWechatpay : NSObject
 
-/**Required
-You have to add your Wechatpay App ID as your URL Schemes in order to capture redirect
-*/
+///Required, must have "https://" scheme
+@property(nonatomic, copy) NSString* universalLink;
 
 ///Optional
 @property(nonatomic, copy, nullable) NSString* overrideProjectKey;
