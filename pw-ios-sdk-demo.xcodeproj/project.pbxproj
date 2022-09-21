@@ -128,6 +128,7 @@
 				TargetAttributes = {
 					9CCFE4661ECE9CF5005627E0 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 37N222R38X;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
@@ -371,7 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 37N222R38X;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "pw-ios-sdk-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -390,7 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 37N222R38X;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "pw-ios-sdk-demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

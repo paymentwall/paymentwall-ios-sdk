@@ -71,8 +71,8 @@ class ViewController: UIViewController {
     func setupPaymentwall() {
         self.setupUI()
         
-        PWCoreSDK.sharedInstance().setGlobalProjectKey("YOUR_PUBLIC_KEY")
-        PWCoreSDK.sharedInstance().setGlobalSecretKey("YOUR_SECRET_KEY")
+        PWCoreSDK.sharedInstance().setGlobalProjectKey("b1cae8467f36c08ee295c5c2ab65a384")
+        PWCoreSDK.sharedInstance().setGlobalSecretKey("545f683307fb303041c049e975a76dd7")
         
         brick = PWOptionBrick()
         brick.setCardScannerPlugin(PWCardScannerPlugin())
