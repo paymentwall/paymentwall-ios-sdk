@@ -15,10 +15,10 @@ PODS:
     - PWCoreSDK (>= 3.0.0)
   - PWMyCardPlugin (3.0.0):
     - PWCoreSDK (>= 3.0.0)
-  - PWWechatpayPlugin (3.0.1):
+  - PWWechatpayPlugin (3.1.1):
     - PWCoreSDK (>= 3.0.0)
-    - PWWechatpayPlugin/Wechatpay (= 3.0.1)
-  - PWWechatpayPlugin/Wechatpay (3.0.1):
+    - PWWechatpayPlugin/Wechatpay (= 3.1.1)
+  - PWWechatpayPlugin/Wechatpay (3.1.1):
     - PWCoreSDK (>= 3.0.0)
 
 DEPENDENCIES:
@@ -55,8 +55,8 @@ SPEC CHECKSUMS:
   PWCoreSDK: f4957795273e12a886ab01e5aa07f67cce305c9d
   PWGameUIPlugin: 94cb50a2f9e3ff698008c8b314e36d805290a393
   PWMyCardPlugin: e9960d1b874204f1e87194eaa48530def33d1725
-  PWWechatpayPlugin: 8f4e38c763877983f84710336b38af70455b39bb
+  PWWechatpayPlugin: 04ba61b9850fa9d38eda91b88d2c9a28276c725d
 
 PODFILE CHECKSUM: a586364a0697ab5d6f69699db3127c43ff75867b
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.11.3
