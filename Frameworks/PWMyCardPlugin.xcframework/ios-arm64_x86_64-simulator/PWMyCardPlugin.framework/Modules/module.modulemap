@@ -1,0 +1,5 @@
+framework module PWMyCardPlugin {
+  umbrella header "PWMyCardPlugin.h"
+  export *
+  module * { export * }
+}

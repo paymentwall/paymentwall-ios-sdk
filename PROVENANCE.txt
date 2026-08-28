@@ -1,0 +1,12 @@
+Paymentwall iOS SDK 4.0.0
+
+build      f8322c806c1b
+built      2026-08-28T10:56:02Z
+signed     Apple Distribution: Paymentwall, Inc. (D44Q8LH786)
+
+Verify what you received:
+
+    shasum -a 256 -c SHA256SUMS
+    codesign -dv --verbose=2 Frameworks/PWCoreSDK.xcframework
+
+The frameworks are dynamic and must be embedded (Embed & Sign), not linked only.

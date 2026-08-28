@@ -1,0 +1,255 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		PWD00000000000000000101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = PWD00000000000000000001 /* AppDelegate.swift */; };
+		PWD00000000000000000102 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = PWD00000000000000000002 /* CheckoutViewController.swift */; };
+		PWD00000000000000000201 /* PWCoreSDK in Frameworks */ = {isa = PBXBuildFile; productRef = PWD00000000000000000301 /* PWCoreSDK */; };
+		PWD00000000000000000202 /* PWMyCardPlugin in Frameworks */ = {isa = PBXBuildFile; productRef = PWD00000000000000000302 /* PWMyCardPlugin */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		PWD00000000000000000001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		PWD00000000000000000002 /* CheckoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
+		PWD00000000000000000003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		PWD00000000000000000010 /* PaymentwallDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaymentwallDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		PWD00000000000000000400 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				PWD00000000000000000201 /* PWCoreSDK in Frameworks */,
+				PWD00000000000000000202 /* PWMyCardPlugin in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		PWD00000000000000000500 = {
+			isa = PBXGroup;
+			children = (
+				PWD00000000000000000501 /* PaymentwallDemo */,
+				PWD00000000000000000502 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		PWD00000000000000000501 /* PaymentwallDemo */ = {
+			isa = PBXGroup;
+			children = (
+				PWD00000000000000000001 /* AppDelegate.swift */,
+				PWD00000000000000000002 /* CheckoutViewController.swift */,
+				PWD00000000000000000003 /* Info.plist */,
+			);
+			path = PaymentwallDemo;
+			sourceTree = "<group>";
+		};
+		PWD00000000000000000502 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				PWD00000000000000000010 /* PaymentwallDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		PWD00000000000000000600 /* PaymentwallDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = PWD00000000000000000700 /* Build configuration list for PBXNativeTarget "PaymentwallDemo" */;
+			buildPhases = (
+				PWD00000000000000000401 /* Sources */,
+				PWD00000000000000000400 /* Frameworks */,
+				PWD00000000000000000402 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PaymentwallDemo;
+			packageProductDependencies = (
+				PWD00000000000000000301 /* PWCoreSDK */,
+				PWD00000000000000000302 /* PWMyCardPlugin */,
+			);
+			productName = PaymentwallDemo;
+			productReference = PWD00000000000000000010 /* PaymentwallDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		PWD00000000000000000800 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = PWD00000000000000000701 /* Build configuration list for PBXProject "PaymentwallDemo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = PWD00000000000000000500;
+			packageReferences = (
+				PWD00000000000000000900 /* XCLocalSwiftPackageReference ".." */,
+			);
+			productRefGroup = PWD00000000000000000502 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				PWD00000000000000000600 /* PaymentwallDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		PWD00000000000000000402 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		PWD00000000000000000401 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				PWD00000000000000000102 /* CheckoutViewController.swift in Sources */,
+				PWD00000000000000000101 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		PWD00000000000000000710 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		PWD00000000000000000711 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 5.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		PWD00000000000000000720 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PaymentwallDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 4.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paymentwall.PaymentwallDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		PWD00000000000000000721 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = PaymentwallDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 4.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.paymentwall.PaymentwallDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		PWD00000000000000000701 /* Build configuration list for PBXProject "PaymentwallDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				PWD00000000000000000710 /* Debug */,
+				PWD00000000000000000711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		PWD00000000000000000700 /* Build configuration list for PBXNativeTarget "PaymentwallDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				PWD00000000000000000720 /* Debug */,
+				PWD00000000000000000721 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		PWD00000000000000000900 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		PWD00000000000000000301 /* PWCoreSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PWCoreSDK;
+		};
+		PWD00000000000000000302 /* PWMyCardPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = PWMyCardPlugin;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = PWD00000000000000000800 /* Project object */;
+}

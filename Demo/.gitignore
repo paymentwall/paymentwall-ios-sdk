@@ -1,0 +1,4 @@
+# Per-developer Xcode state and resolved package pins. Nothing here belongs in a shared repository.
+xcuserdata/
+*.xcuserstate
+.swiftpm/

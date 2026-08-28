@@ -1,0 +1,5 @@
+framework module PWCoreSDK {
+  umbrella header "PWCoreSDK.h"
+  export *
+  module * { export * }
+}
