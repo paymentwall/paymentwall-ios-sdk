@@ -8,14 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
-// These are OPTIONAL widget parameters - you set the ones your flow needs - so they are declared
-// `nullable` rather than left unspecified. An unspecified pointer imports into Swift as an
-// implicitly-unwrapped optional, which gives the caller a crash instead of a diagnostic.
+// Optional widget parameters: set the ones your flow needs and leave the rest nil. Each is
+// explicitly `nullable`, so Swift imports them as real optionals.
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PWWidgetDigitalGoodsFlexible : NSObject
 
-@property (nonatomic, strong) NSString * _Nullable widget;                                 //Required
+/// Which set of payment methods the hosted checkout offers, e.g. `pw_1`. From your project's
+/// Widgets page in the Paymentwall merchant area.
+///
+/// **Optional.** Omit it and Paymentwall offers whatever the project itself is configured to offer.
+/// Set it to choose a specific widget — and note that a widget code belongs to one project, so it
+/// travels with the project key it was created under.
+@property (nonatomic, strong) NSString * _Nullable widget;
 @property (nonatomic, strong) NSString * _Nullable ps;
 @property (nonatomic, strong) NSString * _Nullable ag_type;                                //Required
 @property (nonatomic, strong) NSString * _Nullable ag_period_length;                       //Required*

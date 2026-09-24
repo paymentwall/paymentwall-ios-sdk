@@ -19,9 +19,8 @@ extern NSString *const PWErrorTimedOut;
 extern NSString *const PWErrorMissingField;
 extern NSString *const PWErrorInvalidSignVersion;
 
-// Configuration failures. These are reported through PWCoreSDK.configurationFailureHandler, not
-// through the payment delegate: they happen while the SDK is being SET UP, which is before any
-// payment - and therefore before any delegate - exists.
+// Configuration failures. Reported through PWCoreSDK.configurationFailureHandler rather than the
+// payment delegate, because they occur during set-up, before a payment delegate exists.
 extern NSString *const PWErrorInvalidPaymentOption;
 extern NSString *const PWErrorInvalidIdentifier;
 extern NSString *const PWErrorInvalidUIPackage;
@@ -67,6 +66,11 @@ extern NSString *const BRErrorCardExpireYearEmpty;
 
 extern NSString *const BRErrorEmailEmpty;
 extern NSString *const BRErrorEmailIsInvalid;
+
+/// The risk review finished and the charge does NOT stand.
+///
+/// Reported to the merchant; it is not shown to the payer.
+extern NSString *const BRErrorChargeDeclined;
 
 extern NSString *const BRErrorNoInternet;
 extern NSString *const BRErrorInvalid3DURL;

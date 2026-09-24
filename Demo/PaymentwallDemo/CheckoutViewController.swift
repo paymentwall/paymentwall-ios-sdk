@@ -71,7 +71,7 @@ final class CheckoutViewController: UIViewController {
         // PWLocal. `widget` is REQUIRED — without it the API answers with an error that blames the
         // payer's country rather than the missing parameter, which is a long walk to a short fix.
         let localParams = PWWidgetDigitalGoodsFlexible()
-        localParams.widget = "m2_1"
+        localParams.widget = "pw_1"
         localParams.ag_type = "fixed"
         let local = PWOptionWidget(type: .digitalGoodsFlexible, extraParams: localParams)
 
@@ -102,6 +102,14 @@ extension CheckoutViewController: PWCoreSDKDelegate {
 
         case .cancel:
             report("Cancelled by the payer.")
+
+        case .pending:
+            // NEW IN 4.1.0, and like .unknown it is neither a success nor a failure. Paymentwall
+            // TOOK the money and is reviewing the charge for fraud; the review had not finished on
+            // the device. The verdict arrives at your server through the pingback, which is the
+            // authority — so do not ship goods here.
+            report("Payment UNDER REVIEW — money taken, verdict pending. "
+                   + "Ship on the pingback, not on this callback.")
 
         case .unknown:
             // NEW IN v4, and it is NOT a failure. The SDK lost the page mid-payment, so the charge

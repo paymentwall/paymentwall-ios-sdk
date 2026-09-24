@@ -96,11 +96,32 @@ NS_ASSUME_NONNULL_BEGIN
  */
 -(void)setExtraParams:(NSDictionary<NSString *, id> *)params;
 
+/// Whether the SDK shows its own "Paid" confirmation screen when a payment succeeds.
+///
+/// `YES` by default: the SDK draws a confirmation, counts down a few seconds, and only then calls
+/// `-paymentResponse:`. Set it to `NO` when your app has its own confirmation to show — the SDK then
+/// dismisses straight back to you and calls `-paymentResponse:` immediately.
+///
+/// **This changes when you are told, not whether.** `-paymentResponse:` is still called exactly once,
+/// with the same response; it simply arrives seconds earlier, while your app is still on screen. Show
+/// your own confirmation from there.
+///
+/// It does not affect the processing indicator or the failure screen. A payer who has just handed
+/// over card details still needs to see that something is happening, and still needs to be told when
+/// it did not work.
+///
+/// **A UI package of your own may not honour this.** The SDK suppresses the screen it draws itself;
+/// a `PWUIProtocol` package that shows a success view of its own decides that for itself.
+-(void)setShowsSuccessScreen:(BOOL)showsSuccessScreen;
+
+/// What `-setShowsSuccessScreen:` was last set to. `YES` unless you changed it.
+-(BOOL)showsSuccessScreen;
+
 /// How much the SDK logs about its own network activity. `PWLogLevelNone` by default.
 ///
-/// **It cannot log a request body, a header or a response body** — not by policy, by construction:
-/// the logger takes events rather than strings, and strips the query from every URL before printing
-/// it. So raising this level cannot put card data or a signature in the device log.
+/// **It cannot log a request body, a header or a response body.** The logger takes events rather
+/// than strings and strips the query from every URL, so raising this level cannot put card data or a
+/// signature in the device log.
 ///
 /// Leave it at `PWLogLevelNone` in a shipped app.
 -(void)setLogLevel:(PWLogLevel)level;
@@ -111,8 +132,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///
 /// It is a handler rather than a delegate method because these failures happen while the SDK is
 /// being **set up**, before any payment starts and therefore before a payment delegate exists.
-/// Without it, several of them are silent: the option is dropped, or the value is accepted anyway,
-/// and nothing tells the app.
+/// Several of them are otherwise silent: the option is dropped, or the value is accepted anyway.
 ///
 /// **Set this before configuring anything else.** `error.localizedDescription` carries the reason,
 /// and the `PWError*` constants in `PWError.h` are the values to compare against.

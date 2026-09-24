@@ -8,9 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-// These are OPTIONAL widget parameters - you set the ones your flow needs - so they are declared
-// `nullable` rather than left unspecified. An unspecified pointer imports into Swift as an
-// implicitly-unwrapped optional, which gives the caller a crash instead of a diagnostic.
+// Optional widget parameters: set the ones your flow needs and leave the rest nil. Each is
+// explicitly `nullable`, so Swift imports them as real optionals.
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PWWidgetDigitalGoodsDefaut : NSObject

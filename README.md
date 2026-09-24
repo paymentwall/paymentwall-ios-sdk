@@ -32,17 +32,17 @@ the currency is actually written in the payer's region. Build [Demo](Demo) to se
 
 ## Credentials
 
-You need a **project key** and a **secret key**, both from the application settings of your Merchant
-Account at [paymentwall.com](https://api.paymentwall.com/developers/applications).
+Your app needs a **project key**, from the application settings of your Merchant Account at
+[paymentwall.com](https://api.paymentwall.com/developers/applications).
 
 **The project key is also your public key.** The card form uses that same value, and there is no
 separate card credential to configure. If card payments come back *"Public key is missed or
 invalid"*, that project does not have card processing enabled — enable it in the merchant portal.
 
-The secret key is **optional**, needed only by the payment methods that still sign on the device.
-Anything in your app bundle can be extracted from it, so treat a secret that has shipped inside an
-app binary as compromised for any other purpose — see
-[Signing on your server](INTEGRATION.md#signing-on-your-server).
+Your **secret key stays on your server.** Some payment methods need a signed request; your server
+signs it and hands the signature back — see
+[Signing on your server](INTEGRATION.md#signing-on-your-server). Anything in an app bundle can be
+extracted from it, so treat a secret that has ever shipped inside an app binary as compromised.
 
 ## Add the SDK
 
@@ -52,11 +52,11 @@ The SDK ships through **Swift Package Manager**. In Xcode: **File → Add Packag
 https://github.com/paymentwall/paymentwall-ios-sdk
 ```
 
-and choose **Up to Next Major Version** from `4.0.0`. Or, in a `Package.swift`:
+and choose **Up to Next Major Version** from `4.1.0`. Or, in a `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/paymentwall/paymentwall-ios-sdk", from: "4.0.0")
+    .package(url: "https://github.com/paymentwall/paymentwall-ios-sdk", from: "4.1.0")
 ]
 ```
 

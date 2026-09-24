@@ -14,7 +14,7 @@
 		</data>
 		<key>ios-arm64/PWMyCardPlugin.framework/Info.plist</key>
 		<data>
-		wyJR9ngDwAsqgiekjFtZcsrE3r0=
+		/BUq9nRH3PfACLoFENDcKgVk9yA=
 		</data>
 		<key>ios-arm64/PWMyCardPlugin.framework/LICENSE</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>ios-arm64/PWMyCardPlugin.framework/PWMyCardPlugin</key>
 		<data>
-		2NvpucJeJCx/+6uwn6uAYCHTFtw=
+		ju6l5VTHcLHR0yZjnJCgdDyVfhE=
 		</data>
 		<key>ios-arm64/PWMyCardPlugin.framework/PWMyCardViewController.nib</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>ios-arm64/PWMyCardPlugin.framework/_CodeSignature/CodeResources</key>
 		<data>
-		aBYcLvgnK2Za16NyKe44x+pFDY8=
+		5n02uIUxqP5jOei/LjGh+2t3CM0=
 		</data>
 		<key>ios-arm64/PWMyCardPlugin.framework/mycard.png</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/Info.plist</key>
 		<data>
-		D2X4hQME1MZo4H2MMNRtWWD6zWA=
+		dq46CBiXNWIugVlc4k7ZZVKaigA=
 		</data>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/LICENSE</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/PWMyCardPlugin</key>
 		<data>
-		NSvA7MFU2eszWATIKgs+bFlXtAI=
+		XFI6lgCUzgK0Th7V7XOuH6mSoNA=
 		</data>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/PWMyCardViewController.nib</key>
 		<data>
@@ -86,7 +86,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/_CodeSignature/CodeResources</key>
 		<data>
-		zWXZCKiCcZth00hMf299M/V6qSY=
+		a51rZXgryltc1xOYkdBWcV3pFTQ=
 		</data>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/mycard.png</key>
 		<data>
@@ -105,10 +105,6 @@
 	<dict>
 		<key>ios-arm64/PWMyCardPlugin.framework/Headers/PWMyCardPlugin.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			PvDDHftROD2xBgnHSXz2aCav1y0=
-			</data>
 			<key>hash2</key>
 			<data>
 			vE1hIU4ARKutmrkM0mghgyAwApQ4v/D6w+nRIvlImKM=
@@ -116,10 +112,6 @@
 		</dict>
 		<key>ios-arm64/PWMyCardPlugin.framework/Headers/PWOptionMyCard.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			qXTZgLc4F7ffJIM7BunIWhPE+qY=
-			</data>
 			<key>hash2</key>
 			<data>
 			nRA1XgL2J8Tn0wSutpfao8xVzNh+UCU7rZqmj0T6xnQ=
@@ -127,21 +119,13 @@
 		</dict>
 		<key>ios-arm64/PWMyCardPlugin.framework/Info.plist</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			wyJR9ngDwAsqgiekjFtZcsrE3r0=
-			</data>
 			<key>hash2</key>
 			<data>
-			r27h9mSIoMHWeBG+rPJ103gSvM5L0FOCeSR146VJtr4=
+			Miqyqo8vQJZ0ziawLngTeGczw5Z097oBWmjBAiPqIhw=
 			</data>
 		</dict>
 		<key>ios-arm64/PWMyCardPlugin.framework/LICENSE</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			cTgn5zZX8RIA6dZSGXSBDaOIov0=
-			</data>
 			<key>hash2</key>
 			<data>
 			az7DjTtI9j2/u45Q8i03AYsrKxp0t1DCuchUNASae18=
@@ -149,10 +133,6 @@
 		</dict>
 		<key>ios-arm64/PWMyCardPlugin.framework/Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			y+c+TC4w6w3jwhayoK3V2oek/EY=
-			</data>
 			<key>hash2</key>
 			<data>
 			D4PGNI2BtoWVlrdXt/nyCcm31GCqARO9f5qZg3GDWbE=
@@ -160,21 +140,13 @@
 		</dict>
 		<key>ios-arm64/PWMyCardPlugin.framework/PWMyCardPlugin</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			2NvpucJeJCx/+6uwn6uAYCHTFtw=
-			</data>
 			<key>hash2</key>
 			<data>
-			yf6Dbbjr3VwJtkpKtyvHPll3nWxV+9X/3TFdosuRRMU=
+			IWhdtawVNYxIXL7hGWukE3USKzijSDGdLFuBz6NkWro=
 			</data>
 		</dict>
 		<key>ios-arm64/PWMyCardPlugin.framework/PWMyCardViewController.nib</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			qa4uMzS1FFlb22hSPijsqQ0lmUY=
-			</data>
 			<key>hash2</key>
 			<data>
 			ETZA9rREcUKxO9XFUbmf6DZtcEX90rRNds4txFB2/mc=
@@ -182,10 +154,6 @@
 		</dict>
 		<key>ios-arm64/PWMyCardPlugin.framework/PrivacyInfo.xcprivacy</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			YKbfsrLVB+GSs/0NlZZESAMbyQU=
-			</data>
 			<key>hash2</key>
 			<data>
 			LvrBAof0AfDtWaf3H4M0is/2w5g8PkhKn5FM04sCjlc=
@@ -193,21 +161,13 @@
 		</dict>
 		<key>ios-arm64/PWMyCardPlugin.framework/_CodeSignature/CodeResources</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			aBYcLvgnK2Za16NyKe44x+pFDY8=
-			</data>
 			<key>hash2</key>
 			<data>
-			hwuYVHbPn53dsKWmbNpTV6OubIP+KFNyU2NaHs2R8D0=
+			Y2cps5RqBcXQls34msXAMyR4JtttUrlUgTPxrsOedkU=
 			</data>
 		</dict>
 		<key>ios-arm64/PWMyCardPlugin.framework/mycard.png</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			pp3YD/u57TfcWRa2jlsCKuugbHM=
-			</data>
 			<key>hash2</key>
 			<data>
 			BNvKZ1VmcWhPuI9dac9EaF9eX+Ku4lGAWoP7Sx21i5s=
@@ -215,10 +175,6 @@
 		</dict>
 		<key>ios-arm64/PWMyCardPlugin.framework/mycard@2x.png</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			4rWhVN7fZ27OMjvIAY0LDMTW2gA=
-			</data>
 			<key>hash2</key>
 			<data>
 			nldS/azXpa3Fv2KIIkhR7Am9stfBtu/x3dVbBfa7beA=
@@ -226,10 +182,6 @@
 		</dict>
 		<key>ios-arm64/PWMyCardPlugin.framework/mycard@3x.png</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			0rdu3gTuGKHQfDLGRIwJX6igW70=
-			</data>
 			<key>hash2</key>
 			<data>
 			eMGInkVoKDITpz8dWmcTqzp05D/a8Lsj7TaeU26Cmlk=
@@ -237,10 +189,6 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/Headers/PWMyCardPlugin.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			PvDDHftROD2xBgnHSXz2aCav1y0=
-			</data>
 			<key>hash2</key>
 			<data>
 			vE1hIU4ARKutmrkM0mghgyAwApQ4v/D6w+nRIvlImKM=
@@ -248,10 +196,6 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/Headers/PWOptionMyCard.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			qXTZgLc4F7ffJIM7BunIWhPE+qY=
-			</data>
 			<key>hash2</key>
 			<data>
 			nRA1XgL2J8Tn0wSutpfao8xVzNh+UCU7rZqmj0T6xnQ=
@@ -259,21 +203,13 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/Info.plist</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			D2X4hQME1MZo4H2MMNRtWWD6zWA=
-			</data>
 			<key>hash2</key>
 			<data>
-			xzeXXuZlFkvQ5tHwuWZqZS7GPaZ2f02gTv82Prv1sd4=
+			kus4TnmF98cawkg5SkM4uSbayWSZ6Rdl9P5Wp3CPnZ4=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/LICENSE</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			cTgn5zZX8RIA6dZSGXSBDaOIov0=
-			</data>
 			<key>hash2</key>
 			<data>
 			az7DjTtI9j2/u45Q8i03AYsrKxp0t1DCuchUNASae18=
@@ -281,10 +217,6 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			y+c+TC4w6w3jwhayoK3V2oek/EY=
-			</data>
 			<key>hash2</key>
 			<data>
 			D4PGNI2BtoWVlrdXt/nyCcm31GCqARO9f5qZg3GDWbE=
@@ -292,21 +224,13 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/PWMyCardPlugin</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			NSvA7MFU2eszWATIKgs+bFlXtAI=
-			</data>
 			<key>hash2</key>
 			<data>
-			SR7jGjbrL2TpWGy5k4PwF1J83LF+UpY2xJzPq3laotU=
+			akjBA0fntq5pZakyxi1n9O9cx/Hv6c4h9cS3QqYV6vk=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/PWMyCardViewController.nib</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			qa4uMzS1FFlb22hSPijsqQ0lmUY=
-			</data>
 			<key>hash2</key>
 			<data>
 			ETZA9rREcUKxO9XFUbmf6DZtcEX90rRNds4txFB2/mc=
@@ -314,10 +238,6 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/PrivacyInfo.xcprivacy</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			YKbfsrLVB+GSs/0NlZZESAMbyQU=
-			</data>
 			<key>hash2</key>
 			<data>
 			LvrBAof0AfDtWaf3H4M0is/2w5g8PkhKn5FM04sCjlc=
@@ -325,21 +245,13 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/_CodeSignature/CodeResources</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			zWXZCKiCcZth00hMf299M/V6qSY=
-			</data>
 			<key>hash2</key>
 			<data>
-			BTXorjSExE2L/ZJxCrz8tQcW717jrbS61Gv9NRsOxdI=
+			79f8fp2+98H4Icx+Emk8dm5e4fErp0X4/f1PKvVCjak=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/mycard.png</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			pp3YD/u57TfcWRa2jlsCKuugbHM=
-			</data>
 			<key>hash2</key>
 			<data>
 			BNvKZ1VmcWhPuI9dac9EaF9eX+Ku4lGAWoP7Sx21i5s=
@@ -347,10 +259,6 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/mycard@2x.png</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			4rWhVN7fZ27OMjvIAY0LDMTW2gA=
-			</data>
 			<key>hash2</key>
 			<data>
 			nldS/azXpa3Fv2KIIkhR7Am9stfBtu/x3dVbBfa7beA=
@@ -358,10 +266,6 @@
 		</dict>
 		<key>ios-arm64_x86_64-simulator/PWMyCardPlugin.framework/mycard@3x.png</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			0rdu3gTuGKHQfDLGRIwJX6igW70=
-			</data>
 			<key>hash2</key>
 			<data>
 			eMGInkVoKDITpz8dWmcTqzp05D/a8Lsj7TaeU26Cmlk=
