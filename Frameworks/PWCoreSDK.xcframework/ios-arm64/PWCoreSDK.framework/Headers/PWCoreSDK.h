@@ -15,11 +15,11 @@
 #import "PWOptionWidget.h"
 
 #import "PWBrickToken.h"
+// Native 3-D Secure 2, powered by Cardinal. Included in the SDK, so a 3DS2 challenge is available
+// without adding a separate product.
+#import "PWBrickCardinal3DSPlugin.h"
 #import "PWConstants.h"
 #import "PWCoreSDKResponse.h"
-
-//   PWError.h          every error-message constant an integrator compares against
-//   PWHTTPTransport.h  the HTTP client a payment-option plugin can own
 #import "PWError.h"
 #import "PWHTTPTransport.h"
 

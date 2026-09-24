@@ -6,11 +6,19 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		3fnpPnfkylLTCKsbUc1DMsMEmlY=
+		PPOq3wtbxOtTEg6wVg9C5JoF/xE=
+		</data>
+		<key>Headers/PWBrick3DSProtocol.h</key>
+		<data>
+		+XQIIJAxkv4Tgd4Ox+Dzh/ZbeD4=
+		</data>
+		<key>Headers/PWBrickCardinal3DSPlugin.h</key>
+		<data>
+		ptIJJcQ8G6L6p502xAjmdgxNTds=
 		</data>
 		<key>Headers/PWBrickToken.h</key>
 		<data>
-		ugLANGkARbLWFZ9pdCErQyDSzkM=
+		YenxcDnji+3bJvmujdMObjPgN6A=
 		</data>
 		<key>Headers/PWCardScannerProtocol.h</key>
 		<data>
@@ -18,15 +26,15 @@
 		</data>
 		<key>Headers/PWConstants.h</key>
 		<data>
-		2i4HIoaw32RIvh0BgGpQ+erDYIM=
+		lC/vo9qu8bA7FfgyOocZBw3uHIU=
 		</data>
 		<key>Headers/PWCoreSDK.h</key>
 		<data>
-		gT6cK9N309a0pDmTDOnFFjnzLxk=
+		j8Nmfr9hl2vstPn0Q08ggnFmdHM=
 		</data>
 		<key>Headers/PWCoreSDKMain.h</key>
 		<data>
-		BTtxJJRye6b2Kk9FrlXPcbBLVds=
+		oOAq92rA5v3s22hUgmSVQbunWUs=
 		</data>
 		<key>Headers/PWCoreSDKResponse.h</key>
 		<data>
@@ -34,23 +42,23 @@
 		</data>
 		<key>Headers/PWCustomization.h</key>
 		<data>
-		pgY2rf5mJAKTnuBkEPMMja8mzJo=
+		ZYJAGqhdl27jVT/yH2lVYkwayg0=
 		</data>
 		<key>Headers/PWError.h</key>
 		<data>
-		oHmFRzhOpnup33gD6U/AndOaBAo=
+		GydlINb13TdBrlt0ij2wPMK36Lk=
 		</data>
 		<key>Headers/PWHTTPTransport.h</key>
 		<data>
-		RJZgBvw/+FrJ/rsmXSiKydW5U+4=
+		k+UIt0sxmIHL6KgLiWGjJmV7Urc=
 		</data>
 		<key>Headers/PWLog.h</key>
 		<data>
-		CuUe4NV8IuU8Ox0v5n/i+zxWQfc=
+		2y5X23C9v9uxPGs0Z0g/Hd/0JO8=
 		</data>
 		<key>Headers/PWOptionBrick.h</key>
 		<data>
-		YuLue/XTYZWTBrKVI30cdTUWNyw=
+		kL6LkNioYNgavoiDk8AeL0MfaTo=
 		</data>
 		<key>Headers/PWOptionMint.h</key>
 		<data>
@@ -66,31 +74,31 @@
 		</data>
 		<key>Headers/PWPaymentOptionProtocol.h</key>
 		<data>
-		LuE35xfSpJu5qSv0V7hWimIIddA=
+		FlCyyKZl7d+Ue+pV84wUUrJqRzU=
 		</data>
 		<key>Headers/PWUIProtocol.h</key>
 		<data>
-		ZKVZ28Pvon13KCejuswTrEI9j1w=
+		cBgIEvUDUGNMD1W0IQUIyB7Wa58=
 		</data>
 		<key>Headers/PWWidgetCart.h</key>
 		<data>
-		/4B7Y8nLlb5zx+58W6r71xirGeE=
+		9YaTD2OMEdp9AfLfTX2W8w/74/c=
 		</data>
 		<key>Headers/PWWidgetDigitalGoodsDefaut.h</key>
 		<data>
-		BUYoFUvr81KOlIabaXIcOrzLK0I=
+		vbge2vPFLMcnU8OPAr289chXjsg=
 		</data>
 		<key>Headers/PWWidgetDigitalGoodsFlexible.h</key>
 		<data>
-		Gqf57resXJ14lAGFqorDFwVfU2o=
+		Aq3zTexXviyABiPDdHa74rrvLek=
 		</data>
 		<key>Headers/PWWidgetVirtualCurrency.h</key>
 		<data>
-		rV6y1H5Ciy1LNkumE0R9fWbPe7Q=
+		oi2nx2/M0WhBs0Zf58OVO3N1NvU=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		QXdGbVLDdCyDJIb+voRt8vmwhRc=
+		X8eLwUxMRBo1DeECckDSY5tTmQI=
 		</data>
 		<key>LICENSE</key>
 		<data>
@@ -142,7 +150,7 @@
 		</data>
 		<key>PWDefaultBaseView.nib</key>
 		<data>
-		ctlYJpuEquOIVzegOaSJe5dUm/o=
+		RmK7X5letmLxa6dMFEpDVYQseuA=
 		</data>
 		<key>PWLoadableView.nib</key>
 		<data>
@@ -156,7 +164,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			GsRBY4iIRHZ+Ik5OP6mEPfXenJE=
+			DDFF/R2wATYC+p3Q5Sq+j8L8bwk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -165,7 +173,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			joYATELyMM5CszQG3dbh8C5qdKY=
+			SDX2INOVpO5RVGsD5aQN6RUS0rQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -174,7 +182,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pXWnkxySSMEmXIOR8e5b6/bOKsk=
+			0ueSIJYn0mmsgNUN07am+IxTEHg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -183,7 +191,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			dFMDqEyEe1/NSpsAN1YiUhhMWZc=
+			rF6F34+nVEqWgQVdWT3/gwiBNzo=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -192,7 +200,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			QA9tWj9ubEemhrueu5r6AO9Ajf0=
+			uiUlzgxSvtMm8BaLjjpWAHCtUq8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -201,7 +209,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zBdc5pC8M35ZVUiU3GRRI1+EivM=
+			tVD7hgOGDDpkdO61Ix0w9Tv4F/c=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -210,7 +218,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AG+8g0BxT+f/sWNqJO2fPI7hgH0=
+			kodIKF0oz8yshAsFWLEX5kFOXIc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -219,7 +227,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			I6cMha/S8y0zLEsb/qnEqbTrfTw=
+			nJTS8Wwp9+ZwMiSPj7vztTFBJUs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -228,7 +236,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			mVTvGLYz9k/8uDWYiGto0FtchpQ=
+			s/XPwMNpRmG1B9odBvh6Q9PzP0s=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -237,7 +245,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8MrHuSHzmCySdVhaw9EzqU/LF9Q=
+			w+tm8m24ndCSq06JSTWbPcPNyPk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -246,7 +254,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/cVPoX7fS2aFa1zpXCvXHY/1eJo=
+			ZRMvYZgUUyxJv4WYGHUZi/g4fWI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -258,14 +266,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xons0lg4fTqKNE5VNuv6Di82J5VP2zMDFSDnnqViRsg=
+			33M3RCkM3nsvM+oGpwr3Bd2NneEeJFsRzF4Q7CltiE0=
+			</data>
+		</dict>
+		<key>Headers/PWBrick3DSProtocol.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4xRhdUMGVSr1y+2NQEvkrFPrmnDsSzl+gvxmEkcaYl0=
+			</data>
+		</dict>
+		<key>Headers/PWBrickCardinal3DSPlugin.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LTxN1x50l8AHmbK6DNyzvAIN/rv3aeGQ5xbrwMaeSfY=
 			</data>
 		</dict>
 		<key>Headers/PWBrickToken.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FM68MRWhF/4s2lCssgsCll9ypRdzlJprbMjhCwNfacA=
+			mvuds+IUd6WKASbMkfvLOBdOO7QUama8vW319XP3QAM=
 			</data>
 		</dict>
 		<key>Headers/PWCardScannerProtocol.h</key>
@@ -279,21 +301,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			IjsYzHKHCuWz6WTXuYFPe9JxlF4vU50rJjB4fGKBGbs=
+			MoO6OcbWearzSVPN9zV4KsKBPUN5hLJxK7rwNyKaMt8=
 			</data>
 		</dict>
 		<key>Headers/PWCoreSDK.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qAC1jUtgWLHF+AZF28LvPva2TRv1OL5GuXx7KZ5Rdnc=
+			lE8pMwPiZI2RbPQyL0MbXJplhp6yN2rPRq+JRvbFl8A=
 			</data>
 		</dict>
 		<key>Headers/PWCoreSDKMain.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L4898SuH4MU5bvrwOnwQ+ENGVHEDeBBvhMDMcpzPrGc=
+			rLgz7FsCsOi/hp8VtAjFOM7YvebxHZ7sjOS5TR2K9pU=
 			</data>
 		</dict>
 		<key>Headers/PWCoreSDKResponse.h</key>
@@ -307,35 +329,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Xx9f/5hlUNx/NqBczHZg0huTOd8JQIBDoJ0wIZkI/5M=
+			ZbuiDDH8FhamiNR2yKsgsLDmpREb8bGb7hmuDsehK3c=
 			</data>
 		</dict>
 		<key>Headers/PWError.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rgzXRwPYXtrWn3zHT+VOEDp9BsBmCjrc52sd6ISVEdo=
+			l+nUBZtdSqPxqjCt75pVYtW58l6OzxgmI+stvhxAXu0=
 			</data>
 		</dict>
 		<key>Headers/PWHTTPTransport.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Vnp4niswrNcAQinYfd9/e+2TI5FOIXQ0i2W/Z4UCjqE=
+			XSr93c5T7nC5XKvXUVgi53RVh9Uvte/soE0sHGDsEkA=
 			</data>
 		</dict>
 		<key>Headers/PWLog.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			h22eRssIIIArAMu7o7mSsvXLyh39+cyklYxSmLdQXpM=
+			gemYg7H6WTZt7O3qu+7sREAWJw1DhoPSnpiLHMDG+oI=
 			</data>
 		</dict>
 		<key>Headers/PWOptionBrick.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SasYG62FqeXMscLv/T7M6tjrAeXj/BbQE8tZIGoZefY=
+			h46/UyBibSsHj4idKthhcwVTyK98p22dMdg9CI/dCk0=
 			</data>
 		</dict>
 		<key>Headers/PWOptionMint.h</key>
@@ -363,42 +385,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			jozGdRIGlgMV1DGn3vX5cH5m+r2Yqs+yYDIk7CMJa4E=
+			Kq1uJOt8/Iql/H0DmpX+1FdhlFU/n4DiY1rmapoEm/A=
 			</data>
 		</dict>
 		<key>Headers/PWUIProtocol.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			p3kXBaaHXYwlG+jlYogXYqikcdN9HCSu98SkCnBIFnQ=
+			FW17h4dFLXPKusMRLPjwTqsMRmLYVKBDLixkKSgGoho=
 			</data>
 		</dict>
 		<key>Headers/PWWidgetCart.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M/qDR0KkcZkWVDpj71F6CCYWWTh91rwMf9UH74fowBM=
+			gu2DpFYXCIbMaFTMZlkYKsbGe0LmiX442z5Xeu1qrro=
 			</data>
 		</dict>
 		<key>Headers/PWWidgetDigitalGoodsDefaut.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WM0OvGikg7yUGmJNETKnQUCebJnnVtukPLGaPeP6Dto=
+			jnyugGiwtduqTzAfu8sXExWIDxYFhp0aP+n0hqldy64=
 			</data>
 		</dict>
 		<key>Headers/PWWidgetDigitalGoodsFlexible.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ykdKw5FzOJ7qVYh7RK+QiyG9+3mSgtfj/Z/4yCsB2zA=
+			l0fhaDuhJ0glvT1DtpFvycNGHCwomU2ToPRRI0ZSwEI=
 			</data>
 		</dict>
 		<key>Headers/PWWidgetVirtualCurrency.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			s8IOEy7Mjv5/OWI+hC8J3j0OyEZNZNZ873ACpAfuWlI=
+			VfDyedEzKfGY0nxgUCcspD1hx0O20EdmzRX3wyrQs0E=
 			</data>
 		</dict>
 		<key>LICENSE</key>
@@ -489,7 +511,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9uVBzSDZAT4XFqL7qz47T2oi2PqO7vgSgQuX/rhCSSo=
+			v7GbAZaUmBU+5wTwlbGWlT7/IPVnLu8+1Nxl45xV1Tc=
 			</data>
 		</dict>
 		<key>PWLoadableView.nib</key>
@@ -510,7 +532,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wa4o41VsjJLcDa7nRmPnsnmArY6Yb52HkosFtkXQ5wU=
+			wf+rOwVNB2PtezZ0SkhsMp5e8UZDAJLFqq3SX2tZZOg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -519,7 +541,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			08JIeGvJFD0lGy+FDy/j07exCTTA/5lAi56s7XVWVi8=
+			7quouf7pm/Kim8Fc1Z7VvESVZhwQUGAJv6UcILbYTcQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -528,7 +550,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zuoAe7UwQ6eTOe6po+BF1NXBCT0lWk+zvWybZJyga5Y=
+			J9dwB5iDvzRywC38xcT5lWny34XoYrmitlwFW36MQQw=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -537,7 +559,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z4WBQCQIZtW9kUAjv1IqwhQH61g/Ux6128Rl5MG8Z2M=
+			NDdYuFU27orGBWlUmgGim1ip362iAucJn13K4BUqZe8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -546,7 +568,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4VG6DEe6XDEMkyKKlPZ9X0rNx2cttdccQ62MBmGRCJE=
+			og0QKy/OpgNZEDHLndfDtRZIuytKD1VP6PNmJ7/cpiU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -555,7 +577,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			epkkqjVd76AUqTM6IzT/+MXzje4f4zAihe3TdLgWbr8=
+			D9ge87nLFN9+vP3Ir5PgjGv+q6NdcdakHWJAtRx+Unk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -564,7 +586,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nlmhQxWGHvM02QasWYrWjiwYqC+GzSOy5JRX3vCxgg8=
+			k7tWgtB+RBFzicB7Z/vqDpcyOuHjFwf8So9p7iMwKvs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -573,7 +595,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kFctvKtjq2XWqSUdEwz45Vyx9lL8A5raBxC+o4K9Q88=
+			sv0T/6yx74JJzM7Iri10EI8iqrwA9QJf/njs5SDbaEY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -582,7 +604,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			sYs8YyDEGXr8yy1qkq5MwrnlhJ1GPITs/vm5trdE/BM=
+			CKPrwtL0/QtnsKHBnW+HqvVswyNQRdhvXU2btsqLUW8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -591,7 +613,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aY6QjtMJdFM3T7hyY5XzODMSjidNK/tzR2SWuYP1u54=
+			9476sg7+QM6x12ToJ3mzMcnMFUmAipN0wTbN0TodQzE=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -600,7 +622,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			a+B8R/hM00/M3sBODYMXgAyvBdZ+lcVbNp1I23e/fC4=
+			gOD00Aw8wgD61dlkjyWIgYegta+unuDR6BGbNurFQ6E=
 			</data>
 			<key>optional</key>
 			<true/>

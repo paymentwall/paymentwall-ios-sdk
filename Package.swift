@@ -22,10 +22,12 @@ let package = Package(
 
     products: [
         // Cards (Brick), local payment methods (PWLocal) and Mint. Required.
-        .library(name: "PWCoreSDK",      targets: ["PWCoreSDK"]),
+        //
+        // Adding this one product brings everything the SDK needs; the targets it lists are an
+        // implementation detail and are not added separately.
+        .library(name: "PWCoreSDK", targets: ["PWCoreSDK", "CardinalMobile"]),
         // MyCard prepaid vouchers. Optional. Requires PWCoreSDK.
         .library(name: "PWMyCardPlugin", targets: ["PWMyCardPlugin"]),
-        // Optional. Requires PWCoreSDK.
     ],
 
     // ⚠️ EMBED & SIGN, not link-only. These are DYNAMIC frameworks: that is what lets them carry
@@ -39,5 +41,7 @@ let package = Package(
     targets: [
         .binaryTarget(name: "PWCoreSDK",      path: "Frameworks/PWCoreSDK.xcframework"),
         .binaryTarget(name: "PWMyCardPlugin", path: "Frameworks/PWMyCardPlugin.xcframework"),
+        // Carried by the PWCoreSDK product above. Nothing to add to your target.
+        .binaryTarget(name: "CardinalMobile", path: "Frameworks/CardinalMobile.xcframework"),
     ]
 )

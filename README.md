@@ -52,11 +52,11 @@ The SDK ships through **Swift Package Manager**. In Xcode: **File → Add Packag
 https://github.com/paymentwall/paymentwall-ios-sdk
 ```
 
-and choose **Up to Next Major Version** from `4.0.0`. Or, in a `Package.swift`:
+and choose **Up to Next Major Version** from `4.1.0`. Or, in a `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/paymentwall/paymentwall-ios-sdk", from: "4.0.0")
+    .package(url: "https://github.com/paymentwall/paymentwall-ios-sdk", from: "4.1.0")
 ]
 ```
 

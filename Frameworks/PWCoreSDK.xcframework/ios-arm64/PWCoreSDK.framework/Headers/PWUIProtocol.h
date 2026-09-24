@@ -31,15 +31,22 @@
 -(void)startAnimateLoading;
 -(void)hideWithCompletion:(void (^)(void))completionBlock;
 
-// THE FOUR BELOW ARE @optional, AND THAT IS THE POINT. An integrator may supply their own status
-// view through -[PWUIProtocol loadableView]; making any of these required would stop their existing
-// view compiling on upgrade. The SDK's own PWLoadableView implements all four, and PWPopupHelper
-// -respondsToSelector: checks each one, so a view that implements none behaves exactly as before.
+// The five below are @optional so that a status view supplied through -[PWUIProtocol loadableView]
+// keeps compiling when the SDK adds one. Each is guarded by -respondsToSelector: at the call site;
+// a view that implements none still works.
 @optional
 
+/// The charge is TAKEN and Paymentwall is reviewing it for fraud, and the SDK is polling.
+///
+/// A wait with no known end, like `-showWaitingForAppConfirmation` and unlike the ordinary
+/// processing state: the SDK is not waiting on a request it made, it is waiting on a human decision.
+/// A status view that does not implement this gets the ordinary processing wording.
+///
+/// @param chargeId Paymentwall's id for the charge, shown so the payer can quote it.
+-(void)showChargeUnderReview:(NSString *)chargeId;
+
 /// The payment being processed, so the overlay can print WHAT is being paid — the status screens say
-/// "Processing $40.00" and "Paid $40.00". Before this the overlay was told neither the amount nor the
-/// product. Sent once per payment.
+/// "Processing $40.00" and "Paid $40.00". Sent once per payment.
 -(void)setPaymentObject:(PWPaymentObject *)paymentObject;
 
 /// How the payer would name the method that settled it — "Visa •• 4242", "Prepaid Card". Fills the
@@ -48,24 +55,18 @@
 /// simply absent.
 -(void)setPaymentMethodDescription:(NSString *)methodDescription;
 
-/// The success state's countdown and its "Return to app" button. `seconds` is what
-/// -[PWPopupHelper showSuccessWithMessage:subMessage:duration:completion:] was already going to wait
-/// before dismissing; `action` finishes NOW instead of waiting, and is safe to call twice — the caller
-/// makes it idempotent, so the button and the timer cannot both report the same payment.
+/// The success state's countdown and its "Return to app" button.
 ///
-/// Without this the overlay could still dismiss itself, but the payer would sit in front of a finished
-/// payment with no way to leave and no idea how long it would take.
+/// `seconds` is how long the overlay will wait before dismissing itself; `action` finishes NOW
+/// instead of waiting. `action` is idempotent, so the button and the timer cannot both report the
+/// same payment.
 -(void)setAutoDismissAfterSeconds:(NSTimeInterval)seconds action:(void (^)(void))action;
 
 /// The processing state, re-worded for a wait on the HOST APP rather than on the network.
 ///
-/// The SDK reaches this whenever an option needs a signature it cannot compute: `isRequiringSign` is
-/// set, a `stringToSign` goes to the merchant's delegate, and the method returns WITHOUT making a
-/// request. Until this existed that condition drew the ordinary "processing" screen, so a wait on the
-/// integrator's own backend was indistinguishable from a slow network — for up to the 60s timeout.
-///
-/// A view that does not implement it keeps getting -showLoadingWithMessage:subMessage:, which is what
-/// it got before, so this cannot change an integrator's overlay by being added.
+/// Called when an option needs a signature it cannot compute: a `stringToSign` goes to your delegate
+/// and the SDK makes no request until you answer. A view that does not implement this gets
+/// -showLoadingWithMessage:subMessage: instead.
 -(void)showWaitingForAppConfirmation;
 @end
 

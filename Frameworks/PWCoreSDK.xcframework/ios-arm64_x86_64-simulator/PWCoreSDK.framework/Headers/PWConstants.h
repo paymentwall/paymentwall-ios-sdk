@@ -24,8 +24,7 @@ extern NSString * const PWPaymentTypeNone;
 /// A page rendered inside the SDK signals that it is finished by navigating to this URL, or by
 /// calling `window.close`. Compare against this constant rather than hard-coding the string.
 ///
-/// **Published, not configurable:** the value is shared with the Android SDK, so both platforms
-/// recognise the same signal.
+/// **Published, not configurable:** the same value is recognised on every Paymentwall SDK.
 extern NSString * const PWWebViewCloseSignalURL;
 
 /**
@@ -44,9 +43,22 @@ typedef NS_ENUM(NSUInteger, PWPaymentResponseCode) {
     ///
     /// **Reconcile server-side before shipping goods, and do not treat this as a failure.**
     /// Refunding or refusing to ship on this code alone risks acting on a payment that actually
-    /// succeeded. Before 2.0 this case did not exist and these payments reported
-    /// `PWPaymentResponseCodeFailed`.
-    PWPaymentResponseCodeUnknown
+    /// succeeded.
+    PWPaymentResponseCodeUnknown,
+    /// The charge was TAKEN but is being reviewed for fraud, and the review had not finished.
+    ///
+    /// Paymentwall answers such a charge with `captured: true` and `risk: "pending"`. The SDK polls
+    /// the charge while its own screen is on display and reports `PWPaymentResponseCodeSuccessful`
+    /// or `PWPaymentResponseCodeFailed` once the review finishes. This code is what you get when it
+    /// does NOT finish on the device: the payer left the screen, or the SDK has no secret key and so
+    /// cannot poll at all.
+    ///
+    /// **This is not a success and not a failure — do not ship goods on it.** The outcome arrives
+    /// at your server through Paymentwall's pingback, which is the authority.
+    ///
+    /// **New in 4.1.0**, so a `switch` written against an earlier release does not handle it. It is
+    /// added at the END of this enumeration, so every existing case keeps its raw value.
+    PWPaymentResponseCodePending
 };
 
 /**

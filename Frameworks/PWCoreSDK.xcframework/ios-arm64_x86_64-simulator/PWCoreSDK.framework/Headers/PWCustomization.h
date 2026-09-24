@@ -9,10 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-// EVERY property here is `nullable`: a customization is a set of OVERRIDES, and you set only the
-// ones your design needs. The nullability is declared rather than left unspecified so that Swift
-// imports these as real optionals - an unannotated pointer imports as an implicitly-unwrapped
-// optional, which gives the caller a crash instead of a diagnostic.
+// A customization is a set of OVERRIDES: set only the properties your design needs and leave the
+// rest nil. Every property is explicitly `nullable`, so Swift imports them as real optionals.
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PWCustomization : NSObject

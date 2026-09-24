@@ -20,13 +20,12 @@ typedef NS_ENUM(NSUInteger, PWLogLevel) {
 
 NS_ASSUME_NONNULL_BEGIN
 
-/// The SDK's logger, built so that **logging a request body is not possible**, rather than merely
-/// discouraged.
+/// The SDK's logger. **Logging a request body is not possible through it.**
 ///
-/// There is no string parameter anywhere in this API. Callers describe an **event** — a URL, a
-/// status code, an error — and this class decides what may be printed. The URL has its **query
-/// stripped** first, because Paymentwall's GET requests carry parameters and a signed GET carries
-/// the signature.
+/// There is no string parameter anywhere in this API: callers describe an **event** — a URL, a
+/// status code, an error — and this class decides what may be printed. Every URL has its **query
+/// stripped** first, because Paymentwall's GET requests carry their parameters, and a signed GET
+/// carries the signature, there.
 ///
 /// Set the level through `-[PWCoreSDK setLogLevel:]`, the one public entry point.
 @interface PWLog : NSObject
@@ -41,7 +40,7 @@ NS_ASSUME_NONNULL_BEGIN
 +(void)logResponse:(nullable NSURL *)url statusCode:(NSInteger)statusCode duration:(NSTimeInterval)duration;
 
 /// Logs an error's domain and code. **Not `localizedDescription`** — a server-supplied message can
-/// quote back a parameter value, and that is how a body reaches a log by accident.
+/// quote back a parameter value.
 +(void)logFailure:(NSError *)error forURL:(nullable NSURL *)url;
 
 @end
