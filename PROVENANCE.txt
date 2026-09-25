@@ -1,7 +1,7 @@
-Paymentwall iOS SDK 4.1.0
+Paymentwall iOS SDK 4.2.0
 
-build      3845b95f822a
-built      2026-09-24T08:05:13Z
+build      4dcb93224aa1
+built      2026-09-25T09:49:35Z
 signed     Apple Distribution: Paymentwall, Inc. (D44Q8LH786)
 
 Verify what you received:
