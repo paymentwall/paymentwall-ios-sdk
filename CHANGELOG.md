@@ -1,5 +1,10 @@
 # Changelog
 
+## 4.2.0
+
+**Nothing to change in your integration.** The SDK's own screens now link to Paymentwall's privacy
+policy from their footer, so a payer can read it before they pay. The public API is unchanged.
+
 ## 4.1.0
 
 **Two projects in one app, a flat checkout, and an optional success screen.**
