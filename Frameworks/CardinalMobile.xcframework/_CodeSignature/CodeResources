@@ -34,7 +34,7 @@
 		</data>
 		<key>ios-arm64/CardinalMobile.framework/CardinalMobile</key>
 		<data>
-		U4wqhRaRfajURQ7Q5oXqvJNXNxM=
+		Tn6sRZgTXrup2fA5EfqDKup+fhk=
 		</data>
 		<key>ios-arm64/CardinalMobile.framework/Headers/AuthenticationRequestParameters.h</key>
 		<data>
@@ -210,7 +210,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/CardinalMobile.framework/CardinalMobile</key>
 		<data>
-		ofvo8dFWWBSG25ofbsvz0kxTQQQ=
+		S+ySJLzuok1mt9/zE2ta9T+UOOw=
 		</data>
 		<key>ios-arm64_x86_64-simulator/CardinalMobile.framework/Headers/AuthenticationRequestParameters.h</key>
 		<data>
@@ -412,7 +412,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mkBJwBwOlm6bb5zwZvWldkblq6SDSeikVGosBhyAGVs=
+			EWp3PQtoVl8aT8RB8Nwcexp96G4ngiM5D6pKSNuxNnA=
 			</data>
 		</dict>
 		<key>ios-arm64/CardinalMobile.framework/Headers/AuthenticationRequestParameters.h</key>
@@ -720,7 +720,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fRwpGvVizmfd3pDaI3gK0QduMIvzgLHXptkU2AvsbTk=
+			bgBtrlrolOqNzhNkvEG0J8LNYbELh5kntnH0H36Z71s=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/CardinalMobile.framework/Headers/AuthenticationRequestParameters.h</key>
