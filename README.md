@@ -4,10 +4,10 @@ Accept payments inside your iOS app. Paymentwall is a global payment gateway rea
 countries with 100+ alternative payment options, and this SDK becomes a native part of your
 application — so a payer never leaves it for a browser.
 
-**Version 4.0** is a substantial change from 3.x: Swift Package Manager distribution, signed dynamic
-frameworks, and a smaller set of shipped modules. If you are upgrading, read
-[CHANGELOG.md](CHANGELOG.md) first. If you are integrating for the first time, start at
-[Add the SDK](#add-the-sdk).
+**Version 4** is a substantial change from 3.x: Swift Package Manager distribution, signed dynamic
+frameworks, and a smaller set of shipped modules. CocoaPods is not a v4 channel — `pod 'PWCoreSDK'`
+continues to resolve 3.1.1 and will not receive v4. If you are integrating for the first time, start
+at [Add the SDK](#add-the-sdk).
 
 The payment screens are native, follow the payer's light or dark mode, and format the total the way
 the currency is actually written in the payer's region. Build [Demo](Demo) to see them.

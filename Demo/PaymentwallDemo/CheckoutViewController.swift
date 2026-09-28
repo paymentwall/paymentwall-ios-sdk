@@ -104,7 +104,7 @@ extension CheckoutViewController: PWCoreSDKDelegate {
             report("Cancelled by the payer.")
 
         case .pending:
-            // NEW IN 4.1.0, and like .unknown it is neither a success nor a failure. Paymentwall
+            // Like .unknown, this is neither a success nor a failure. Paymentwall
             // TOOK the money and is reviewing the charge for fraud; the review had not finished on
             // the device. The verdict arrives at your server through the pingback, which is the
             // authority — so do not ship goods here.
